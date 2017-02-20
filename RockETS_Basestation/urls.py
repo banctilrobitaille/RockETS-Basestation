@@ -14,9 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from basestation import views
 
-# from django.contrib import admin
+__BASE_PATH = "rest/api/"
+__API_VERSION = "v1"
 
 urlpatterns = [
-    # url(r'^admin/', admin.site.urls),
+    url(r'^{}{}{}'.format("", "", ""), views.index, name="index"),
+    url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation"), views.index, name="index"),
 ]

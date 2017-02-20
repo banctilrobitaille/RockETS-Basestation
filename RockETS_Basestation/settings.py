@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'basestation',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -70,14 +72,16 @@ WSGI_APPLICATION = 'RockETS_Basestation.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+_MONGODB_HOST = '127.0.0.1'
+_MONGODB_NAME = 'RockETS_Basestation'
+
+mongoengine.connect(_MONGODB_NAME)
 
 DATABASES = {
     'default': {
         'ENGINE': '',
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
