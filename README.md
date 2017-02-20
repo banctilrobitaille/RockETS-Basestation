@@ -1,5 +1,10 @@
 #RockETS Basestation
 
+#### Setup
+> pip install djangorestframework
+
+> pip install mongoengine
+
 #### How to contribute ?
 - [X] Create a branch by feature and/or bug fix
 - [X] Get the code
