@@ -3,9 +3,11 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+from base_station.models import Rocket
+
 
 def index(request):
-    return HttpResponse("Hello world !")
+    return HttpResponse(Rocket.objects.all()[0].name)
 
 #
 # @api_view(['GET'])

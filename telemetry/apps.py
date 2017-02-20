@@ -3,5 +3,5 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 
 
-class BasestationConfig(AppConfig):
-    name = 'basestation'
+class TelemetryConfig(AppConfig):
+    name = 'telemetry'
