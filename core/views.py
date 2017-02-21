@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from base_station.models import Rocket
+from core.models import Rocket
 
 
 def index(request):
