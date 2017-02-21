@@ -54,11 +54,7 @@ ROOT_URLCONF = 'RockETS_Basestation.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates/analytics'),
-                 os.path.join(BASE_DIR, 'templates/core'),
-                 os.path.join(BASE_DIR, 'templates/logger'),
-                 os.path.join(BASE_DIR, 'templates/telemetry'),
-                 os.path.join(BASE_DIR, 'templates/weather_station')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
