@@ -1,0 +1,8 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.content-title {
+    color: white;
+    border-bottom: solid 1px dimgray;
+}
