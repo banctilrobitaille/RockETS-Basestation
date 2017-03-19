@@ -2,7 +2,25 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-.content-title {
+.content-title-section {
     color: white;
     border-bottom: solid 1px dimgray;
+    display: inline-block;
+}
+
+.content-title {
+    display: inline-block;
+}
+
+.btn-custom {
+    background-color: #006080 !important;
+    border-color: #006080 !important;
+    border-radius: 0 !important;
+    margin-left: 5%;
+    margin-bottom: 3%;
+}
+
+.btn-custom:hover{
+    background-color: #004767 !important;
+    border-color: #004767 !important;
 }
