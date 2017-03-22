@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4682eee8-212f-4da9-9e47-9f4895f3fca8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/static/css/core-general.css" afterPath="$PROJECT_DIR$/core/static/css/core-general.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/core/base-template.html" afterPath="$PROJECT_DIR$/templates/core/base-template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" afterPath="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sensors/sensors-index.html" afterPath="$PROJECT_DIR$/templates/sensors/sensors-index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sensors/sensors-modal.html" afterPath="$PROJECT_DIR$/templates/sensors/sensors-modal.html" />
     </list>
     <ignored path="RockETS_Basestation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,8 +40,8 @@
       <file leaf-file-name="base-template.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74613005">
-              <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+            <state vertical-scroll-proportion="1.2600619">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -687,7 +683,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23901394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23901394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1114,8 +1110,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74613005">
-          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+        <state vertical-scroll-proportion="1.2600619">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding />
         </state>
       </provider>
