@@ -43,3 +43,20 @@ body {
 .custom-modal {
     border-radius: 0 !important;
 }
+
+.content-searching-image {
+    height: 30%;
+    width: 30%;
+}
+
+.top-buffer {
+    margin-top: 5%;
+}
+
+.white-text {
+    color: white;
+}
+
+.centered-content {
+    text-align: center;
+}
