@@ -12,15 +12,34 @@ body {
     display: inline-block;
 }
 
-.btn-custom {
+.content-section-action {
+    display: inline-block;
+    padding-left: 5%;
+    margin-bottom: 5%;
+}
+
+.btn-primary-custom {
     background-color: #006080 !important;
     border-color: #006080 !important;
     border-radius: 0 !important;
-    margin-left: 5%;
-    margin-bottom: 3%;
 }
 
-.btn-custom:hover{
+.btn-primary-custom:hover {
     background-color: #004767 !important;
     border-color: #004767 !important;
+}
+
+.btn-secondary-custom {
+    background-color: #ececec !important;
+    border-color: #ececec !important;
+    border-radius: 0 !important;
+}
+
+.btn-secondary-custom:hover {
+    background-color: #dfdfdf !important;
+    border-color: #dfdfdf !important;
+}
+
+.custom-modal {
+    border-radius: 0 !important;
 }
