@@ -7,8 +7,10 @@ from rest_framework.response import Response
 from core.models import Rocket
 
 
+@api_view(['GET'])
 def index(request):
-    return render_to_response('core/base_template.html', None, RequestContext(request))
+    if request.method == 'GET':
+        return render_to_response('core/base-template.html', None, RequestContext(request))
 
 #
 # @api_view(['GET'])
