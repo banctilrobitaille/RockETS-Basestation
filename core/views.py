@@ -6,4 +6,4 @@ from rest_framework.decorators import api_view
 @api_view(['GET'])
 def index(request):
     if request.method == 'GET':
-        return render_to_response('core/base-template.html', {'content_title': "Dashboard"}, RequestContext(request))
+        return render_to_response('core/base-template.html', {'content_title': "Home"}, RequestContext(request))

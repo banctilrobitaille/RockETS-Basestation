@@ -23,8 +23,8 @@
             <div class="menu-list">
 
                 <ul id="menu-content" class="menu-content collapse out">
-                    <li class="active">
-                        <a href="#">
+                    <li>
+                        <a href="dashboards">
                             <i class="fa fa-bar-chart fa-lg"></i> Dashboards
                         </a>
                     </li>
@@ -53,9 +53,8 @@
                 <div class="col-md-12">
                     <div class="col-md-5 content-title-section">
                         <h2 class="content-title">{{ content_title }}</h2>
-                        <button type="submit" class="btn btn-primary btn-custom">
-                            Create <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-                        </button>
+                        {% block section_action %}
+                        {% endblock %}
                     </div>
                 </div>
             </div>
