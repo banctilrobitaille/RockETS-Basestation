@@ -16,27 +16,26 @@
 <div class="container-fluid full-page">
     <div class="row full-page">
         <div class="nav-side-menu col-md-2 full-page">
-            <div class="brand"><img class="brand-logo" src="{% static "resources/images/rocketsLogo.png" %}"
-                                    alt="RockETS Logo"/></div>
+            <div class="brand">
+                <a href="/">
+                    <img class="brand-logo" src="{% static "resources/images/rocketsLogo.png" %}" alt="RockETS Logo"/>
+                </a>
+            </div>
             <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-
             <div class="menu-list">
-
                 <ul id="menu-content" class="menu-content collapse out">
-                    <li class="active">
-                        <a href="#">
+                    <li>
+                        <a href="dashboards">
                             <i class="fa fa-bar-chart fa-lg"></i> Dashboards
                         </a>
                     </li>
-
                     <li data-toggle="collapse" data-target="#sensors" class="collapsed">
-                        <a href="#"><i class="fa  fa-tachometer fa-lg"></i> Sensors <span class="arrow"></span></a>
+                        <a href="sensors"><i class="fa  fa-tachometer fa-lg"></i> Sensors <span
+                                class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="sensors">
                         <li>Temperature</li>
                     </ul>
-
-
                     <li data-toggle="collapse" data-target="#flights" class="collapsed">
                         <a href="#"><i class="fa fa-history fa-lg"></i> Flights history <span class="arrow"></span></a>
                     </li>
@@ -51,12 +50,17 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-5 content-title-section">
-                        <h2 class="content-title">Dashboards</h2>
-                        <button type="submit" class="btn btn-primary btn-custom">
-                            Create <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-                        </button>
+                        <div class="col-md-12">
+                            <h2 class="content-title">{{ content_title }}</h2>
+                            {% block content_section_action %}
+                            {% endblock %}
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                {% block content %}
+                {% endblock %}
             </div>
         </div>
     </div>

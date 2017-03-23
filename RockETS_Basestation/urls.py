@@ -13,13 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+import core.views
+import sensors.views
+import dashboards.views
 from django.conf.urls import url
-from core import views
 
 __BASE_PATH = "rest/api/"
-__API_VERSION = "v1"
+__API_VERSION = "v1/"
 
 urlpatterns = [
-    url(r'^{}{}{}'.format("", "", ""), views.index, name="index"),
-    url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation"), views.index, name="index"),
+    url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation"), core.views.index),
+    url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation/sensors"), sensors.views.index),
+    url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards"), sensors.views.index),
+    url(r'^{}{}{}'.format("", "", "sensors"), sensors.views.index),
+    url(r'^{}{}{}'.format("", "", "dashboards"), dashboards.views.index),
+    url(r'^{}{}{}'.format("", "", ""), core.views.index),
 ]

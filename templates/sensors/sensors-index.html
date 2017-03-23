@@ -1,0 +1,16 @@
+{% extends "core/base-template.html" %}
+{% load static %}
+{% block content_section_action %}
+    <a href="#" data-toggle="modal" data-target="#sensor-modal">
+        <button type="submit" class="btn btn-primary btn-primary-custom content-section-action">
+            Add <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+        </button>
+    </a>
+{% endblock %}
+{% block content %}
+    <div class="col-md-12 top-buffer centered-content">
+        <h3 class="white-text">No sensor configured</h3>
+        <img class="content-searching-image top-buffer" src="{% static "resources/images/searching.png" %}"/>
+    </div>
+    {% include "sensors/sensors-modal.html" %}
+{% endblock %}
