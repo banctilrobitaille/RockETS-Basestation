@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4682eee8-212f-4da9-9e47-9f4895f3fca8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/static/css/core-general.css" afterPath="$PROJECT_DIR$/core/static/css/core-general.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/core/base-template.html" afterPath="$PROJECT_DIR$/templates/core/base-template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sensors/sensors-modal.html" afterPath="$PROJECT_DIR$/templates/sensors/sensors-modal.html" />
     </list>
     <ignored path="RockETS_Basestation.iws" />
@@ -50,21 +48,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="core-general.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="core-general.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/static/css/core-general.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.870968">
-              <caret line="77" column="26" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.59133124">
+              <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sensors-modal.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sensors-modal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sensors/sensors-modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17027864">
-              <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
+            <state vertical-scroll-proportion="-11.354838">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -1042,18 +1040,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/static/css/core-general.css">
+    <entry file="file://$PROJECT_DIR$/templates/sensors/sensors-modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.870968">
-          <caret line="77" column="26" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
+        <state vertical-scroll-proportion="-11.354838">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sensors/sensors-modal.html">
+    <entry file="file://$PROJECT_DIR$/core/static/css/core-general.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17027864">
-          <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.59133124">
+          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
           <folding />
         </state>
       </provider>

@@ -72,6 +72,8 @@ body {
 
 .modal-header-icon {
     display: inline-block;
+    color: #004767;
+    padding-right: 2%;
 }
 
 .modal-title {
