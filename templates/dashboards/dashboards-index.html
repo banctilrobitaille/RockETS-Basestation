@@ -1,4 +1,10 @@
 {% extends "core/base-template.html" %}
+
+{% load static %}
+{% block stylesheet_import %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/dashboards.css" %}">
+{% endblock %}
+
 {% block content_section_action %}
     <a href="#" data-toggle="modal" data-target="#dashboards-modal">
         <button type="submit" class="btn btn-primary btn-primary-custom content-section-action">
@@ -6,11 +12,10 @@
         </button>
     </a>
 {% endblock %}
+
 {% block content %}
     <div class="row">
-        <div class="col-md-4">
-            <canvas id="myChart"></canvas>
-        </div>
+        {% include "dashboards/dashboard.html" %}
     </div>
     {% include "dashboards/dashboards-modals.html" %}
     <script>
