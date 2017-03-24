@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4682eee8-212f-4da9-9e47-9f4895f3fca8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboards/static/css/dashboards.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/dashboards/dashboard.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/static/js/plotly-latest.min.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/static/js/chart.min.js" afterPath="$PROJECT_DIR$/dashboards/static/js/chart.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/static/css/hover-min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboards/static/css/dashboards.css" afterPath="$PROJECT_DIR$/dashboards/static/css/dashboards.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/core/base-template.html" afterPath="$PROJECT_DIR$/templates/core/base-template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" afterPath="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboards/dashboard.html" afterPath="$PROJECT_DIR$/templates/dashboards/dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboards/dashboards-modals.html" afterPath="$PROJECT_DIR$/templates/dashboards/dashboards-modals.html" />
     </list>
     <ignored path="RockETS_Basestation.iws" />
@@ -37,8 +35,8 @@
       <file leaf-file-name="base-template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.193548">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.096774">
+              <caret line="10" column="81" selection-start-line="10" selection-start-column="81" selection-end-line="10" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -57,8 +55,8 @@
       <file leaf-file-name="sensors-modal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sensors/sensors-modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="87" column="7" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
+            <state vertical-scroll-proportion="-18.032259">
+              <caret line="45" column="34" selection-start-line="36" selection-start-column="28" selection-end-line="45" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -67,28 +65,38 @@
       <file leaf-file-name="dashboards-modals.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-modals.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.548387">
-              <caret line="5" column="72" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="72" />
+            <state vertical-scroll-proportion="-13.774194">
+              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6171108">
-              <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+            <state vertical-scroll-proportion="-2.1290324">
+              <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboards.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dashboards.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboards/static/css/dashboards.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.935484">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4628331">
+              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hover-min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/static/css/hover-min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,16 +107,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-19.161291">
               <caret line="62" column="34" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sensors-index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/sensors/sensors-index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -174,11 +172,11 @@
         <option value="$PROJECT_DIR$/core/static/css/core-general.css" />
         <option value="$PROJECT_DIR$/templates/sensors/sensors-modal.html" />
         <option value="$PROJECT_DIR$/core/static/js/chart.min.js" />
-        <option value="$PROJECT_DIR$/templates/dashboards/dashboards-modals.html" />
         <option value="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" />
         <option value="$PROJECT_DIR$/templates/core/base-template.html" />
-        <option value="$PROJECT_DIR$/dashboards/static/css/dashboards.css" />
+        <option value="$PROJECT_DIR$/templates/dashboards/dashboards-modals.html" />
         <option value="$PROJECT_DIR$/templates/dashboards/dashboard.html" />
+        <option value="$PROJECT_DIR$/dashboards/static/css/dashboards.css" />
       </list>
     </option>
   </component>
@@ -265,7 +263,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dashboards" />
+              <option name="myItemId" value="sensors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -283,7 +281,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="dashboards" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,28 +368,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RockETS_Basestation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RockETS_Basestation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -411,10 +387,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\core\static\css" />
       <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\core\static\resources\images" />
       <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\dashboards\static" />
       <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\core\static" />
-      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\core\static\css" />
       <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\static\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -747,16 +723,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#55#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1067,14 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sensors/sensors-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="7" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboards/static/js/chart.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1084,30 +1042,6 @@
             <marker date="1490311812875" expanded="true" signature="86133:86150" placeholder="..." />
             <marker date="1490311812875" expanded="true" signature="155665:155682" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-modals.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.548387">
-          <caret line="5" column="72" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.935484">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.193548">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1127,7 +1061,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboards/static/css/dashboards.css">
+    <entry file="file://$PROJECT_DIR$/core/static/css/hover-min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.096774">
+          <caret line="10" column="81" selection-start-line="10" selection-start-column="81" selection-end-line="10" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.935484">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
@@ -1135,10 +1085,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sensors/sensors-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.032259">
+          <caret line="45" column="34" selection-start-line="36" selection-start-column="28" selection-end-line="45" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-modals.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.774194">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6171108">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        <state vertical-scroll-proportion="-2.1290324">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboards/static/css/dashboards.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4628331">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
           <folding />
         </state>
       </provider>
