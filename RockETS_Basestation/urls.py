@@ -15,7 +15,7 @@ Including another URLconf
 """
 import core.views
 import sensors.views
-import dashboards.views
+from dashboards.views import *
 from django.conf.urls import url
 
 __BASE_PATH = "rest/api/"
@@ -24,8 +24,8 @@ __API_VERSION = "v1/"
 urlpatterns = [
     url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation"), core.views.index),
     url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation/sensors"), sensors.views.index),
-    url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards"), sensors.views.index),
+    url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards"), Dashboards.as_view()),
     url(r'^{}{}{}'.format("", "", "sensors"), sensors.views.index),
-    url(r'^{}{}{}'.format("", "", "dashboards"), dashboards.views.index),
+    url(r'^{}{}{}'.format("", "", "dashboards"), Dashboards.as_view()),
     url(r'^{}{}{}'.format("", "", ""), core.views.index),
 ]

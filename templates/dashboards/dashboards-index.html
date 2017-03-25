@@ -5,6 +5,10 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/dashboards.css" %}">
 {% endblock %}
 
+{% block js_import %}
+    <script src="{% static "js/jquery.flightindicators.min.js" %}"></script>
+{% endblock %}
+
 {% block content_section_action %}
     <a href="#" data-toggle="modal" data-target="#dashboards-modal">
         <button type="submit" class="btn btn-primary btn-primary-custom content-section-action">
