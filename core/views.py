@@ -1,9 +1,11 @@
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
 from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 
 
-@api_view(['GET'])
-def index(request):
-    if request.method == 'GET':
+class Core(APIView):
+    @staticmethod
+    @api_view(['GET'])
+    def get(request):
         return render_to_response('core/base-template.html', {'content_title': "Home"}, RequestContext(request))
