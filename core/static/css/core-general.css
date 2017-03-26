@@ -85,3 +85,16 @@ body {
 .modal-title {
     display: inline-block;
 }
+
+.sweet-alert {
+    border-radius: 0 !important;
+}
+
+.confirm {
+    border-radius: 0 !important;
+    background-color: #006080 !important;
+}
+
+.confirm:hover {
+    background-color: #004767 !important;
+}
