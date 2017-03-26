@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4682eee8-212f-4da9-9e47-9f4895f3fca8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboards/exceptions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboards/factories.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboards/validators.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/static/resources/images/rocketsLogo_black.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/static/resources/images/rocketsLogo.png" afterPath="$PROJECT_DIR$/core/static/resources/images/rocketsLogo_white.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/static/css/core-general.css" afterPath="$PROJECT_DIR$/core/static/css/core-general.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboards/factories.py" afterPath="$PROJECT_DIR$/dashboards/factories.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboards/models.py" afterPath="$PROJECT_DIR$/dashboards/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboards/static/js/dashboards.js" afterPath="$PROJECT_DIR$/dashboards/static/js/dashboards.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboards/views.py" afterPath="$PROJECT_DIR$/dashboards/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/core/base-template.html" afterPath="$PROJECT_DIR$/templates/core/base-template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" afterPath="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboards/dashboards-modals.html" afterPath="$PROJECT_DIR$/templates/dashboards/dashboards-modals.html" />
     </list>
     <ignored path="RockETS_Basestation.iws" />
@@ -33,11 +37,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="dashboards.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base-template.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="4.967742">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboards-modals.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-modals.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="52" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core-general.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/static/css/core-general.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-34.774193">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboards.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboards/static/js/dashboards.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.6333333">
+              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
               </folding>
@@ -45,24 +79,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboards-modals.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-modals.html">
+      <file leaf-file-name="dashboards-index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19169329">
-              <caret line="33" column="56" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+            <state vertical-scroll-proportion="1.4193548">
+              <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RockETS_Basestation/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
-              <folding>
-                <element signature="e#653#680#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -71,10 +93,8 @@
         <entry file="file://$PROJECT_DIR$/dashboards/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
-              </folding>
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,22 +125,9 @@
         <entry file="file://$PROJECT_DIR$/dashboards/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exceptions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboards/exceptions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-              <folding>
-                <marker date="1490533421685" expanded="true" signature="54:118" placeholder="..." />
-                <marker date="1490533421685" expanded="true" signature="87:118" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -130,20 +137,10 @@
         <entry file="file://$PROJECT_DIR$/dashboards/factories.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding>
-                <marker date="1490530745525" expanded="true" signature="31:120" placeholder="..." />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RockETS_Basestation/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="124" column="15" selection-start-line="124" selection-start-column="15" selection-end-line="124" selection-end-column="15" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -177,10 +174,8 @@
         <option value="$PROJECT_DIR$/templates/sensors/sensor-modal.html" />
         <option value="$PROJECT_DIR$/RockETS_Basestation/settings.py" />
         <option value="$PROJECT_DIR$/templates/sensors/sensors-index.html" />
-        <option value="$PROJECT_DIR$/core/static/css/core-general.css" />
         <option value="$PROJECT_DIR$/templates/sensors/sensors-modal.html" />
         <option value="$PROJECT_DIR$/core/static/js/chart.min.js" />
-        <option value="$PROJECT_DIR$/templates/core/base-template.html" />
         <option value="$PROJECT_DIR$/dashboards/static/css/dashboards.css" />
         <option value="$PROJECT_DIR$/templates/dashboards/aircraft/dashboard-aircraft.html" />
         <option value="$PROJECT_DIR$/templates/dashboards/dashboard.html" />
@@ -188,15 +183,17 @@
         <option value="$PROJECT_DIR$/core/views.py" />
         <option value="$PROJECT_DIR$/sensors/views.py" />
         <option value="$PROJECT_DIR$/sensors/models.py" />
-        <option value="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" />
         <option value="$PROJECT_DIR$/RockETS_Basestation/urls.py" />
-        <option value="$PROJECT_DIR$/dashboards/static/js/dashboards.js" />
-        <option value="$PROJECT_DIR$/dashboards/factories.py" />
         <option value="$PROJECT_DIR$/dashboards/exceptions.py" />
-        <option value="$PROJECT_DIR$/dashboards/models.py" />
         <option value="$PROJECT_DIR$/dashboards/validators.py" />
+        <option value="$PROJECT_DIR$/dashboards/factories.py" />
+        <option value="$PROJECT_DIR$/dashboards/models.py" />
         <option value="$PROJECT_DIR$/dashboards/views.py" />
+        <option value="$PROJECT_DIR$/templates/core/base-template.html" />
+        <option value="$PROJECT_DIR$/core/static/css/core-general.css" />
         <option value="$PROJECT_DIR$/templates/dashboards/dashboards-modals.html" />
+        <option value="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" />
+        <option value="$PROJECT_DIR$/dashboards/static/js/dashboards.js" />
       </list>
     </option>
   </component>
@@ -236,7 +233,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -330,12 +326,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="dashboards" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RockETS_Basestation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RockETS_Basestation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboards" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RockETS_Basestation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RockETS_Basestation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="RockETS_Basestation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -348,19 +385,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\core\static\resources\images" />
+      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\dashboards\static\js" />
+      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\dashboards\static\resources\images\gauges" />
+      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\dashboards\static\css" />
+      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\core\static\css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\dashboards\static\resources\images" />
       <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\templates\dashboards" />
       <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\dashboards\static\js" />
       <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\core\static\js" />
       <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\core" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\dashboards\static\js" />
-      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\dashboards\static\resources\images\gauges" />
-      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\dashboards\static\css" />
-      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\core\static\css" />
-      <recent name="C:\Users\Benoit\Desktop\ETS\Rockets\Dev\RockETS_Basestation\core\static\resources\images" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.RockETS_Basestation">
@@ -644,7 +681,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1064" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -652,11 +689,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26045015" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25723472" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23901394" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27759916" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@RockETS_Basestation" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.77599144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -681,7 +718,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/dashboards/views.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -766,14 +810,6 @@
             <marker date="1490311812875" expanded="true" signature="86133:86150" placeholder="..." />
             <marker date="1490311812875" expanded="true" signature="155665:155682" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/static/css/core-general.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -898,7 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34434783">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3321739">
           <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -951,27 +984,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sensors/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.612904">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,17 +996,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
           <folding>
-            <element signature="e#653#680#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboards/static/js/dashboards.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
+            <element signature="e#653#680#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1007,7 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="176" column="8" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,17 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboards/factories.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-          <folding>
-            <marker date="1490530745525" expanded="true" signature="31:120" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1033,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1041,10 +1034,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding>
-            <marker date="1490533421685" expanded="true" signature="54:118" placeholder="..." />
-            <marker date="1490533421685" expanded="true" signature="87:118" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,16 +1043,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="509" column="8" selection-start-line="509" selection-start-column="8" selection-end-line="509" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboards/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1076,21 +1056,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dashboards/factories.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboards/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dashboards/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/static/css/core-general.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-34.774193">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.967742">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-modals.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19169329">
-          <caret line="33" column="56" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="52" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboards-index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4193548">
+          <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboards/static/js/dashboards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6333333">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
