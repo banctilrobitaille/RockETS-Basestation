@@ -1,21 +1,23 @@
-<div class="col-md-4 dashboard">
-    <div class="row dashboard-header">
-        <div class="col-md-2 dashboard-icon">
-            <i class="fa  fa-bar-chart fa-3x"></i>
+{% for dashboard in dashboards %}
+    <div class="col-md-3 dashboard">
+        <div class="row dashboard-header">
+            <div class="col-md-2 dashboard-icon">
+                <i class="fa  fa-bar-chart fa-3x"></i>
+            </div>
+            <div class="col-md-7 dashboard-title">
+                <h4>{{ dashboard.name }}</h4>
+            </div>
+            <div class="col-md-1">
+                <i class="fa  fa-cog fa-2x hvr-grow glow"></i>
+            </div>
+            <div class="col-md-1">
+                <i class="fa  fa-trash-o fa-2x hvr-grow"></i>
+            </div>
         </div>
-        <div class="col-md-7 dashboard-title">
-            <h4>Dashboard 1</h4>
+        <hr class="dashboard-spacing">
+        <div class="row dashboard-content">
         </div>
-        <div class="col-md-1">
-            <i class="fa  fa-cog fa-2x hvr-grow glow"></i>
-        </div>
-        <div class="col-md-1">
-            <i class="fa  fa-trash-o fa-2x hvr-grow"></i>
+        <div class="row dashboard-footer">
         </div>
     </div>
-    <hr class="dashboard-spacing">
-    <div class="row dashboard-content">
-    </div>
-    <div class="row dashboard-footer">
-    </div>
-</div>
+{% endfor %}

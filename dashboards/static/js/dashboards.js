@@ -14,6 +14,7 @@ $(document).ready(function () {
                 type: "POST",
                 success: function (resultData) {
                     swal("Great", "Dashboard created successfully", "success")
+                    location.reload();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     sweetAlert("Oops...", "An error has occurred while creating the dashboard", "error");

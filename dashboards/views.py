@@ -30,3 +30,8 @@ class Dashboards(APIView):
             return Response(status=status.HTTP_201_CREATED)
         except InvalidDashboardParametersException as e:
             return JsonResponse({'error_message': e.message}, status=400)
+
+    @staticmethod
+    @api_view(['DELETE'])
+    def deleted(request):
+        pass
