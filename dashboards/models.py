@@ -4,8 +4,8 @@ from django.db import models
 from mongoengine import *
 
 
-class DashboardType(object):
-    AIRCRAFT_DASHBOARD = "aircraft"
+class DashboardTemplates(object):
+    NAME = ["aircraft"]
 
 
 class DashboardWidget(EmbeddedDocument):

@@ -1,11 +1,17 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.http import JsonResponse
+from django.utils.datastructures import MultiValueDictKeyError
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from validators import DashboardValidator
+from factories import DashboardFactory
+
 from dashboards.models import Dashboard
+from dashboards.exceptions import InvalidDashboardParametersException
 
 
 class Dashboards(APIView):
@@ -19,4 +25,8 @@ class Dashboards(APIView):
     @staticmethod
     @api_view(['POST'])
     def post(request):
-        return Response(status=status.HTTP_200_OK)
+        try:
+            DashboardFactory.create_dashboard_from_query_params(DashboardValidator.validate(request.query_params))
+            return Response(status=status.HTTP_201_CREATED)
+        except InvalidDashboardParametersException as e:
+            return JsonResponse({'error_message': e.message}, status=400)
