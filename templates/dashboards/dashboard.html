@@ -1,5 +1,5 @@
 {% for dashboard in dashboards %}
-    <div class="col-md-3 dashboard">
+    <div class="col-md-4 dashboard">
         <div class="row dashboard-header">
             <div class="col-md-2 dashboard-icon">
                 <i class="fa  fa-bar-chart fa-3x"></i>
@@ -16,6 +16,17 @@
         </div>
         <hr class="dashboard-spacing">
         <div class="row dashboard-content">
+            <h5 class="dashboard-properties-title">UUID: </h5>
+            <span>{{ dashboard.uuid }}</span>
+            </br>
+
+            <h5 class="dashboard-properties-title">Description: </h5>
+            <span>{{ dashboard.description }}</span>
+            </br>
+
+            <h5 class="dashboard-properties-title">Template: </h5>
+            <span>{{ dashboard.template }}</span>
+            </br>
         </div>
         <div class="row dashboard-footer">
         </div>

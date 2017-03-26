@@ -13,8 +13,8 @@ $(document).ready(function () {
                 url: "http://localhost:8000/dashboards" + queryParams,
                 type: "POST",
                 success: function (resultData) {
-                    swal("Great", "Dashboard created successfully", "success")
                     location.reload();
+                    swal("Great", "Dashboard created successfully", "success")
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     sweetAlert("Oops...", "An error has occurred while creating the dashboard", "error");

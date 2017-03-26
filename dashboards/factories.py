@@ -9,7 +9,7 @@ class DashboardFactory(object):
         dashboard = Dashboard()
         dashboard.name = query_params['name']
         dashboard.description = query_params['description']
-        dashboard.type = query_params['template']
+        dashboard.template = query_params['template']
         dashboard.uuid = uuid.uuid4()
 
         return dashboard

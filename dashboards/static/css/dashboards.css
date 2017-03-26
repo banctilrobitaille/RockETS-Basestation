@@ -1,7 +1,7 @@
 .dashboard {
     color: white;
-    margin-top: 2%;
-    margin-left: 2%;
+    margin-top: 3%;
+    margin-left: 3%;
     background-color: rgba(30, 130, 76, 0.5);
     border: 2px solid rgba(30, 130, 76, 0);
     padding-top: 2%;
@@ -12,5 +12,15 @@
     border: 2px solid #1E824C;
 }
 
+.glow {
+    text-shadow: 0px 0px 5px #1E824C;
+}
 
-.glow { text-shadow: 0px 0px 5px #1E824C; }
+.dashboard-properties-title {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.dashboard-properties {
+    display: inline-block;
+}
