@@ -2,11 +2,11 @@
 
 {% load static %}
 {% block stylesheet_import %}
-    <link rel="stylesheet" type="text/css" href="{% static "css/dashboards.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/dashboard-widgets.css" %}">
 {% endblock %}
 
 {% block js_import %}
-    <script src="{% static "js/dashboards.js" %}"></script>
+    <script src="{% static "js/dashboard-modals.js" %}"></script>
 {% endblock %}
 
 {% block content_section_action %}
@@ -19,9 +19,10 @@
 
 {% block content %}
     <div class="row">
-        {% include "dashboards/dashboard.html" %}
+        {% include "dashboards/dashboard-widget.html" %}
     </div>
-    {% include "dashboards/dashboards-modals.html" %}
+    {% include "dashboards/modals/dashboard-creation-modal.html" %}
+    {% include "dashboards/modals/dashboard-edition-modal.html" %}
     <script>
         Chart.defaults.global.defaultFontColor = 'white';
         var ctx = document.getElementById('myChart').getContext('2d');

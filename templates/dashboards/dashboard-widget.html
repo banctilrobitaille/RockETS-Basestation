@@ -1,0 +1,30 @@
+{% for dashboard in dashboards %}
+    <div class="col-md-4 dashboard-widget hvr-forward" id="{{ dashboard.uuid }}">
+        <div class="row dashboard-widget-header">
+            <div class="col-md-2 dashboard-icon">
+                <i class="fa  fa-bar-chart fa-3x"></i>
+            </div>
+            <div class="col-md-7 dashboard-widget-title">
+                <h4>{{ dashboard.name }}</h4>
+            </div>
+            <div class="col-md-1">
+                <a href="#" data-toggle="modal" data-target="#dashboard-edition-modal">
+                    <i class="fa  fa-cog fa-2x hvr-grow"></i>
+                </a>
+            </div>
+            <div class="col-md-1 dashboard-widget-delete-icon">
+                <i class="fa  fa-trash-o fa-2x hvr-grow"></i>
+            </div>
+        </div>
+        <div class="row dashboard-widget-content">
+            <h5 class="dashboard-widget-properties-title">UUID: </h5>
+            <span>{{ dashboard.uuid }}</span>
+            <br/>
+            <h5 class="dashboard-widget-properties-title">Description: </h5>
+            <span>{{ dashboard.description }}</span>
+            <br/>
+        </div>
+        <div class="row dashboard-widget-footer">
+        </div>
+    </div>
+{% endfor %}
