@@ -34,4 +34,10 @@ class Dashboards(APIView):
     @staticmethod
     @api_view(['DELETE'])
     def deleted(request):
-        pass
+        try:
+            if 'uuid' in request.query_params.keys():
+                dashboard = Dashboard.objects(uuid=request.query_params['uuid'])
+                dashboard.delete()
+                return JsonResponse({'message': "Dashboard successfully deleted"}, status=200)
+        except Exception as e:
+            return JsonResponse({'error_message': e.message}, status=500)
