@@ -13,7 +13,6 @@ $(document).ready(function () {
                 url: "http://localhost:8000/dashboards" + queryParams,
                 type: "POST",
                 success: function (resultData) {
-                    location.reload();
                     swal("Great", "Dashboard created successfully", "success")
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -26,5 +25,9 @@ $(document).ready(function () {
         } else {
             $("#dashboardNameError").show();
         }
-    })
+    });
+
+    $("#dashboard-edition-modal").on('shown.bs.modal', function (event) {
+        alert(event.target.id);
+    });
 });

@@ -33,7 +33,7 @@ class Dashboards(APIView):
 
     @staticmethod
     @api_view(['DELETE'])
-    def deleted(request):
+    def delete(request):
         try:
             if 'uuid' in request.query_params.keys():
                 dashboard = Dashboard.objects(uuid=request.query_params['uuid'])
