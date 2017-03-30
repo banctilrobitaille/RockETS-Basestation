@@ -39,5 +39,7 @@ class Dashboards(APIView):
                 dashboard = Dashboard.objects(uuid=request.query_params['uuid'])
                 dashboard.delete()
                 return JsonResponse({'message': "Dashboard successfully deleted"}, status=200)
+            else:
+                return JsonResponse({}, status=400)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=500)
