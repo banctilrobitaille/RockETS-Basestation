@@ -5,6 +5,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="sensors.models.Sensor.objects" />
+          <option value="dashboards.models.Dashboard.objects" />
         </list>
       </option>
     </inspection_tool>

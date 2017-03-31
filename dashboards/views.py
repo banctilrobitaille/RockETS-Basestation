@@ -17,9 +17,16 @@ class Dashboards(APIView):
     @staticmethod
     @api_view(['GET'])
     def get(request):
-        dashboards = Dashboard.objects.all()
-        return render_to_response('dashboards/dashboards-index.html',
-                                  {'content_title': "Dashboards", 'dashboards': dashboards}, RequestContext(request))
+        if "uuid" not in request.query_params.keys():
+            dashboards = Dashboard.objects.all()
+            return render_to_response('dashboards/dashboards-index.html',
+                                      {'content_title': "Dashboards", 'dashboards': dashboards},
+                                      RequestContext(request))
+        else:
+            dashboard = Dashboard.objects(uuid=request.query_params["uuid"])
+            return render_to_response('dashboards/dashboard.html',
+                                      {'content_title': dashboard.name, 'dashboards': dashboard},
+                                      RequestContext(request))
 
     @staticmethod
     @api_view(['POST'])
