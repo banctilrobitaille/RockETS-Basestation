@@ -5,7 +5,7 @@
                 <i class="fa  fa-bar-chart fa-2x"></i>
             </div>
             <div class="col-md-7 dashboard-widget-title">
-                <h4>{{ dashboard.name }}</h4>
+                <h4 class="ellipsis-text">{{ dashboard.name }}</h4>
             </div>
             <div class="col-md-1 dashboard-widget-edit-icon">
                 <a href="#" data-toggle="modal" data-target="#dashboard-edition-modal">
@@ -19,6 +19,8 @@
             </div>
         </div>
         <div class="row dashboard-widget-content">
+            <div class="dashboard-widget-content-overlay" id="{{ dashboard.uuid }}">
+            </div>
             <h5 class="dashboard-widget-properties-title">UUID: </h5>
             <span>{{ dashboard.uuid }}</span>
             <br/>

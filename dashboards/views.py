@@ -23,7 +23,7 @@ class Dashboards(APIView):
                                       {'content_title': "Dashboards", 'dashboards': dashboards},
                                       RequestContext(request))
         else:
-            dashboard = Dashboard.objects(uuid=request.query_params["uuid"])
+            dashboard = Dashboard.objects(uuid=request.query_params["uuid"]).first()
             return render_to_response('dashboards/dashboard.html',
                                       {'content_title': dashboard.name, 'dashboards': dashboard},
                                       RequestContext(request))

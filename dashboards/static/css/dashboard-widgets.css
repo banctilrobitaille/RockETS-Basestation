@@ -13,7 +13,10 @@
 .dashboard-widget-header {
     padding-top: 1%;
     background-color: rgba(0, 0, 0, 0.1);
+}
 
+.dashboard-widget-title {
+    overflow: hidden;
 }
 
 .dashboard-widget-properties-title {
@@ -31,6 +34,17 @@
 
 .dashboard-widget-content {
     padding-left: 4%;
+}
+
+.dashboard-widget-content-overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    height: 65%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
 }
 
 a {

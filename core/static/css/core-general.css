@@ -98,3 +98,10 @@ body {
 .confirm:hover {
     background-color: #004767 !important;
 }
+
+.ellipsis-text {
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    display: block !important;
+}

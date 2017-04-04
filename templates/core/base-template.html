@@ -5,7 +5,7 @@
     <title>RockETS base station</title>
     <link rel="icon" href="{% static "resources/images/rocketsLogo_black.png" %}">
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/hover-min.css" %}">
@@ -18,6 +18,7 @@
     <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "js/chart.min.js" %}"></script>
     <script src="{% static "js/sweetalert.min.js" %}"></script>
+    <script src="{% static "js/sidebar.js" %}"></script>
     {% block js_import %}
     {% endblock %}
 </head>
@@ -35,17 +36,17 @@
             <div class="menu-list">
                 <ul id="menu-content" class="menu-content collapse out">
                     <a href="dashboards">
-                        <li>
+                        <li class="menu-tab" id="menu-tab-dashboards">
                             <i class="fa fa-bar-chart fa-lg"></i> Dashboards
                         </li>
                     </a>
                     <a href="sensors">
-                        <li>
+                        <li class="menu-tab" id="menu-tab-sensors">
                             <i class="fa  fa-tachometer fa-lg"></i> Sensors
                         </li>
                     </a>
                     <a href="#">
-                        <li>
+                        <li class="menu-tab" id="menu-tab-flight-history">
                             <i class="fa fa-history fa-lg"></i> Flights history
                         </li>
                     </a>
