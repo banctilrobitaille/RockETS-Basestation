@@ -1,1 +1,83 @@
 {% extends "core/base-template.html" %}
+
+{% load static %}
+{% block stylesheet_import %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/widgets.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/dashboard.css" %}">
+{% endblock %}
+
+{% block js_import %}
+    <script src="{% static "js/chart.min.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-5 dashboard-chart-widget-holder">
+            <canvas class="chart-widget" id="acceleration"></canvas>
+        </div>
+        <div class="col-md-5 dashboard-chart-widget-holder">
+            <canvas class="chart-widget" id="vitesse"></canvas>
+        </div>
+        <div class="col-md-5 dashboard-chart-widget-holder">
+            <canvas class="chart-widget" id="altitude"></canvas>
+        </div>
+        <div class="col-md-4 dashboard-add-widget hvr-grow">
+            <i class="fa  fa-plus fa-5x dashboard-add-widget-icon"></i>
+            <h4>Add widget</h4>
+        </div>
+    </div>
+    <script>
+        Chart.defaults.global.defaultFontColor = 'white';
+        var ctx = document.getElementById('acceleration').getContext('2d');
+        var data = [];
+        for (var i = 0; i < 30; i++) {
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                    datasets: [{
+                        label: 'Acceleration',
+                        data: [12, 19, 3, 17, 6, 3, 7],
+                        backgroundColor: "rgba(207, 0, 15,0.1)",
+                        borderColor: "rgba(207, 0, 15,0.7)"
+                    }]
+                },
+                axisX: {
+                    labelFontColor: "red"
+                }
+            });
+        }
+        var ctx2 = document.getElementById('vitesse').getContext('2d');
+        var myChart2 = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                datasets: [{
+                    label: 'vitesse',
+                    data: [12, 19, 3, 17, 6, 3, 7],
+                    backgroundColor: "rgba(1, 152, 117,0.1)",
+                    borderColor: "rgba(1, 152, 117,0.7)"
+                }]
+            },
+            axisX: {
+                labelFontColor: "red"
+            }
+        });
+        var ctx3 = document.getElementById('altitude').getContext('2d');
+        var myChart3 = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                datasets: [{
+                    label: 'Altitude',
+                    data: [12, 19, 3, 17, 6, 3, 7],
+                    backgroundColor: "rgba(232, 126, 4,0.1)",
+                    borderColor: "rgba(232, 126, 4,0.7)"
+                }]
+            },
+            axisX: {
+                labelFontColor: "red"
+            }
+        });
+    </script>
+{% endblock %}

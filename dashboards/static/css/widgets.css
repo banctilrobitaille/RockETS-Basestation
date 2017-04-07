@@ -1,0 +1,32 @@
+.widget-holder {
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.widget-holder-header {
+    padding: 1%;
+    color: white;
+    border-left: 4px solid #004767;
+    background-color: rgba(0, 0, 0, 0.05);;
+}
+
+.widget-holder-action {
+    padding: 0;
+}
+
+.widget-holder-action-chart {
+    padding: 0;
+}
+
+.widget-holder-content {
+    padding: 1%;
+}
+
+.widget-holder-footer {
+
+}
+
+.gauge-widget{
+    margin-left:4%;
+}
