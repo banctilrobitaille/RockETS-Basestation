@@ -1,5 +1,5 @@
+from dashboards.models import Dashboard
 from exceptions import InvalidDashboardParametersException
-from models import DashboardTemplates
 
 
 class DashboardValidator(object):
@@ -23,6 +23,6 @@ class DashboardValidator(object):
     def __validate_template_from(query_params):
         if 'template' not in query_params.keys() or not query_params['template']:
             raise InvalidDashboardParametersException("Parameter <template> should not be null or empty")
-        elif query_params['template'] not in DashboardTemplates.NAME:
+        elif query_params['template'] not in Dashboard.TEMPLATES.keys():
             raise InvalidDashboardParametersException(
-                    "Parameter <template> should be one of those:" + str(DashboardTemplates.NAME))
+                    "Parameter <template> should be one of those:" + str(Dashboard.TEMPLATES.keys()))

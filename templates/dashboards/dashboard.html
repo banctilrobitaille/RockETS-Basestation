@@ -12,15 +12,11 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-md-5 dashboard-chart-widget-holder">
-            <canvas class="chart-widget" id="acceleration"></canvas>
-        </div>
-        <div class="col-md-5 dashboard-chart-widget-holder">
-            <canvas class="chart-widget" id="vitesse"></canvas>
-        </div>
-        <div class="col-md-5 dashboard-chart-widget-holder">
-            <canvas class="chart-widget" id="altitude"></canvas>
-        </div>
+        {% for widget in dashboards.widgets %}
+            <div class="col-md-5">
+                <h3 style="color:white;">{{ widget.name }}</h3>
+            </div>
+        {% endfor %}
         <div class="col-md-4 dashboard-add-widget hvr-grow">
             <i class="fa  fa-plus fa-5x dashboard-add-widget-icon"></i>
             <h4>Add widget</h4>

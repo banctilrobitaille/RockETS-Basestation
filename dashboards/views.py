@@ -50,3 +50,8 @@ class Dashboards(APIView):
                 return JsonResponse({}, status=400)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=500)
+
+    @staticmethod
+    @api_view(['PUT'])
+    def put(request):
+        pass
