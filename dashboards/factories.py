@@ -23,13 +23,13 @@ class DashboardFactory(object):
 
         if template == Dashboard.TEMPLATES['aircraft']:
             widgets.append(DashboardWidgetFactory.create_default_widget_from(
-                    widget_type=DashboardWidget.TYPES['altitude-gauge']))
+                    widget_type=DashboardWidget.TYPES['altimeter']))
             widgets.append(DashboardWidgetFactory.create_default_widget_from(
-                    widget_type=DashboardWidget.TYPES['vertical-speed-gauge']))
+                    widget_type=DashboardWidget.TYPES['variometer']))
             widgets.append(DashboardWidgetFactory.create_default_widget_from(
-                    widget_type=DashboardWidget.TYPES['heading-gauge']))
+                    widget_type=DashboardWidget.TYPES['heading']))
             widgets.append(DashboardWidgetFactory.create_default_widget_from(
-                    widget_type=DashboardWidget.TYPES['air-speed-gauge']))
+                    widget_type=DashboardWidget.TYPES['airspeed']))
 
         return widgets
 
@@ -46,42 +46,42 @@ class DashboardWidgetFactory(object):
     def create_default_widget_from(widget_type):
         widget = DashboardWidget()
 
-        if widget_type is DashboardWidget.TYPES['vertical-speed-gauge']:
+        if widget_type is DashboardWidget.TYPES['variometer']:
             widget.name = "Vertical speed"
             widget.description = "The vertical speed gauge(variometer) inform of the rate of descent or climb"
             widget.measure_units = DashboardWidget.MEASURE_UNITS['feet_per_minute']
             widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_VERTICAL_SPEED_GAUGE_POSITION
-            widget.type = DashboardWidget.TYPES['vertical-speed-gauge']
+            widget.type = DashboardWidget.TYPES['variometer']
             widget.category = DashboardWidget.CATEGORIES['gauge']
             widget.uuid = uuid.uuid4()
-        elif widget_type is DashboardWidget.TYPES['air-speed-gauge']:
+        elif widget_type is DashboardWidget.TYPES['airspeed']:
             widget.name = "Air speed"
             widget.description = "The airspeed indicator or airspeed gauge is an instrument used in an aircraft to " \
                                  "display the craft's airspeed, typically in knots"
             widget.measure_units = DashboardWidget.MEASURE_UNITS['knots']
             widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_AIR_SPEED_GAUGE_POSITION
-            widget.type = DashboardWidget.TYPES['air-speed-gauge']
+            widget.type = DashboardWidget.TYPES['airspeed']
             widget.category = DashboardWidget.CATEGORIES['gauge']
             widget.uuid = uuid.uuid4()
-        elif widget_type is DashboardWidget.TYPES['altitude-gauge']:
+        elif widget_type is DashboardWidget.TYPES['altimeter']:
             widget.name = "Altitude"
             widget.description = "An altimeter or an altitude meter is an instrument used to measure the altitude" \
                                  " of an object above a fixed level."
             widget.measure_units = DashboardWidget.MEASURE_UNITS['feet']
             widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_ALTITUDE_GAUGE_POSITION
-            widget.type = DashboardWidget.TYPES['altitude-gauge']
+            widget.type = DashboardWidget.TYPES['altimeter']
             widget.category = DashboardWidget.CATEGORIES['gauge']
             widget.uuid = uuid.uuid4()
-        elif widget_type is DashboardWidget.TYPES['heading-gauge']:
+        elif widget_type is DashboardWidget.TYPES['heading']:
             widget.name = "Heading"
             widget.description = "The heading indicator (also called an HI) is a flight instrument used in an" \
                                  " aircraft to inform the pilot of the aircraft's heading."
             widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_HEADING_INDICATOR_POSITION
-            widget.type = DashboardWidget.TYPES['heading-gauge']
+            widget.type = DashboardWidget.TYPES['heading']
             widget.category = DashboardWidget.CATEGORIES['gauge']
             widget.uuid = uuid.uuid4()
         elif widget_type is DashboardWidget.TYPES['line-chart']:

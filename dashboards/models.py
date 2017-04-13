@@ -6,10 +6,10 @@ from mongoengine import *
 
 class DashboardWidget(EmbeddedDocument):
     TYPES = {'line-chart': "line-chart",
-             'altitude-gauge': "altitude-gauge",
-             'vertical-speed-gauge': "vertical-speed-gauge",
-             'heading-gauge': "heading-gauge",
-             'air-speed-gauge': "air-speed-gauge"}
+             'altimeter': "altimeter",
+             'variometer': "variometer",
+             'heading': "heading",
+             'airspeed': "airspeed"}
     MEASURE_UNITS = {'knots': "kn",
                      'meters': "m",
                      'feet': "ft",
