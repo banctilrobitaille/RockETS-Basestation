@@ -53,6 +53,7 @@ class DashboardWidgetFactory(object):
             widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_VERTICAL_SPEED_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['vertical-speed-gauge']
+            widget.category = DashboardWidget.CATEGORIES['gauge']
             widget.uuid = uuid.uuid4()
         elif widget_type is DashboardWidget.TYPES['air-speed-gauge']:
             widget.name = "Air speed"
@@ -62,6 +63,7 @@ class DashboardWidgetFactory(object):
             widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_AIR_SPEED_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['air-speed-gauge']
+            widget.category = DashboardWidget.CATEGORIES['gauge']
             widget.uuid = uuid.uuid4()
         elif widget_type is DashboardWidget.TYPES['altitude-gauge']:
             widget.name = "Altitude"
@@ -71,6 +73,7 @@ class DashboardWidgetFactory(object):
             widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_ALTITUDE_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['altitude-gauge']
+            widget.category = DashboardWidget.CATEGORIES['gauge']
             widget.uuid = uuid.uuid4()
         elif widget_type is DashboardWidget.TYPES['heading-gauge']:
             widget.name = "Heading"
@@ -79,6 +82,7 @@ class DashboardWidgetFactory(object):
             widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_HEADING_INDICATOR_POSITION
             widget.type = DashboardWidget.TYPES['heading-gauge']
+            widget.category = DashboardWidget.CATEGORIES['gauge']
             widget.uuid = uuid.uuid4()
         elif widget_type is DashboardWidget.TYPES['line-chart']:
             widget.name = "Chart"
@@ -86,6 +90,7 @@ class DashboardWidgetFactory(object):
                                  " series of data points called 'markers' connected by straight line segments."
             widget.size = DashboardWidgetFactory.DEFAULT_CHART_SIZE
             widget.type = DashboardWidget.TYPES['line-chart']
+            widget.category = DashboardWidget.CATEGORIES['chart']
             widget.uuid = uuid.uuid4()
         else:
             raise InvalidDashboardParametersException("The provided dashboard widget type is invalid")

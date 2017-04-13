@@ -3,11 +3,10 @@
  */
 $(document).ready(function () {
     $(".dashboard-widget").on("click", function (event) {
-        //event.currentTarget.preventDefault();
-
-        var dashboardId = event.currentTarget.id;
-        var queryParams = "?uuid=" + dashboardId;
-
-        window.location.href = "http://localhost:8000/dashboards" + queryParams;
+        if (!$(event.target).hasClass("fa")) {
+            var dashboardId = event.currentTarget.id;
+            var queryParams = "?uuid=" + dashboardId;
+            window.location.href = "http://localhost:8000/dashboards" + queryParams;
+        }
     });
 });

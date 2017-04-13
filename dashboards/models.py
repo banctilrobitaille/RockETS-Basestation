@@ -18,12 +18,15 @@ class DashboardWidget(EmbeddedDocument):
                      'feet_per_minute': "ft/min",
                      'feet_per_second': "ft/sec",
                      }
+    CATEGORIES = {'gauge': "gauge",
+                  'chart': "chart"}
 
     uuid = UUIDField(required=True)
     sensor_id = UUIDField()
     name = StringField(required=True)
     description = StringField()
     type = StringField()
+    category = StringField()
     measure_units = StringField()
     grid_position = IntField(min_value=0)
     size = IntField(min_value=1, max_value=5)
