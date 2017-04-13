@@ -10,7 +10,13 @@
 {% block js_import %}
     <script src="{% static "js/chart.min.js" %}"></script>
 {% endblock %}
-
+{% block content_section_action %}
+    <a href="#" data-toggle="modal" data-target="">
+        <button type="submit" class="btn btn-primary btn-primary-custom content-section-action">
+            Save <i class="fa fa-save" aria-hidden="true"></i>
+        </button>
+    </a>
+{% endblock %}
 {% block content %}
     <div class="row">
         {% for widget in dashboards.widgets %}
