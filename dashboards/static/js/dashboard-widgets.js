@@ -10,7 +10,13 @@ $(document).ready(function () {
             url: "http://localhost:8000/dashboards" + queryParams,
             type: "DELETE",
             success: function (resultData) {
-                swal("Great", "Dashboard deleted successfully", "success")
+                swal({
+                    title: "Deleted",
+                    text: "Dashboard has been successfully deleted",
+                    type: "success"
+                }, function () {
+                    location.reload();
+                });
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 sweetAlert("Oops...", "An error has occurred while deleting the dashboard", "error");
