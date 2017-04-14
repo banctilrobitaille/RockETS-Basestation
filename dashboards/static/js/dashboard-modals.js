@@ -27,7 +27,11 @@ $(document).ready(function () {
         }
     });
 
-    $("#dashboard-edition-modal").on('shown.bs.modal', function (event) {
-        alert(event.target.id);
+    $(".dashboard-widget-edit-icon").on('click', function (event) {
+        var dashboardWidget = $(event.target).closest(".dashboard-widget");
+        var dashboardEditionModal = $("#dashboard-edition-modal");
+        dashboardEditionModal.find("#dashboardName").val(dashboardWidget.find(".dashboard-name").html());
+        dashboardEditionModal.find("#dashboardDescription").val(dashboardWidget.find(".dashboard-description").html());
+        dashboardEditionModal.find("#dashboardUUID").val(dashboardWidget.find(".dashboard-uuid").html());
     });
 });
