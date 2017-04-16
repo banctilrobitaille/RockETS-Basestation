@@ -5,11 +5,17 @@ from mongoengine import *
 
 
 class DashboardWidget(EmbeddedDocument):
+    meta = {
+        'abstract': True,
+    }
+
     TYPES = {'line-chart': "line-chart",
              'altimeter': "altimeter",
              'variometer': "variometer",
              'heading': "heading",
-             'airspeed': "airspeed"}
+             'airspeed': "airspeed",
+             'gps_map': "GPS map",
+             'guided_chute_planner': "Guided chute planner"}
     MEASURE_UNITS = {'knots': "kn",
                      'meters': "m",
                      'feet': "ft",
@@ -19,7 +25,8 @@ class DashboardWidget(EmbeddedDocument):
                      'feet_per_second': "ft/sec",
                      }
     CATEGORIES = {'gauge': "gauge",
-                  'chart': "chart"}
+                  'chart': "chart",
+                  'map': 'map'}
 
     uuid = UUIDField(required=True)
     sensor_id = UUIDField()
@@ -32,6 +39,10 @@ class DashboardWidget(EmbeddedDocument):
     size = IntField(min_value=1, max_value=5)
 
 
+class GpsMap(DashboardWidget):
+    pass
+
+
 class Dashboard(Document):
     TEMPLATES = {'none': "none", 'aircraft': "aircraft"}
 
@@ -40,3 +51,11 @@ class Dashboard(Document):
     description = StringField(max_length=200)
     template = StringField()
     widgets = ListField(EmbeddedDocumentField(DashboardWidget))
+
+    def update_with(self, params):
+        if 'name' in params.keys():
+            self.name = params['name']
+        if 'description' in params.keys():
+            self.description = params['description']
+
+        return self

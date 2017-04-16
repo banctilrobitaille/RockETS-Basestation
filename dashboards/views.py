@@ -54,4 +54,10 @@ class Dashboards(APIView):
     @staticmethod
     @api_view(['PUT'])
     def put(request):
-        pass
+        try:
+            DashboardValidator.validate(request.query_params, for_update=True)
+            dashboard = Dashboard.objects(uuid=request.query_params['uuid'])
+            dashboard.update_with(request.query_params).save()
+            return JsonResponse({'message': "Dashboard successfully updated"}, status=200)
+        except InvalidDashboardParametersException as e:
+            return JsonResponse({'error_message': e.message}, status=400)

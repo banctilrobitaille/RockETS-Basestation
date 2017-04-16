@@ -4,11 +4,18 @@ from exceptions import InvalidDashboardParametersException
 
 class DashboardValidator(object):
     @staticmethod
-    def validate(query_params):
-        DashboardValidator.__validate_name_from(query_params)
-        DashboardValidator.__validate_description_from(query_params)
-        DashboardValidator.__validate_template_from(query_params)
+    def validate(query_params, for_update=False):
+        DashboardValidator.__validate_uuid_from(query_params)
+        if not for_update:
+            DashboardValidator.__validate_name_from(query_params)
+            DashboardValidator.__validate_description_from(query_params)
+            DashboardValidator.__validate_template_from(query_params)
         return query_params
+
+    @staticmethod
+    def __validate_uuid_from(query_params):
+        if 'uuid' not in query_params.keys() or not query_params['uuid']:
+            raise InvalidDashboardParametersException("Parameter <uuid> should should not be null or empty")
 
     @staticmethod
     def __validate_name_from(query_params):
