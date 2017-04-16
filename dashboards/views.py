@@ -56,7 +56,7 @@ class Dashboards(APIView):
     def put(request):
         try:
             DashboardValidator.validate(request.query_params, for_update=True)
-            dashboard = Dashboard.objects(uuid=request.query_params['uuid'])
+            dashboard = Dashboard.objects(uuid=request.query_params['uuid']).first()
             dashboard.update_with(request.query_params).save()
             return JsonResponse({'message': "Dashboard successfully updated"}, status=200)
         except InvalidDashboardParametersException as e:
