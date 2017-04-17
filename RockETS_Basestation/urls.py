@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation"), Core.as_view()),
     url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation/sensors"), Sensors.as_view()),
     url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards"), Dashboards.as_view()),
+    url(r'^{}{}{}'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards/widget"), Dashboards.as_view()),
     url(r'^{}{}{}'.format("", "", "sensors"), Sensors.as_view()),
     url(r'^{}{}{}'.format("", "", "dashboards"), Dashboards.as_view()),
     url(r'^{}{}{}'.format("", "", ""), Core.as_view()),

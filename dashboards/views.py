@@ -61,3 +61,25 @@ class Dashboards(APIView):
             return JsonResponse({'message': "Dashboard successfully updated"}, status=200)
         except InvalidDashboardParametersException as e:
             return JsonResponse({'error_message': e.message}, status=400)
+
+
+class Widgets(APIView):
+    @staticmethod
+    @api_view(['GET'])
+    def get(request):
+        pass
+
+    @staticmethod
+    @api_view(['POST'])
+    def post(request):
+        pass
+
+    @staticmethod
+    @api_view(['DELETE'])
+    def delete(request):
+        pass
+
+    @staticmethod
+    @api_view(['PUT'])
+    def put(request):
+        pass

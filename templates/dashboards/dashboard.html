@@ -74,12 +74,17 @@
             <div class="row widget-holder-footer">
             </div>
         </div>
-        <div class="col-md-4 dashboard-add-widget hvr-grow">
-            <i class="fa  fa-plus fa-5x dashboard-add-widget-icon"></i>
-            <h4>Add widget</h4>
-        </div>
+        <a href="#" data-toggle="modal" data-target="#widget-creation-modal">
+            <div class="col-md-4 dashboard-add-widget hvr-grow">
+
+                <i class="fa  fa-plus fa-5x dashboard-add-widget-icon"></i>
+                <h4>Add widget</h4>
+
+            </div>
+        </a>
     </div>
     {% include "dashboards/scripts/chart-widget.html" %}
     {% include "dashboards/scripts/flightindicators.html" %}
     {% include "dashboards/scripts/mapbox.html" %}
+    {% include "dashboards/modals/widgets/widget-creation-modal.html" %}
 {% endblock %}
