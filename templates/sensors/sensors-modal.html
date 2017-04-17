@@ -1,0 +1,96 @@
+<div class="modal fade" id="sensor-modal" tabindex="-1" role="dialog" aria-labelledby="sensor-modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content custom-modal">
+            <div class="modal-header">
+                <i class="fa  fa-tachometer fa-4x modal-header-icon"></i>
+                <h3 class="modal-title" id="sensor-modal-label">Sensor creation</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <h4>General</h4>
+                            <hr>
+                            <div class="form-group">
+                                <label for="sensorName" class="col-sm-2 control-label">Name:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" id="sensorName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="sensorDescription" class="col-sm-2 control-label">Description:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" id="sensorDescription"
+                                           placeholder="Ex: Avionic bay temperature">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h4>Parameters</h4>
+                            <hr>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Type:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="">
+                                        <option value="Temperature">Thermometer</option>
+                                        <option value="Acceleration">Accelerometer</option>
+                                        <option value="GPS">GPS</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Location:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="">
+                                        <option value="Local">Local</option>
+                                        <option value="Remote">Remote</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Model:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Interface:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="">
+                                        <option value="Serial">Serial/USB</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Port:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="associatedTag" class="col-sm-2 control-label">Associated tag:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" id="associatedTag">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-primary-custom" id="" data-dismiss="modal">
+                    Add
+                </button>
+                <button type="button" class="btn btn-secondary btn-secondary-custom" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

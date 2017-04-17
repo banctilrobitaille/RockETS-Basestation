@@ -1,0 +1,27 @@
+{% extends "core/base-template.html" %}
+
+{% load static %}
+{% block stylesheet_import %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/dashboard-widgets.css" %}">
+{% endblock %}
+
+{% block js_import %}
+    <script src="{% static "js/dashboard-widgets.js" %}"></script>
+    <script src="{% static "js/dashboard-modals.js" %}"></script>
+    <script src="{% static "js/dashboard.js" %}"></script>
+{% endblock %}
+
+{% block content_section_action %}
+    <a href="#" data-toggle="modal" data-target="#dashboard-creation-modal">
+        <button type="submit" class="btn btn-primary btn-primary-custom content-section-action">
+            Create <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+        </button>
+    </a>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        {% include "dashboards/dashboard-widget.html" %}
+    </div>
+    {% include "dashboards/modals/dashboard-creation-modal.html" %}
+    {% include "dashboards/modals/dashboard-edition-modal.html" %}
+{% endblock %}

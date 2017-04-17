@@ -1,0 +1,85 @@
+{% extends "core/base-template.html" %}
+
+{% load static %}
+{% block stylesheet_import %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/widgets.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/dashboard.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/flightindicators.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/mapbox-gl.css" %}"/>
+{% endblock %}
+
+{% block js_import %}
+    <script src="{% static "js/mapbox-gl.js" %}"></script>
+    <script src="{% static "js/chart.min.js" %}"></script>
+{% endblock %}
+{% block content_section_action %}
+    <a href="#" data-toggle="modal" data-target="">
+        <button type="submit" class="btn btn-primary btn-primary-custom content-section-action">
+            Save <i class="fa fa-save" aria-hidden="true"></i>
+        </button>
+    </a>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        {% for widget in dashboards.widgets %}
+            {% if widget.category == "gauge" %}
+                <div class="col-md-{{ widget.size }} widget-holder gauge-widget">
+                    <div class="row widget-holder-header">
+                        <div class="col-md-10">
+                            <span>{{ widget.name }}</span>
+                        </div>
+                        <div class="col-md-2 widget-holder-action">
+                            <i class="fa  fa-cog fa-1x hvr-grow"></i>
+                            <i class="fa  fa-trash fa-1x hvr-grow"></i>
+                        </div>
+                    </div>
+                    <div class="row widget-holder-content">
+                        <span class="{{ widget.type }}" id="{{ widget.uuid }}"></span>
+                    </div>
+                    <div class="row widget-holder-footer">
+                    </div>
+                </div>
+            {% elif widget.category == "chart" %}
+                <div class="col-md-{{ widget.size }} widget-holder">
+                    <div class="row widget-holder-header">
+                        <div class="col-md-11">
+                            <span>{{ widget.name }}</span>
+                        </div>
+                        <div class="col-md-1 widget-holder-action-chart">
+                            <i class="fa  fa-cog fa-1x hvr-grow"></i>
+                            <i class="fa  fa-trash fa-1x hvr-grow"></i>
+                        </div>
+                    </div>
+                    <div class="row widget-holder-content">
+                        <canvas class="chart-widget" id="altitude"></canvas>
+                    </div>
+                    <div class="row widget-holder-footer">
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="col-md-5 widget-holder">
+            <div class="row widget-holder-header">
+                <div class="col-md-11">
+                    <span>Map</span>
+                </div>
+                <div class="col-md-1 widget-holder-action-chart">
+                    <i class="fa  fa-cog fa-1x hvr-grow"></i>
+                    <i class="fa  fa-trash fa-1x hvr-grow"></i>
+                </div>
+            </div>
+            <div class="row widget-holder-content">
+                <div id='map'></div>
+            </div>
+            <div class="row widget-holder-footer">
+            </div>
+        </div>
+        <div class="col-md-4 dashboard-add-widget hvr-grow">
+            <i class="fa  fa-plus fa-5x dashboard-add-widget-icon"></i>
+            <h4>Add widget</h4>
+        </div>
+    </div>
+    {% include "dashboards/scripts/chart-widget.html" %}
+    {% include "dashboards/scripts/flightindicators.html" %}
+    {% include "dashboards/scripts/mapbox.html" %}
+{% endblock %}

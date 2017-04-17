@@ -1,0 +1,62 @@
+<div class="modal fade" id="dashboard-edition-modal" tabindex="-1" role="dialog" aria-labelledby="dashboard-modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content custom-modal">
+            <div class="modal-header">
+                <i class="fa  fa-bar-chart fa-4x modal-header-icon"></i>
+                <h3 class="modal-title" id="dashboards-modal-label">Dashboard edition</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <h4>General</h4>
+                            <hr>
+                            <div class="form-group">
+                                <label for="editedDashboardName" class="col-sm-2 control-label">Name:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" id="editedDashboardName">
+                                </div>
+                                <div class="col-md-9 col-md-offset-2">
+                                    <span class="modal-error-message help-block" id="dashboardNameError">The dashboard name should not be empty</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="editedDashboardDescription"
+                                       class="col-sm-2 control-label">Description:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom"
+                                           id="editedDashboardDescription">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="editedDashboardUUID" class="col-sm-2 control-label">UUID:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" readonly="readonly"
+                                           id="editedDashboardUUID">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="dashboardTemplate" class="col-sm-2 control-label">Template:</label>
+                                <div class="col-sm-9">
+                                    <select disabled class="form-control input-custom" id="dashboardTemplate">
+                                        <option value="aircraft">Aircraft</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-primary-custom" id="editDashboardButton">
+                    Update
+                </button>
+                <button type="button" class="btn btn-secondary btn-secondary-custom" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

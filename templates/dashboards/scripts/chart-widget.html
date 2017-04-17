@@ -1,0 +1,55 @@
+{% load static %}
+<script>
+    Chart.defaults.global.defaultFontColor = 'white';
+    var ctx = document.getElementById('acceleration').getContext('2d');
+    var data = [];
+    for (var i = 0; i < 30; i++) {
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['0', '1', '2', '3', '4', '5', '6'],
+                datasets: [{
+                    label: 'Acceleration',
+                    data: [12, 19, 3, 17, 6, 3, 7],
+                    backgroundColor: "rgba(207, 0, 15,0.1)",
+                    borderColor: "rgba(207, 0, 15,1)"
+                }]
+            },
+            axisX: {
+                labelFontColor: "red"
+            }
+        });
+    }
+    var ctx2 = document.getElementById('verticalSpeed').getContext('2d');
+    var myChart2 = new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            datasets: [{
+                label: 'Vertical speed',
+                data: [12, 19, 3, 17, 6, 3, 7],
+                backgroundColor: "rgba(1, 152, 117,0.1)",
+                borderColor: "rgba(1, 152, 117,1)"
+            }]
+        },
+        axisX: {
+            labelFontColor: "red"
+        }
+    });
+    var ctx3 = document.getElementById('altitude').getContext('2d');
+    var myChart3 = new Chart(ctx3, {
+        type: 'line',
+        data: {
+            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            datasets: [{
+                label: 'Altitude',
+                data: [12, 19, 3, 17, 6, 3, 7],
+                backgroundColor: "rgba(232, 126, 4,0.1)",
+                borderColor: "rgba(232, 126, 4,1)"
+            }]
+        },
+        axisX: {
+            labelFontColor: "red"
+        }
+    });
+</script>
