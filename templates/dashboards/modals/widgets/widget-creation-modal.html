@@ -32,8 +32,9 @@
                                 <label for="" class="col-sm-2 control-label">Type:</label>
                                 <div class="col-sm-9">
                                     <select class="form-control input-custom" id="widgetType">
-                                        <option value="altimeter">Altimeter</option>
-                                        <option value="variometer">Variometer</option>
+                                        {% for type in  widget_types %}
+                                            <option class="widgetType" value="{{ type }}">{{ type }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
@@ -52,6 +53,13 @@
                                         <option value="10">10</option>
                                         <option value="11">11</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="widgetDashboardUUID" class="col-sm-2 control-label">Dashboard:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" readonly="readonly"
+                                           id="widgetDashboardUUID" value="{{ dashboards.uuid }}">
                                 </div>
                             </div>
                         </div>

@@ -96,3 +96,18 @@ class DashboardWidgetFactory(object):
             raise InvalidDashboardParametersException("The provided dashboard widget type is invalid")
 
         return widget
+
+    @staticmethod
+    def create_widget_from_query_params(query_params):
+        widget = DashboardWidget()
+
+        widget.name = query_params['name']
+        widget.description = query_params['description']
+        widget.measure_units = DashboardWidget.MEASURE_UNITS['knots']
+        widget.size = int(query_params['size'])
+        widget.grid_position = 0
+        widget.type = query_params['type']
+        widget.category = DashboardWidget.TYPES_TO_CATEGORY[query_params['type']]
+        widget.uuid = uuid.uuid4()
+
+        return widget

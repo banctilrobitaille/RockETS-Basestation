@@ -14,8 +14,8 @@ class DashboardWidget(EmbeddedDocument):
              'variometer': "variometer",
              'heading': "heading",
              'airspeed': "airspeed",
-             'gps_map': "GPS map",
-             'guided_chute_planner': "Guided chute planner"}
+             'gps-map': "GPS map",
+             'guided-chute-planner': "Guided chute planner"}
     MEASURE_UNITS = {'knots': "kn",
                      'meters': "m",
                      'feet': "ft",
@@ -26,7 +26,17 @@ class DashboardWidget(EmbeddedDocument):
                      }
     CATEGORIES = {'gauge': "gauge",
                   'chart': "chart",
-                  'map': 'map'}
+                  'map': "map"}
+
+    TYPES_TO_CATEGORY = {
+        'line-chart': "chart",
+        'altimeter': "gauge",
+        'variometer': "gauge",
+        'heading': "gauge",
+        'airspeed': "gauge",
+        'gps-map': "map",
+        'guided-chute-planner': "map"
+    }
 
     uuid = UUIDField(required=True)
     sensor_id = UUIDField()

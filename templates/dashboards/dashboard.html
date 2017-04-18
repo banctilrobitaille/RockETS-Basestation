@@ -6,11 +6,13 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/dashboard.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/flightindicators.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/mapbox-gl.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "css/widgets-modals.css" %}"/>
 {% endblock %}
 
 {% block js_import %}
     <script src="{% static "js/mapbox-gl.js" %}"></script>
     <script src="{% static "js/chart.min.js" %}"></script>
+    <script src="{% static "js/widget-modals.js" %}"></script>
 {% endblock %}
 {% block content_section_action %}
     <a href="#" data-toggle="modal" data-target="">
@@ -75,11 +77,9 @@
             </div>
         </div>
         <a href="#" data-toggle="modal" data-target="#widget-creation-modal">
-            <div class="col-md-4 dashboard-add-widget hvr-grow">
-
+            <div class="col-md-2 dashboard-add-widget hvr-grow">
                 <i class="fa  fa-plus fa-5x dashboard-add-widget-icon"></i>
                 <h4>Add widget</h4>
-
             </div>
         </a>
     </div>

@@ -6,10 +6,10 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from validators import DashboardValidator
-from factories import DashboardFactory
+from validators import DashboardValidator, WidgetValidator
+from factories import DashboardFactory, DashboardWidgetFactory
 
-from dashboards.models import Dashboard
+from dashboards.models import Dashboard, DashboardWidget
 from dashboards.exceptions import InvalidDashboardParametersException
 
 
@@ -25,7 +25,8 @@ class Dashboards(APIView):
         else:
             dashboard = Dashboard.objects(uuid=request.query_params["uuid"]).first()
             return render_to_response('dashboards/dashboard.html',
-                                      {'content_title': dashboard.name, 'dashboards': dashboard},
+                                      {'content_title': dashboard.name, 'dashboards': dashboard,
+                                       'widget_types': DashboardWidget.TYPES.keys()},
                                       RequestContext(request))
 
     @staticmethod
@@ -55,7 +56,7 @@ class Dashboards(APIView):
     @api_view(['PUT'])
     def put(request):
         try:
-            DashboardValidator.validate(request.query_params, for_update=True)
+            DashboardValidator.validate_params_for_update(request.query_params)
             dashboard = Dashboard.objects(uuid=request.query_params['uuid']).first()
             dashboard.update_with(request.query_params).save()
             return JsonResponse({'message': "Dashboard successfully updated"}, status=200)
@@ -72,7 +73,15 @@ class Widgets(APIView):
     @staticmethod
     @api_view(['POST'])
     def post(request):
-        pass
+        try:
+            widget = DashboardWidgetFactory.create_widget_from_query_params(
+                    WidgetValidator.validate_params_for_creation(request.query_params))
+            dashboard = Dashboard.objects(uuid=request.query_params['dashboard-uuid']).first()
+            dashboard.widgets.append(widget)
+            dashboard.save()
+            return Response(status=status.HTTP_201_CREATED)
+        except InvalidDashboardParametersException as e:
+            return JsonResponse({'error_message': e.message}, status=400)
 
     @staticmethod
     @api_view(['DELETE'])
