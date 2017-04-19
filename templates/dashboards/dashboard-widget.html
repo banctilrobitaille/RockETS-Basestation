@@ -1,13 +1,13 @@
 {% for dashboard in dashboards %}
-    <div class="col-md-4 dashboard-widget hvr-forward" id="{{ dashboard.uuid }}">
+    <div class="col-md-4 col-sm-6 dashboard-widget hvr-forward" id="{{ dashboard.uuid }}">
         <div class="row dashboard-widget-header">
-            <div class="col-md-2 dashboard-icon">
+            <div class="col-md-2 col-sm-2 dashboard-icon">
                 <i class="fa  fa-bar-chart fa-2x"></i>
             </div>
-            <div class="col-md-8 dashboard-widget-title">
+            <div class="col-md-8 col-sm-7 dashboard-widget-title">
                 <h4 class="ellipsis-text dashboard-name">{{ dashboard.name }}</h4>
             </div>
-            <div class="col-md-2 dashboard-widget-action">
+            <div class="col-md-2 col-sm-3 dashboard-widget-action">
                 <a href="#">
                     <i class="pull-right fa  fa-trash-o fa-2x hvr-grow dashboard-widget-delete-icon"
                        id="{{ dashboard.uuid }}"></i>

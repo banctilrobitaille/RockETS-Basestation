@@ -12,7 +12,7 @@
 }
 
 .widget-holder-action {
-    padding: 0;
+    padding: 1% 1% 0 0;
 }
 
 .widget-holder-action-chart {
@@ -27,6 +27,6 @@
 
 }
 
-.gauge-widget{
-    margin-left:4%;
+.gauge-widget {
+    margin-left: 4%;
 }
