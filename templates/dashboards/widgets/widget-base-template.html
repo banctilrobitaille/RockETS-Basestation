@@ -1,0 +1,22 @@
+<div class="col-md-{{ widget.size }} widget-holder gauge-widget">
+    <div class="row widget-holder-header">
+        <div class="col-md-10">
+            {% block widget-title %}
+            {% endblock %}
+        </div>
+        <div class="col-md-2 widget-holder-action">
+            <i class="fa  fa-cog fa-1x hvr-grow"></i>
+            <i class="fa  fa-trash fa-1x hvr-grow"></i>
+        </div>
+    </div>
+    <div class="row widget-holder-content">
+        {% block widget-content %}
+        {% endblock %}
+    </div>
+    <div class="row widget-holder-footer">
+        {% block widget-footer %}
+        {% endblock %}
+    </div>
+</div>
+{% block script %}
+{% endblock %}

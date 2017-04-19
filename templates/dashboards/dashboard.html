@@ -24,58 +24,10 @@
 {% block content %}
     <div class="row">
         {% for widget in dashboards.widgets %}
-            {% if widget.category == "gauge" %}
-                <div class="col-md-{{ widget.size }} widget-holder gauge-widget">
-                    <div class="row widget-holder-header">
-                        <div class="col-md-10">
-                            <span>{{ widget.name }}</span>
-                        </div>
-                        <div class="col-md-2 widget-holder-action">
-                            <i class="fa  fa-cog fa-1x hvr-grow"></i>
-                            <i class="fa  fa-trash fa-1x hvr-grow"></i>
-                        </div>
-                    </div>
-                    <div class="row widget-holder-content">
-                        <span class="{{ widget.type }}" id="{{ widget.uuid }}"></span>
-                    </div>
-                    <div class="row widget-holder-footer">
-                    </div>
-                </div>
-            {% elif widget.category == "chart" %}
-                <div class="col-md-{{ widget.size }} widget-holder">
-                    <div class="row widget-holder-header">
-                        <div class="col-md-11">
-                            <span>{{ widget.name }}</span>
-                        </div>
-                        <div class="col-md-1 widget-holder-action-chart">
-                            <i class="fa  fa-cog fa-1x hvr-grow"></i>
-                            <i class="fa  fa-trash fa-1x hvr-grow"></i>
-                        </div>
-                    </div>
-                    <div class="row widget-holder-content">
-                        <canvas class="chart-widget" id="altitude"></canvas>
-                    </div>
-                    <div class="row widget-holder-footer">
-                    </div>
-                </div>
-            {% endif %}
+            {% with "dashboards/widgets/"|add:widget.category|add:"-widget.html" as widget_template %}
+                {% include widget_template %}
+            {% endwith %}
         {% endfor %}
-        <div class="col-md-5 widget-holder">
-            <div class="row widget-holder-header">
-                <div class="col-md-11">
-                    <span>Map</span>
-                </div>
-                <div class="col-md-1 widget-holder-action-chart">
-                    <i class="fa  fa-cog fa-1x hvr-grow"></i>
-                    <i class="fa  fa-trash fa-1x hvr-grow"></i>
-                </div>
-            </div>
-            <div class="row widget-holder-content">
-                <div id='map'></div>
-            </div>
-            <div class="row widget-holder-footer">
-            </div>
-        </div>
         <a href="#" data-toggle="modal" data-target="#widget-creation-modal">
             <div class="col-md-2 dashboard-add-widget hvr-grow">
                 <i class="fa  fa-plus fa-5x dashboard-add-widget-icon"></i>
