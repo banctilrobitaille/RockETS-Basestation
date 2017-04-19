@@ -6,6 +6,8 @@
         <list>
           <option value="sensors.models.Sensor.objects" />
           <option value="dashboards.models.Dashboard.objects" />
+          <option value="dashboards.views.Widgets.objects" />
+          <option value="dashboards.models.DashboardWidget.objects" />
         </list>
       </option>
     </inspection_tool>

@@ -13,6 +13,7 @@
     <script src="{% static "js/mapbox-gl.js" %}"></script>
     <script src="{% static "js/chart.min.js" %}"></script>
     <script src="{% static "js/widget-modals.js" %}"></script>
+    <script src="{% static "js/widget.js" %}"></script>
 {% endblock %}
 {% block content_section_action %}
     <a href="#" data-toggle="modal" data-target="">
@@ -22,18 +23,20 @@
     </a>
 {% endblock %}
 {% block content %}
-    <div class="row">
-        {% for widget in dashboards.widgets %}
-            {% with "dashboards/widgets/"|add:widget.category|add:"-widget.html" as widget_template %}
-                {% include widget_template %}
-            {% endwith %}
-        {% endfor %}
-        <a href="#" data-toggle="modal" data-target="#widget-creation-modal">
-            <div class="col-md-2 dashboard-add-widget hvr-grow">
-                <i class="fa  fa-plus fa-5x dashboard-add-widget-icon"></i>
-                <h4>Add widget</h4>
-            </div>
-        </a>
+    <div class="dashboard" id="{{ dashboards.uuid }}">
+        <div class="row">
+            {% for widget in dashboards.widgets %}
+                {% with "dashboards/widgets/"|add:widget.category|add:"-widget.html" as widget_template %}
+                    {% include widget_template %}
+                {% endwith %}
+            {% endfor %}
+            <a href="#" data-toggle="modal" data-target="#widget-creation-modal">
+                <div class="col-md-2 dashboard-add-widget hvr-grow">
+                    <i class="fa  fa-plus fa-5x dashboard-add-widget-icon"></i>
+                    <h4>Add widget</h4>
+                </div>
+            </a>
+        </div>
     </div>
     {% include "dashboards/scripts/chart-widget.html" %}
     {% include "dashboards/scripts/flightindicators.html" %}

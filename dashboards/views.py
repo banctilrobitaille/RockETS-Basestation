@@ -86,9 +86,18 @@ class Widgets(APIView):
     @staticmethod
     @api_view(['DELETE'])
     def delete(request):
-        pass
+        try:
+            if 'dashboard-uuid' in request.query_params.keys() and 'widget-uuid' in request.query_params.keys():
+                dashboard = Dashboard.objects(uuid=request.query_params['dashboard-uuid'])
+                dashboard.update_one(pull__widgets__uuid=DashboardWidget(uuid=request.query_params['widget-uuid']).uuid)
+                return JsonResponse({'message': "Widget successfully deleted"}, status=200)
+            else:
+                return JsonResponse({}, status=400)
+        except Exception as e:
+            return JsonResponse({'error_message': e.message}, status=500)
 
-    @staticmethod
-    @api_view(['PUT'])
-    def put(request):
-        pass
+
+@staticmethod
+@api_view(['PUT'])
+def put(request):
+    pass
