@@ -11,12 +11,15 @@
 }
 
 .dashboard-widget-header {
-    padding-top: 1%;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-widget-title {
     overflow: hidden;
+}
+
+.dashboard-widget-action {
+    padding: 0 1% 0 0;
 }
 
 .dashboard-widget-properties-title {

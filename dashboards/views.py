@@ -92,12 +92,12 @@ class Widgets(APIView):
                 dashboard.update_one(pull__widgets__uuid=DashboardWidget(uuid=request.query_params['widget-uuid']).uuid)
                 return JsonResponse({'message': "Widget successfully deleted"}, status=200)
             else:
-                return JsonResponse({}, status=400)
+                return JsonResponse({'message': "The query should contains the following parameters: "
+                                                "<dashboard-uuid>, <widget-uuid>"}, status=400)
         except Exception as e:
-            return JsonResponse({'error_message': e.message}, status=500)
+            return JsonResponse({'message': e.message}, status=500)
 
-
-@staticmethod
-@api_view(['PUT'])
-def put(request):
-    pass
+    @staticmethod
+    @api_view(['PUT'])
+    def put(request):
+        pass
