@@ -6,10 +6,10 @@
         </div>
         <div class="col-md-2 widget-holder-action">
             <a href="#">
-                <i class="pull-right fa  fa-cog fa-1x hvr-grow widget-edit-icon"></i>
-            </a>
-            <a href="#">
                 <i class="pull-right fa  fa-trash fa-1x hvr-grow widget-delete-icon"></i>
+            </a>
+            <a href="#" data-toggle="modal" data-target="#widget-edition-modal">
+                <i class="pull-right fa  fa-cog fa-1x hvr-grow widget-edit-icon"></i>
             </a>
         </div>
     </div>
@@ -18,6 +18,12 @@
         {% endblock %}
     </div>
     <div class="row widget-holder-footer">
+        <input type="hidden" value="{{ widget.name }}" class="widget-name">
+        <input type="hidden" value="{{ widget.uuid }}" class="widget-uuid">
+        <input type="hidden" value="{{ widget.description }}" class="widget-description">
+        <input type="hidden" value="{{ widget.measure_units }}" class="widget-measure-units">
+        <input type="hidden" value="{{ widget.size }}" class="widget-size">
+        <input type="hidden" value="{{ widget.sensor_id }}" class="widget-sensor-id">
         {% block widget-footer %}
         {% endblock %}
     </div>

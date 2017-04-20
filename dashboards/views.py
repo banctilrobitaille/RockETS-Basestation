@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -10,7 +10,7 @@ from validators import DashboardValidator, WidgetValidator
 from factories import DashboardFactory, DashboardWidgetFactory
 
 from dashboards.models import Dashboard, DashboardWidget
-from dashboards.exceptions import InvalidDashboardParametersException
+from dashboards.exceptions import InvalidDashboardParametersException, InvalidWidgetParametersException
 
 
 class Dashboards(APIView):
@@ -68,7 +68,17 @@ class Widgets(APIView):
     @staticmethod
     @api_view(['GET'])
     def get(request):
-        pass
+        try:
+            if 'widget-uuid' in request.query_params.keys():
+                widget = \
+                    Dashboard.objects(widgets__match={'uuid': request.query_params['widget-uuid']}).first().widgets[0]
+
+                return HttpResponse(widget.to_json())
+            else:
+                return JsonResponse({'message': "The query should contains the following parameters: "
+                                                "<widget-uuid>"}, status=400)
+        except Exception as e:
+            return JsonResponse({'message': e.message}, status=500)
 
     @staticmethod
     @api_view(['POST'])
@@ -100,4 +110,13 @@ class Widgets(APIView):
     @staticmethod
     @api_view(['PUT'])
     def put(request):
-        pass
+        try:
+            Dashboard.objects(uuid=request.query_params['dashboard-uuid'],
+                              widgets__uuid=request.query_params['widget-uuid']).update(
+                    set__widgets__S__name=request.query_params['name'])
+            return JsonResponse({'message': "Widget successfully updated"}, status=200)
+        except InvalidWidgetParametersException as e:
+            return JsonResponse({'message': "The query should contains the following parameters: "
+                                            "<dashboard-uuid>, <widget-uuid>"}, status=400)
+        except Exception as e:
+            return JsonResponse({'message': e.message}, status=500)
