@@ -46,7 +46,7 @@ class DashboardWidget(EmbeddedDocument):
     category = StringField()
     measure_units = StringField()
     grid_position = IntField(min_value=0)
-    size = IntField(min_value=1, max_value=11)
+    width = IntField(min_value=1, max_value=11)
 
 
 class GpsMap(DashboardWidget):

@@ -49,7 +49,7 @@ class WidgetValidator(object):
         WidgetValidator.__validate_name_from(query_params)
         WidgetValidator.__validate_description_from(query_params)
         WidgetValidator.__validate_type_from(query_params)
-        WidgetValidator.__validate_size_from(query_params)
+        WidgetValidator.__validate_width_from(query_params)
         WidgetValidator.__validate_dashboard_from(query_params)
         WidgetValidator.__validate_sensor_from(query_params)
         WidgetValidator.__validate_refresh_rate_from(query_params)
@@ -77,13 +77,13 @@ class WidgetValidator(object):
                     "Parameter <type> should be one of those:" + str(DashboardWidget.TYPES.keys()))
 
     @staticmethod
-    def __validate_size_from(query_params):
-        if 'size' not in query_params.keys() or not query_params['size']:
-            raise InvalidWidgetParametersException("Parameter <size> should not be null or empty")
-        elif int(query_params['size']) < WidgetValidator.WIDGET_SIZE_LOWER_BOUND or int(
-                query_params['size']) > WidgetValidator.WIDGET_SIZE_UPPER_BOUND:
+    def __validate_width_from(query_params):
+        if 'width' not in query_params.keys() or not query_params['width']:
+            raise InvalidWidgetParametersException("Parameter <width> should not be null or empty")
+        elif int(query_params['width']) < WidgetValidator.WIDGET_SIZE_LOWER_BOUND or int(
+                query_params['width']) > WidgetValidator.WIDGET_SIZE_UPPER_BOUND:
             raise InvalidWidgetParametersException(
-                    "Parameter <size> should be in range:" + str(WidgetValidator.WIDGET_SIZE_LOWER_BOUND) + "-" + str(
+                    "Parameter <width> should be in range:" + str(WidgetValidator.WIDGET_SIZE_LOWER_BOUND) + "-" + str(
                             WidgetValidator.WIDGET_SIZE_UPPER_BOUND))
 
     @staticmethod

@@ -50,7 +50,7 @@ class DashboardWidgetFactory(object):
             widget.name = "Vertical speed"
             widget.description = "The vertical speed gauge(variometer) inform of the rate of descent or climb"
             widget.measure_units = DashboardWidget.MEASURE_UNITS['feet_per_minute']
-            widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
+            widget.width = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_VERTICAL_SPEED_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['variometer']
             widget.category = DashboardWidget.CATEGORIES['gauge']
@@ -60,7 +60,7 @@ class DashboardWidgetFactory(object):
             widget.description = "The airspeed indicator or airspeed gauge is an instrument used in an aircraft to " \
                                  "display the craft's airspeed, typically in knots"
             widget.measure_units = DashboardWidget.MEASURE_UNITS['knots']
-            widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
+            widget.width = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_AIR_SPEED_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['airspeed']
             widget.category = DashboardWidget.CATEGORIES['gauge']
@@ -70,7 +70,7 @@ class DashboardWidgetFactory(object):
             widget.description = "An altimeter or an altitude meter is an instrument used to measure the altitude" \
                                  " of an object above a fixed level."
             widget.measure_units = DashboardWidget.MEASURE_UNITS['feet']
-            widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
+            widget.width = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_ALTITUDE_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['altimeter']
             widget.category = DashboardWidget.CATEGORIES['gauge']
@@ -79,7 +79,7 @@ class DashboardWidgetFactory(object):
             widget.name = "Heading"
             widget.description = "The heading indicator (also called an HI) is a flight instrument used in an" \
                                  " aircraft to inform the pilot of the aircraft's heading."
-            widget.size = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
+            widget.width = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_HEADING_INDICATOR_POSITION
             widget.type = DashboardWidget.TYPES['heading']
             widget.category = DashboardWidget.CATEGORIES['gauge']
@@ -88,7 +88,7 @@ class DashboardWidgetFactory(object):
             widget.name = "Chart"
             widget.description = "A line chart or line graph is a type of chart which displays information as a" \
                                  " series of data points called 'markers' connected by straight line segments."
-            widget.size = DashboardWidgetFactory.DEFAULT_CHART_SIZE
+            widget.width = DashboardWidgetFactory.DEFAULT_CHART_SIZE
             widget.type = DashboardWidget.TYPES['line-chart']
             widget.category = DashboardWidget.CATEGORIES['chart']
             widget.uuid = uuid.uuid4()
@@ -104,7 +104,7 @@ class DashboardWidgetFactory(object):
         widget.name = query_params['name']
         widget.description = query_params['description']
         widget.measure_units = DashboardWidget.MEASURE_UNITS['knots']
-        widget.size = int(query_params['size'])
+        widget.width = int(query_params['width'])
         widget.grid_position = 0
         widget.type = query_params['type']
         widget.category = DashboardWidget.TYPES_TO_CATEGORY[query_params['type']]

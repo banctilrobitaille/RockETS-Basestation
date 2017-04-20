@@ -9,12 +9,12 @@ $(document).ready(function () {
         var widgetName = $("#widgetName").val();
         var widgetDescription = $("#widgetDescription").val();
         var widgetType = $("#widgetType").val().toLowerCase();
-        var widgetSize = $("#widgetSize").val();
+        var widgetWidth = $("#widgetWidth").val();
         var widgetSensor = $("#widgetSensor").val();
         var widgetRefreshRate = $("#widgetRefreshRate").val();
         var widgetDashboardUUID = $("#widgetDashboardUUID").val();
         var queryParams = "?name=" + widgetName + "&description=" + widgetDescription + "&type=" + widgetType +
-            "&size=" + widgetSize + "&sensor=" + widgetSensor + "&refresh-rate=" + widgetRefreshRate +
+            "&width=" + widgetWidth + "&sensor=" + widgetSensor + "&refresh-rate=" + widgetRefreshRate +
             "&dashboard-uuid=" + widgetDashboardUUID;
 
         jQuery.ajax({
@@ -44,19 +44,19 @@ $(document).ready(function () {
         widgetEditionModal.find("#editedWidgetUUID").val($(widget).attr("id"));
         widgetEditionModal.find("#editedWidgetName").val(widget.find(".widget-name").val());
         widgetEditionModal.find("#editedWidgetDescription").val(widget.find(".widget-description").val());
-        widgetEditionModal.find("#editedWidgetSize").value(widget.find(".dashboard-size").val());
-        widgetEditionModal.find("#editedWidgetSensor").value(widget.find(".dashboard-sensor-id").val());
+        widgetEditionModal.find("#editedWidgetWidth").val(widget.find(".widget-width").val());
+        widgetEditionModal.find("#editedWidgetSensor").val(widget.find(".widget-sensor-id").val());
     });
 
     $("#updateWidgetModalButton").on('click', function () {
         var editedWidgetUUID = $("#editedWidgetUUID").val();
         var editedWidgetName = $("#editedWidgetName").val();
         var editedWidgetDescription = $("#editedWidgetDescription").val();
-        var editedWidgetSize = $("#editedWidgetSize").val();
+        var editedWidgetWidth = $("#editedWidgetWidth").val();
         var editedWidgetSensor = $("#editedWidgetSensor").val();
         var widgetDashboardUUID = $("#widgetDashboardUUID").val();
         var queryParams = "?widget-uuid=" + editedWidgetUUID + "&name=" + editedWidgetName + "&description=" + editedWidgetDescription +
-            "&size=" + widgetSize + "&sensor=" + widgetSensor + "&dashboard-uuid=" + widgetDashboardUUID;
+            "&width=" + editedWidgetWidth + "&sensor=" + editedWidgetSensor + "&dashboard-uuid=" + widgetDashboardUUID;
 
         jQuery.ajax({
             url: "http://localhost:8000/dashboards/widget" + queryParams,

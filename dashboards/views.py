@@ -68,17 +68,7 @@ class Widgets(APIView):
     @staticmethod
     @api_view(['GET'])
     def get(request):
-        try:
-            if 'widget-uuid' in request.query_params.keys():
-                widget = \
-                    Dashboard.objects(widgets__match={'uuid': request.query_params['widget-uuid']}).first().widgets[0]
-
-                return HttpResponse(widget.to_json())
-            else:
-                return JsonResponse({'message': "The query should contains the following parameters: "
-                                                "<widget-uuid>"}, status=400)
-        except Exception as e:
-            return JsonResponse({'message': e.message}, status=500)
+        pass
 
     @staticmethod
     @api_view(['POST'])
@@ -112,8 +102,10 @@ class Widgets(APIView):
     def put(request):
         try:
             Dashboard.objects(uuid=request.query_params['dashboard-uuid'],
-                              widgets__uuid=request.query_params['widget-uuid']).update(
-                    set__widgets__S__name=request.query_params['name'])
+                              widgets__uuid=request.query_params['widget-uuid']).update_one(
+                    set__widgets__S__name=request.query_params['name'],
+                    set__widgets__S__description=request.query_params['description'],
+                    set__widgets__S__width=request.query_params['width'])
             return JsonResponse({'message': "Widget successfully updated"}, status=200)
         except InvalidWidgetParametersException as e:
             return JsonResponse({'message': "The query should contains the following parameters: "

@@ -1,4 +1,4 @@
-<div class="col-md-{{ widget.size }} widget-holder gauge-widget" id="{{ widget.uuid }}">
+<div class="col-md-{{ widget.width }} widget-holder gauge-widget" id="{{ widget.uuid }}">
     <div class="row widget-holder-header">
         <div class="col-md-10">
             {% block widget-title %}
@@ -22,7 +22,7 @@
         <input type="hidden" value="{{ widget.uuid }}" class="widget-uuid">
         <input type="hidden" value="{{ widget.description }}" class="widget-description">
         <input type="hidden" value="{{ widget.measure_units }}" class="widget-measure-units">
-        <input type="hidden" value="{{ widget.size }}" class="widget-size">
+        <input type="hidden" value="{{ widget.width }}" class="widget-width">
         <input type="hidden" value="{{ widget.sensor_id }}" class="widget-sensor-id">
         {% block widget-footer %}
         {% endblock %}
