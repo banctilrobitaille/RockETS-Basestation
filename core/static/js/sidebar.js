@@ -2,14 +2,18 @@
  * Created by Benoit on 2017-04-04.
  */
 $(document).ready(function () {
-    $(".menu-tab").on('click', function (e) {
-        $(e.target).addClass("active");
-        localStorage.setItem('activeTab', e.target.id);
-        console.log(e.target.id);
+    var path = window.location.pathname;
+    path = path.replace(/\/$/, "");
+    path = decodeURIComponent(path);
+
+    $(".menu-tab-link").each(function () {
+        var href = $(this).attr('href');
+        if (path !== "") {
+            if (path === href) {
+                $(this).find('li').addClass('active');
+            }
+        } else {
+            $("#menu-tab-home").addClass("active");
+        }
     });
-    var activeTab = localStorage.getItem('activeTab');
-    console.log(activeTab);
-    if (activeTab) {
-        $("#" + activeTab).addClass("active");
-    }
 });
