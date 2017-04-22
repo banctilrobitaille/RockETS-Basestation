@@ -3,7 +3,7 @@
     <span>{{ widget.name }}</span>
 {% endblock %}
 {% block widget-content %}
-    <div id="{{ widget.name }}-{{ widget.uuid }}"></div>
+    <div class="gauge-widget" id="{{ widget.name }}-{{ widget.uuid }}"></div>
     <script>
         var g = new JustGage({
             id: "{{ widget.name }}-{{ widget.uuid }}",
