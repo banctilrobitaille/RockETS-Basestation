@@ -4,6 +4,10 @@
 {% endblock %}
 {% block widget-content %}
     <div class="gauge-widget" id="{{ widget.name }}-{{ widget.uuid }}"></div>
+{% endblock %}
+{% block widget-footer %}
+{% endblock %}
+{% block script %}
     <script>
         var g = new JustGage({
             id: "{{ widget.name }}-{{ widget.uuid }}",
@@ -16,6 +20,4 @@
             symbol: "{{ widget.measure_units }}"
         });
     </script>
-{% endblock %}
-{% block widget-footer %}
 {% endblock %}

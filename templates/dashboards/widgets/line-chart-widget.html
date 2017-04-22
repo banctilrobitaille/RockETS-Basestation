@@ -1,0 +1,52 @@
+{% extends "dashboards/widgets/widget-base-template.html" %}
+{% block widget-title %}
+    <span>{{ widget.name }}</span>
+{% endblock %}
+{% block widget-content %}
+    <canvas class="chart-widget" id="{{ widget.name|cut:" " }}-{{ widget.uuid }}"></canvas>
+{% endblock %}
+{% block widget-footer %}
+{% endblock %}
+{% block script %}
+    <script>
+        Chart.defaults.global.defaultFontColor = 'white';
+        var ctx = document.getElementById('{{ widget.name|cut:" "}}-{{ widget.uuid }}').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['0', '1', '2', '3', '4', '5', '6'],
+                datasets: [{
+                    label: '{{ widget.name }}',
+                    data: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100],
+                    backgroundColor: "rgba(207, 0,15,0)",
+                    borderColor: getRandomColor()
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: '{{ widget.measure_units }}'
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Time(sec)'
+                        }
+                    }],
+                }
+            }
+        });
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+{% endblock %}
