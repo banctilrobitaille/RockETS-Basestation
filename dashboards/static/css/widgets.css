@@ -1,7 +1,8 @@
 .widget-holder {
     margin-top: 2%;
-    margin-left: 2%;
+    margin-left: 4%;
     background-color: rgba(0, 0, 0, 0.2);
+    min-height: 250px;
 }
 
 .widget-holder-header {
@@ -25,8 +26,4 @@
 
 .widget-holder-footer {
 
-}
-
-.gauge-widget {
-    margin-left: 4%;
 }

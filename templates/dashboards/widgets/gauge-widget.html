@@ -3,9 +3,17 @@
     <span>{{ widget.name }}</span>
 {% endblock %}
 {% block widget-content %}
-    <span class="{{ widget.type }}" id="{{ widget.uuid }}"></span>
+    <div id="{{ widget.name }}-{{ widget.uuid }}"></div>
+    <script>
+        var g = new JustGage({
+            id: "{{ widget.name }}-{{ widget.uuid }}",
+            value: 67,
+            min: 0,
+            max: 100,
+            title: "test",
+            valueFontColor: "#FFFFFF"
+        });
+    </script>
 {% endblock %}
 {% block widget-footer %}
-{% endblock %}
-{% block script %}
 {% endblock %}

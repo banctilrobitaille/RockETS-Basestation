@@ -14,6 +14,8 @@
     <script src="{% static "js/chart.min.js" %}"></script>
     <script src="{% static "js/widget-modals.js" %}"></script>
     <script src="{% static "js/widget.js" %}"></script>
+    <script src="{% static "js/raphael-2.1.4.min.js" %}"></script>
+    <script src="{% static "js/justgage.js" %}"></script>
 {% endblock %}
 {% block content_section_action %}
     <a href="#" data-toggle="modal" data-target="">
@@ -24,23 +26,34 @@
 {% endblock %}
 {% block content %}
     <div class="dashboard" id="{{ dashboards.uuid }}">
-        <div class="row">
-            {% for widget in dashboards.widgets %}
-                {% with "dashboards/widgets/"|add:widget.category|add:"-widget.html" as widget_template %}
-                    {% include widget_template %}
-                {% endwith %}
-            {% endfor %}
-            <a href="#" data-toggle="modal" data-target="#widget-creation-modal">
-                <div class="col-md-2 dashboard-add-widget hvr-grow">
-                    <i class="fa  fa-plus fa-5x dashboard-add-widget-icon"></i>
-                    <h4>Add widget</h4>
-                </div>
-            </a>
-        </div>
+        {% for row in dashboard_rows %}
+            <div class="row">
+                {% for widget in row.widgets %}
+                    {% with "dashboards/widgets/"|add:widget.type|add:"-widget.html" as widget_template %}
+                        {% include widget_template %}
+                    {% endwith %}
+                {% endfor %}
+                {% if forloop.last %}
+                    {% if row.is_full %}
+                        </div>
+                        <div class="row">
+                            {% include "dashboards/add-widget-component.html" %}
+                        </div>
+                    {% else %}
+                        {% include "dashboards/add-widget-component.html" %}
+                        </div>
+                    {% endif %}
+                {% else %}
+                    </div>
+                {% endif %}
+        {% endfor %}
     </div>
     {% include "dashboards/scripts/chart-widget.html" %}
     {% include "dashboards/scripts/flightindicators.html" %}
     {% include "dashboards/scripts/mapbox.html" %}
     {% include "dashboards/modals/widgets/widget-creation-modal.html" %}
     {% include "dashboards/modals/widgets/widget-edition-modal.html" %}
+    {% block script %}
+
+    {% endblock %}
 {% endblock %}

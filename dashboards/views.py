@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from validators import DashboardValidator, WidgetValidator
-from factories import DashboardFactory, DashboardWidgetFactory
+from factories import DashboardFactory, DashboardWidgetFactory, DashboardRowsFactory
 
 from dashboards.models import Dashboard, DashboardWidget
 from dashboards.exceptions import InvalidDashboardParametersException, InvalidWidgetParametersException
@@ -24,9 +24,11 @@ class Dashboards(APIView):
                                       RequestContext(request))
         else:
             dashboard = Dashboard.objects(uuid=request.query_params["uuid"]).first()
+            dashboard_rows = DashboardRowsFactory.create_dashboard_rows_from(dashboard.widgets)
+
             return render_to_response('dashboards/dashboard.html',
                                       {'content_title': dashboard.name, 'dashboards': dashboard,
-                                       'widget_types': DashboardWidget.TYPES.keys()},
+                                       'widget_types': DashboardWidget.TYPES.keys(), 'dashboard_rows': dashboard_rows},
                                       RequestContext(request))
 
     @staticmethod

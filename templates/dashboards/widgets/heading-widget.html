@@ -3,7 +3,7 @@
     <span>{{ widget.name }}</span>
 {% endblock %}
 {% block widget-content %}
-    <div id='map'></div>
+    <span class="{{ widget.type }}" id="{{ widget.uuid }}"></span>
 {% endblock %}
 {% block widget-footer %}
 {% endblock %}

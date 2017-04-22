@@ -1,6 +1,6 @@
 import uuid
 
-from dashboards.models import Dashboard, DashboardWidget
+from dashboards.models import Dashboard, DashboardWidget, DashboardRow
 from exceptions import InvalidDashboardParametersException
 
 
@@ -111,3 +111,21 @@ class DashboardWidgetFactory(object):
         widget.uuid = uuid.uuid4()
 
         return widget
+
+
+class DashboardRowsFactory(object):
+    @staticmethod
+    def create_dashboard_rows_from(widgets):
+        dashboard_rows = []
+        dashboard_row = DashboardRow()
+
+        for widget in widgets:
+            if dashboard_row.has_room_for(widget):
+                dashboard_row.add_widget(widget)
+            else:
+                dashboard_rows.append(dashboard_row)
+                dashboard_row = DashboardRow()
+                dashboard_row.add_widget(widget)
+
+        dashboard_rows.append(dashboard_row)
+        return dashboard_rows
