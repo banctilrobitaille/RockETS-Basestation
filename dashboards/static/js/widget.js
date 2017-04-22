@@ -28,5 +28,7 @@ $(document).ready(function () {
     });
 
 
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip().click(function (e) {
+        e.preventDefault();
+    });
 });

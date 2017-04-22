@@ -1,6 +1,5 @@
 .widget-holder {
     margin-top: 2%;
-    margin-left: 4%;
     background-color: rgba(0, 0, 0, 0.2);
     min-height: 250px;
 }
@@ -30,4 +29,20 @@
 
 .gauge-widget {
     margin-top: 12%;
+}
+
+.widget-style-2 {
+    margin-right: 6%;
+}
+
+.widget-style-3 {
+    margin-right: 5%;
+}
+
+.widget-style-5 {
+    margin-right: 2%;
+}
+
+.widget-style-8 {
+    margin-right: 2%;
 }

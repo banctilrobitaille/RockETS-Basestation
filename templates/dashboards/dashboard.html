@@ -27,7 +27,7 @@
 {% block content %}
     <div class="dashboard" id="{{ dashboards.uuid }}">
         {% for row in dashboard_rows %}
-            <div class="row">
+            <div class="row dashboard-row">
                 {% for widget in row.widgets %}
                     {% with "dashboards/widgets/"|add:widget.type|add:"-widget.html" as widget_template %}
                         {% include widget_template %}
