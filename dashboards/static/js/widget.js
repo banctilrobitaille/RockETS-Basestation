@@ -26,4 +26,7 @@ $(document).ready(function () {
             timeout: 12000000
         });
     });
+
+
+    $('[data-toggle="tooltip"]').tooltip();
 });
