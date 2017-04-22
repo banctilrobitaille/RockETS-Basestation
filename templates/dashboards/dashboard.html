@@ -34,7 +34,7 @@
                     {% endwith %}
                 {% endfor %}
                 {% if forloop.last %}
-                    {% if row.is_full %}
+                    {% if row.used_width > 8 %}
                         </div>
                         <div class="row">
                             {% include "dashboards/add-widget-component.html" %}

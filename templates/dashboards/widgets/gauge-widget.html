@@ -7,11 +7,13 @@
     <script>
         var g = new JustGage({
             id: "{{ widget.name }}-{{ widget.uuid }}",
-            value: 67,
+            value: Math.random() * 100,
             min: 0,
             max: 100,
-            title: "test",
-            valueFontColor: "#FFFFFF"
+            valueFontColor: "#FFFFFF",
+            label: "{{ widget.description }}",
+            labelFontColor: "#FFFFFF",
+            symbol: "{{ widget.measure_units }}"
         });
     </script>
 {% endblock %}
