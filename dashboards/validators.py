@@ -49,6 +49,7 @@ class WidgetValidator(object):
         WidgetValidator.__validate_name_from(query_params)
         WidgetValidator.__validate_description_from(query_params)
         WidgetValidator.__validate_type_from(query_params)
+        WidgetValidator.__validate_measure_units_from(query_params)
         WidgetValidator.__validate_width_from(query_params)
         WidgetValidator.__validate_dashboard_from(query_params)
         WidgetValidator.__validate_sensor_from(query_params)
@@ -75,6 +76,14 @@ class WidgetValidator(object):
         elif query_params['type'] not in DashboardWidget.TYPES.keys():
             raise InvalidWidgetParametersException(
                     "Parameter <type> should be one of those:" + str(DashboardWidget.TYPES.keys()))
+
+    @staticmethod
+    def __validate_measure_units_from(query_params):
+        if 'measure-units' not in query_params.keys() or not query_params['measure-units']:
+            raise InvalidWidgetParametersException("Parameter <measure-units> should not be null or empty")
+        elif query_params['measure-units'] not in DashboardWidget.MEASURE_UNITS.keys():
+            raise InvalidWidgetParametersException(
+                    "Parameter <measure-units> should be one of those:" + str(DashboardWidget.MEASURE_UNITS.keys()))
 
     @staticmethod
     def __validate_width_from(query_params):

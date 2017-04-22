@@ -103,7 +103,7 @@ class DashboardWidgetFactory(object):
 
         widget.name = query_params['name']
         widget.description = query_params['description']
-        widget.measure_units = DashboardWidget.MEASURE_UNITS['knots']
+        widget.measure_units = DashboardWidget.MEASURE_UNITS[query_params['measure-units']]
         widget.width = int(query_params['width'])
         widget.grid_position = 0
         widget.type = query_params['type']

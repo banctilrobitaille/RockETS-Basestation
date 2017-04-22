@@ -8,13 +8,14 @@ $(document).ready(function () {
     $('#addWidgetModalButton').on('click', function () {
         var widgetName = $("#widgetName").val();
         var widgetDescription = $("#widgetDescription").val();
+        var widgetMeasureUnits = $("#widgetMeasureUnits").val().toLowerCase();
         var widgetType = $("#widgetType").val().toLowerCase();
         var widgetWidth = $("#widgetWidth").val();
         var widgetSensor = $("#widgetSensor").val();
         var widgetRefreshRate = $("#widgetRefreshRate").val();
         var widgetDashboardUUID = $("#widgetDashboardUUID").val();
         var queryParams = "?name=" + widgetName + "&description=" + widgetDescription + "&type=" + widgetType +
-            "&width=" + widgetWidth + "&sensor=" + widgetSensor + "&refresh-rate=" + widgetRefreshRate +
+            "&measure-units=" + widgetMeasureUnits + "&width=" + widgetWidth + "&sensor=" + widgetSensor + "&refresh-rate=" + widgetRefreshRate +
             "&dashboard-uuid=" + widgetDashboardUUID;
 
         jQuery.ajax({

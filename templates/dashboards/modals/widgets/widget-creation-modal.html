@@ -39,6 +39,16 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Measure Units:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="widgetMeasureUnits">
+                                        {% for measure_unit in  measure_units %}
+                                            <option value="{{ measure_unit }}">{{ measure_unit }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="" class="col-sm-2 control-label">Size:</label>
                                 <div class="col-sm-9">
                                     <select class="form-control input-custom" id="widgetWidth">

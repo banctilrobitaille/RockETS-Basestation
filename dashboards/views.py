@@ -28,7 +28,9 @@ class Dashboards(APIView):
 
             return render_to_response('dashboards/dashboard.html',
                                       {'content_title': dashboard.name, 'dashboards': dashboard,
-                                       'widget_types': DashboardWidget.TYPES.keys(), 'dashboard_rows': dashboard_rows},
+                                       'dashboard_rows': dashboard_rows,
+                                       'widget_types': DashboardWidget.TYPES.keys(),
+                                       'measure_units': DashboardWidget.MEASURE_UNITS.keys()},
                                       RequestContext(request))
 
     @staticmethod
