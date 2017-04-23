@@ -1,18 +1,25 @@
 .dashboard-add-widget {
-    margin-top: 7%;
-    margin-left: 3%;
+    min-height: 248px;
+    display: table;
+    margin-top: 2%;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
 }
 
 .dashboard-add-widget:hover {
     color: rgba(255, 255, 255, 0.8);
+    border: dashed 2px rgba(255, 255, 255, 0.8);
 }
 
-.dashboard-add-widget-icon {
-    padding-top: 14%;
+.dashboard-add-widget-content {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .dashboard-row {
     padding-left: 1%;
+}
+
+.dashboard {
+    margin-bottom: 3%;
 }
