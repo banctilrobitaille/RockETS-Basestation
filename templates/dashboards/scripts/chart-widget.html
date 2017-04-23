@@ -20,36 +20,4 @@
             }
         });
     }
-    var ctx2 = document.getElementById('verticalSpeed').getContext('2d');
-    var myChart2 = new Chart(ctx2, {
-        type: 'line',
-        data: {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            datasets: [{
-                label: 'Vertical speed',
-                data: [12, 19, 3, 17, 6, 3, 7],
-                backgroundColor: "rgba(1, 152, 117,0.1)",
-                borderColor: "rgba(1, 152, 117,1)"
-            }]
-        },
-        axisX: {
-            labelFontColor: "red"
-        }
-    });
-    var ctx3 = document.getElementById('altitude').getContext('2d');
-    var myChart3 = new Chart(ctx3, {
-        type: 'line',
-        data: {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            datasets: [{
-                label: 'Altitude',
-                data: [12, 19, 3, 17, 6, 3, 7],
-                backgroundColor: "rgba(232, 126, 4,0.1)",
-                borderColor: "rgba(232, 126, 4,1)"
-            }]
-        },
-        axisX: {
-            labelFontColor: "red"
-        }
-    });
 </script>

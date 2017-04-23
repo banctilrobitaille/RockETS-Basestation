@@ -1,0 +1,100 @@
+<div class="modal fade" id="widget-creation-modal" tabindex="-1" role="dialog"
+     aria-labelledby="widget-creation-modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content custom-modal">
+            <div class="modal-header">
+                <i class="fa  fa-th-large fa-4x modal-header-icon"></i>
+                <h3 class="modal-title" id="widget-creation-modal-label">Add widget</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <h4>General</h4>
+                            <hr>
+                            <div class="form-group">
+                                <label for="widgetName" class="col-sm-2 control-label">Name:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" id="widgetName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="widgetDescription" class="col-sm-2 control-label">Description:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" id="widgetDescription">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Type:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="widgetType">
+                                        {% for type in  widget_types %}
+                                            <option class="widgetType" value="{{ type }}">{{ type }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Measure Units:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="widgetMeasureUnits">
+                                        {% for measure_unit in  measure_units %}
+                                            <option value="{{ measure_unit }}">{{ measure_unit }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Size:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="widgetWidth">
+                                        <option value="2">Small</option>
+                                        <option value="3">Medium</option>
+                                        <option value="5">Large</option>
+                                        <option value="10">Extra-Large</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="widgetDashboardUUID" class="col-sm-2 control-label">Dashboard:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" readonly="readonly"
+                                           id="widgetDashboardUUID" value="{{ dashboards.uuid }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h4>Connectivity</h4>
+                            <hr>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Sensor:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="widgetSensor">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Refresh rate:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="widgetRefreshRate">
+                                        <option value="realTime">Real time</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-primary-custom" id="addWidgetModalButton">
+                    Add
+                </button>
+                <button type="button" class="btn btn-secondary btn-secondary-custom" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

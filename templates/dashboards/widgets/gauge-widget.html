@@ -1,0 +1,24 @@
+{% extends "dashboards/widgets/widget-base-template.html" %}
+{% block widget-title %}
+    <span>{{ widget.name }}</span>
+{% endblock %}
+{% block widget-content %}
+    <div class="gauge-widget" id="{{ widget.name }}-{{ widget.uuid }}"></div>
+{% endblock %}
+{% block widget-footer %}
+{% endblock %}
+{% block script %}
+    <script>
+        var g = new JustGage({
+            id: "{{ widget.name }}-{{ widget.uuid }}",
+            value: Math.random() * 100,
+            min: 0,
+            max: 100,
+            valueFontColor: "#FFFFFF",
+            label: "{{ widget.description }}",
+            labelFontColor: "#FFFFFF",
+            symbol: "{{ widget.measure_units }}",
+            decimals: 2
+        });
+    </script>
+{% endblock %}
