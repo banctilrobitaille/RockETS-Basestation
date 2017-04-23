@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'core',
     'sensors',
     'dashboards',
+    'targets',
 ]
 
 MIDDLEWARE = [
