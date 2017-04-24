@@ -5,6 +5,8 @@
 
 > pip install mongoengine
 
+> Install Redis from https://github.com/MSOpenTech/redis/releases
+
 #### How to contribute ?
 - [X] Create a branch by feature and/or bug fix
 - [X] Get the code
