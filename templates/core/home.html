@@ -1,0 +1,14 @@
+{% extends "core/base-template.html" %}
+{% block script %}
+    <script>
+        socket = new WebSocket("ws://" + window.location.host + "/telemetry/");
+        socket.onmessage = function (e) {
+            alert(e.data);
+        };
+        socket.onopen = function () {
+            alert("Socket opened");
+        };
+        // Call onopen directly if socket is already open
+        if (socket.readyState == WebSocket.OPEN) socket.onopen();
+    </script>
+{% endblock %}

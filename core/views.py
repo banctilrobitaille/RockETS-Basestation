@@ -8,4 +8,4 @@ class Core(APIView):
     @staticmethod
     @api_view(['GET'])
     def get(request):
-        return render_to_response('core/base-template.html', {'content_title': "Home"}, RequestContext(request))
+        return render_to_response('core/home.html', {'content_title': "Home"}, RequestContext(request))
