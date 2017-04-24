@@ -35,11 +35,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     'rest_framework',
     'core',
     'sensors',
     'dashboards',
     'targets',
+    'telemetry',
 ]
 
 MIDDLEWARE = [
@@ -110,7 +112,7 @@ CHANNEL_LAYERS = {
         "CONFIG": {
             "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
         },
-        "ROUTING": "",
+        "ROUTING": 'RockETS_Basestation.routing.channel_routing',
     },
 }
 
