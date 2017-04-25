@@ -1,7 +1,7 @@
 from channels.routing import route
-from telemetry.consumers import ws_connect, ws_disconnect
+from telemetry import consumers as telemetry_consumers
 
 channel_routing = [
-    route("websocket.connect", ws_connect),
-    route("websocket.disconnect", ws_disconnect)
+    route("websocket.connect", telemetry_consumers.ws_connect, path=r"^/telemetry$"),
+    route("websocket.disconnect", telemetry_consumers.ws_disconnect, path=r"^/telemetry$")
 ]
