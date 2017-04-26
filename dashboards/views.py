@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from telemetry.communication import CommunicationService
 from validators import DashboardValidator, WidgetValidator
 from factories import DashboardFactory, DashboardWidgetFactory, DashboardRowsFactory
 
@@ -23,6 +24,7 @@ class Dashboards(APIView):
                                       {'content_title': "Dashboards", 'dashboards': dashboards},
                                       RequestContext(request))
         else:
+            CommunicationService.get_instance().open_communication_channel_for("telemetry")
             dashboard = Dashboard.objects(uuid=request.query_params["uuid"]).first()
             dashboard_rows = DashboardRowsFactory.create_dashboard_rows_from(dashboard.widgets)
 

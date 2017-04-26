@@ -14,7 +14,7 @@
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['0', '1', '2', '3', '4', '5', '6'],
+                labels: [moment().add(1, 's'), moment().add(3, 's'), moment().add(5, 's'), moment().add(7, 's'), moment().add(9, 's')],
                 datasets: [{
                     label: '{{ widget.name }}',
                     data: [Math.random() * 100 + Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100],
@@ -25,7 +25,7 @@
             options: {
                 scales: {
                     yAxes: [{
-                        type: 'logarithmic',
+                        type: 'linear',
                         ticks: {
                             suggestedMin: 0
                         },
@@ -35,11 +35,11 @@
                         }
                     }],
                     xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Time(sec)'
+                        type: 'time',
+                        time: {
+                            unit: 'second'
                         }
-                    }],
+                    }]
                 }
             }
         });

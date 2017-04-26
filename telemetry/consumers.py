@@ -1,7 +1,7 @@
 from channels import Group
 
 
-def ws_connect(message):
+def ws_connect(message, sensor_uuid):
     message.reply_channel.send({"accept": True})
     Group("telemetry").add(message.reply_channel)
 

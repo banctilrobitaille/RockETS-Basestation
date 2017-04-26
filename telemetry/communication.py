@@ -45,8 +45,8 @@ class CommunicationDeviceWorker(Thread):
     def run(self):
         self.__is_running = True
         while self.__is_running:
-            Group(self.__channel_group).send({'text': str(random.randint(1, 100))})
-            time.sleep(0.2)
+            Group(self.__channel_group).send({'text': str(random.uniform(0.0, 100.0))})
+            time.sleep(2)
 
     def stop(self):
         self.__is_running = False

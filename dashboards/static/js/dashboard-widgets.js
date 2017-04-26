@@ -25,4 +25,12 @@ $(document).ready(function () {
             timeout: 12000000
         });
     });
+
+    $(".dashboard-widget").on("click", function (event) {
+        if (!$(event.target).hasClass("fa")) {
+            var dashboardId = event.currentTarget.id;
+            var queryParams = "?uuid=" + dashboardId;
+            window.location.href = "http://localhost:8000/dashboards" + queryParams;
+        }
+    });
 });

@@ -11,11 +11,13 @@
 
 {% block js_import %}
     <script src="{% static "js/mapbox-gl.js" %}"></script>
+    <script src="{% static "js/moment.js" %}"></script>
     <script src="{% static "js/chart.min.js" %}"></script>
     <script src="{% static "js/widget-modals.js" %}"></script>
     <script src="{% static "js/widget.js" %}"></script>
     <script src="{% static "js/raphael-2.1.4.min.js" %}"></script>
     <script src="{% static "js/justgage.js" %}"></script>
+    <script src="{% static "js/dashboard.js" %}"></script>
 {% endblock %}
 {% block content_section_action %}
     <a href="#" data-toggle="modal" data-target="">
@@ -23,6 +25,13 @@
             Save <i class="fa fa-save" aria-hidden="true"></i>
         </button>
     </a>
+{% endblock %}
+{% block additional-information %}
+    <div class="pull-right dashboard-additional-information">
+        <div class="time">
+            <h4 class="dashboard-time-content"></h4>
+        </div>
+    </div>
 {% endblock %}
 {% block content %}
     <div class="dashboard" id="{{ dashboards.uuid }}">

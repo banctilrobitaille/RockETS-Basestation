@@ -10,5 +10,4 @@ class Core(APIView):
     @staticmethod
     @api_view(['GET'])
     def get(request):
-        CommunicationService.get_instance().open_communication_channel_for("telemetry")
         return render_to_response('core/home.html', {'content_title': "Home"}, RequestContext(request))

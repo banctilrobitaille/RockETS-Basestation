@@ -6,12 +6,24 @@
     <div class="gauge-widget" id="{{ widget.name }}-{{ widget.uuid }}"></div>
 {% endblock %}
 {% block widget-footer %}
+    <div class="col-md-6 gauge-widget-minimum-value-holder">
+        <h4 class="gauge-widget-minimum-value">
+            Min: 0
+        </h4>
+    </div>
+    <div class="col-md-6 gauge-widget-maximum-value-holder">
+        <h4 class="gauge-widget-maximum-value">
+            Max: 0
+        </h4>
+    </div>
 {% endblock %}
 {% block script %}
     <script>
-        var g = new JustGage({
+        window["{{ widget.uuid }}-maximum-value"] = 0;
+        window["{{ widget.uuid }}-minimum-value"] = 100;
+        window["{{ widget.uuid }}"] = new JustGage({
             id: "{{ widget.name }}-{{ widget.uuid }}",
-            value: Math.random() * 100,
+            value: 0,
             min: 0,
             max: 100,
             valueFontColor: "#FFFFFF",
@@ -20,5 +32,24 @@
             symbol: "{{ widget.measure_units }}",
             decimals: 2
         });
+
+        window["{{ widget.uuid }}-socket"] = new WebSocket("ws://" + window.location.host + "/telemetry/12rsdf");
+        window["{{ widget.uuid }}-socket"].onmessage = function (e) {
+            var value = parseFloat(e.data).toFixed(2);
+            if (value < window["{{ widget.uuid }}-minimum-value"]) {
+                window["{{ widget.uuid }}-minimum-value"] = value;
+                $("#{{ widget.uuid }}").find(".gauge-widget-minimum-value").html("Min: " + value);
+            }
+            if (value > window["{{ widget.uuid }}-maximum-value"]) {
+                window["{{ widget.uuid }}-maximum-value"] = value;
+                $("#{{ widget.uuid }}").find(".gauge-widget-maximum-value").html("Max: " + value);
+            }
+            window["{{ widget.uuid }}"].refresh(parseFloat(e.data));
+        };
+        window["{{ widget.uuid }}-socket"].onopen = function () {
+            console.log("Socket opened")
+        };
+        // Call onopen directly if socket is already open
+        if (window["{{ widget.uuid }}-socket"].readyState == WebSocket.OPEN) window["{{ widget.uuid }}-socket"].onopen();
     </script>
 {% endblock %}
