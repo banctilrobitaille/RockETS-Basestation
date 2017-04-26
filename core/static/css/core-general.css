@@ -109,3 +109,15 @@ body {
 .additional-information {
     display: table;
 }
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}

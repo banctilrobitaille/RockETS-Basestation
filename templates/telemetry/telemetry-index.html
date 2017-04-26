@@ -1,1 +1,8 @@
 {% extends "core/base-template.html" %}
+{% load static %}
+{% block stylesheet_import %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/monitored-object-widget.css" %}">
+{% endblock %}
+{% block content %}
+    {% include "telemetry/monitored-object-base-template.html" %}
+{% endblock %}

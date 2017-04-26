@@ -1,0 +1,39 @@
+.monitored-object-widget {
+    color: white;
+    margin-top: 3%;
+    margin-left: 3%;
+    background-color: rgba(230, 126, 34, 0.8);
+}
+
+.glow {
+    text-shadow: 0px 0px 5px #1E824C;
+}
+
+.monitored-object-widget-header {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.monitored-object-widget-title {
+    overflow: hidden;
+}
+
+.monitored-object-widget-action {
+    padding: 0 1% 0 0;
+}
+
+.monitored-object-widget-properties-title {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.monitored-object-widget-properties {
+    display: inline-block;
+}
+
+.monitored-object-widget-icon {
+    color: #FFF;
+}
+
+.monitored-object-widget-content {
+    padding-left: 4%;
+}

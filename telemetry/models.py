@@ -21,6 +21,7 @@ class MonitoredObject(Document):
     uuid = UUIDField(required=True)
     name = StringField(required=True)
     description = StringField()
+    identifier = StringField()
 
 
 class Aircraft(MonitoredObject):
