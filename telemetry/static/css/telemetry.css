@@ -1,0 +1,14 @@
+.telemetry-section-title {
+    margin-left: 2%;
+    margin-top: 2%;
+    color: white;
+}
+
+.monitored-objects-section {
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 2%;
+}
+
+.monitored-objects-section-content {
+    padding-bottom: 2%;
+}
