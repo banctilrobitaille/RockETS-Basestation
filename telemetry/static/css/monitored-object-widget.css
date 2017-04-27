@@ -10,14 +10,21 @@
 }
 
 .monitored-object-widget-header {
+    padding-top: 1%;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
 .monitored-object-widget-title {
+    margin-top: 1%;
     overflow: hidden;
 }
 
+.monitored-object-name {
+    margin: 0;
+}
+
 .monitored-object-widget-action {
+    margin-top: 1%;
     padding: 0 1% 0 0;
 }
 
@@ -35,5 +42,13 @@
 }
 
 .monitored-object-widget-content {
-    padding-left: 4%;
+
+}
+
+.monitored-object-widget-image {
+    padding: 0;
+}
+
+.monitored-object-widget-details {
+
 }
