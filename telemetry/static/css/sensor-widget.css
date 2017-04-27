@@ -1,21 +1,14 @@
 .sensor-widget {
     color: white;
-    margin-top: 3%;
-    margin-left: 3%;
-    background-color: rgba(230, 126, 34, 0.8);
-}
-
-.glow {
-    text-shadow: 0px 0px 5px #1E824C;
+    background-color: rgba(142, 68, 173, 0.8);
 }
 
 .sensor-widget-header {
-    padding-top: 1%;
+    padding: 2%;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
 .sensor-widget-title {
-    margin-top: 1%;
     overflow: hidden;
 }
 
@@ -42,7 +35,7 @@
 }
 
 .sensor-widget-content {
-
+    padding: 2%;
 }
 
 .sensor-widget-image {
