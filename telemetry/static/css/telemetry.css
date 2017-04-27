@@ -1,6 +1,10 @@
 .telemetry-section-title {
-    margin: 0;
     color: white;
+    border-bottom: solid 1px dimgray;
+}
+
+.telemetry-section-title-value {
+    margin: 0 0 1%;
 }
 
 .monitored-objects-section {
@@ -21,4 +25,8 @@
 
 .telemetry-section-header {
     padding: 2%;
+}
+
+.telemetry-section-collapse-icon {
+
 }
