@@ -5,33 +5,36 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/monitored-object-widget.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/sensor-widget.css" %}">
 {% endblock %}
+{% block js_import %}
+    <script src="{% static "js/telemetry.js" %}"></script>
+{% endblock %}
 {% block content %}
-    <div class="row monitored-objects-section">
+    <div class="row monitored-objects-section telemetry-section">
         <div class="row telemetry-section-header">
             <div class="col-md-11 telemetry-section-title">
                 <h3 class="telemetry-section-title-value">Monitored objects:</h3>
             </div>
             <div class="col-md-1 telemetry-section-collapse-icon">
-                <i class="fa  fa-arrow-up fa-2x pull-right"></i>
+                <a href="#"><i class="fa  fa-arrow-up fa-2x pull-right"></i></a>
             </div>
         </div>
-        <div class="row  telemetry-section-content">
+        <div class="row  telemetry-section-content telemetry-section-displayed">
             <div class="col-md-12">
                 {% include "telemetry/monitored-object-base-template.html" %}
                 {% include "telemetry/add-monitored-object-component.html" %}
             </div>
         </div>
     </div>
-    <div class="row sensors-section">
+    <div class="row sensors-section telemetry-section">
         <div class="row telemetry-section-header">
             <div class="col-md-11 telemetry-section-title">
                 <h3 class="telemetry-section-title-value">Sensors:</h3>
             </div>
             <div class="col-md-1 telemetry-section-collapse-icon">
-                <i class="fa  fa-arrow-up fa-2x pull-right"></i>
+                <a href="#"><i class="fa  fa-arrow-up fa-2x pull-right"></i></a>
             </div>
         </div>
-        <div class="row telemetry-section-content">
+        <div class="row telemetry-section-content telemetry-section-displayed">
             <div class="col-md-12">
                 {% include "telemetry/sensors-base-template.html" %}
             </div>
