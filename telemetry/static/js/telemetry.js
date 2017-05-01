@@ -15,6 +15,6 @@ $(document).ready(function () {
             telemetrySectionContent.addClass("telemetry-section-displayed");
             telemetrySectionCollapseIconSection.html("<a href='#'><i class='fa  fa-arrow-up fa-2x pull-right'></i></a>");
         }
-        telemetrySectionContent.toggle();
+        telemetrySectionContent.slideToggle();
     });
 });
