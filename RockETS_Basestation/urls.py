@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from telemetry.views import Telemetry
+from telemetry.views import Telemetry, TelemetryMonitoredObjects, TelemetrySensors
 from dashboards.views import Dashboards, Widgets
 from sensors.views import Sensors
 from core.views import Core
@@ -10,11 +10,16 @@ __API_VERSION = "v1/"
 
 urlpatterns = [
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation"), Core.as_view()),
+    url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry/sensor"), TelemetrySensors.as_view()),
+    url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry/monitored-object"),
+        TelemetryMonitoredObjects.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry"), Telemetry.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/sensors"), Sensors.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards/widget"), Widgets.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards"), Dashboards.as_view()),
     url(r'^{}{}{}$'.format("", "", "telemetry"), Telemetry.as_view()),
+    url(r'^{}{}{}$'.format("", "", "telemetry/monitored-object"), TelemetryMonitoredObjects.as_view()),
+    url(r'^{}{}{}$'.format("", "", "telemetry/sensor"), TelemetrySensors.as_view()),
     url(r'^{}{}{}$'.format("", "", "sensors"), Sensors.as_view()),
     url(r'^{}{}{}$'.format("", "", "dashboards"), Dashboards.as_view()),
     url(r'^{}{}{}$'.format("", "", "dashboards/widget"), Widgets.as_view()),
