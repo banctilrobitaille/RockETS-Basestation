@@ -1,11 +1,11 @@
-<div class="modal fade" id="monitored-object-creation-modal" tabindex="-1" role="dialog"
-     aria-labelledby="monitored-object-creation-modal-label"
+<div class="modal fade" id="sensor-edition-modal" tabindex="-1" role="dialog"
+     aria-labelledby="sensor-edition-modal-label"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content custom-modal">
             <div class="modal-header">
                 <i class="fa  fa-car fa-4x modal-header-icon"></i>
-                <h3 class="modal-title" id="monitored-object-creation-modal-label">Monitored object creation</h3>
+                <h3 class="modal-title" id="sensor-edition-modal-label">Edit sensor</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,20 +17,20 @@
                             <h4>General</h4>
                             <hr>
                             <div class="form-group">
-                                <label for="monitoredObjectName" class="col-sm-2 control-label">Name:</label>
+                                <label for="editedSensorName" class="col-sm-2 control-label">Name:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control input-custom" id="monitoredObjectName">
+                                    <input type="text" class="form-control input-custom" id="editedSensorName">
                                 </div>
                                 <div class="col-md-9 col-md-offset-2">
-                                    <span class="modal-error-message help-block" id="monitoredObjectNameError">The monitored object name should not be empty</span>
+                                    <span class="modal-error-message help-block" id="sensorNameError">The monitored object name should not be empty</span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="monitoredObjectDescription"
+                                <label for="editedSensorDescription"
                                        class="col-sm-2 control-label">Description:</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control input-custom"
-                                           id="monitoredObjectDescription">
+                                           id="editedSensorDescription">
                                 </div>
                             </div>
                         </div>
@@ -39,8 +39,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary btn-primary-custom"
-                        id="createMonitoredObjectButton">
-                    Create
+                        id="updateSensorButton">
+                    Update
                 </button>
                 <button type="button" class="btn btn-secondary btn-secondary-custom" data-dismiss="modal">Close</button>
             </div>

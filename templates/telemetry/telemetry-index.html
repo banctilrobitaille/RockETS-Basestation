@@ -37,8 +37,10 @@
         <div class="row telemetry-section-content telemetry-section-displayed">
             <div class="col-md-12">
                 {% include "telemetry/sensors-base-template.html" %}
+                {% include "telemetry/add-sensors-component.html" %}
             </div>
         </div>
     </div>
     {% include "telemetry/modals/monitored-object-creation-modal.html" %}
+    {% include "telemetry/modals/sensor-creation-modal.html" %}
 {% endblock %}

@@ -45,5 +45,17 @@
 
 .telemetry-add-monitored-object:hover {
     color: rgba(255, 255, 255, 0.8);
-    border: dashed 2px rgba(230, 126, 34, 1);
+    border: dashed 2px dimgray;
+}
+
+.telemetry-add-sensors {
+    margin-left: 1%;
+    display: table;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.telemetry-add-sensors:hover {
+    color: rgba(255, 255, 255, 0.8);
+    border: dashed 2px dimgray;
 }
