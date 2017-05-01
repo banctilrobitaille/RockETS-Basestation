@@ -18,6 +18,7 @@
         <div class="row  telemetry-section-content">
             <div class="col-md-12">
                 {% include "telemetry/monitored-object-base-template.html" %}
+                {% include "telemetry/add-monitored-object-component.html" %}
             </div>
         </div>
     </div>
@@ -36,4 +37,5 @@
             </div>
         </div>
     </div>
+    {% include "telemetry/modals/monitored-object-creation-modal.html" %}
 {% endblock %}

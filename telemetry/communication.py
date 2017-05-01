@@ -1,8 +1,7 @@
-import random
+import serial
 from threading import Thread
-
-import time
 from channels import Group
+import json
 
 
 class CommunicationService(object):
@@ -41,12 +40,26 @@ class CommunicationDeviceWorker(Thread):
         super(CommunicationDeviceWorker, self).__init__()
         self.__is_running = False
         self.__channel_group = channel_group
+        self.__serial_connection = serial.Serial(port='COM5',
+                                                 baudrate=57600,
+                                                 parity=serial.PARITY_NONE,
+                                                 stopbits=serial.STOPBITS_ONE,
+                                                 bytesize=serial.EIGHTBITS)
 
     def run(self):
         self.__is_running = True
         while self.__is_running:
-            Group(self.__channel_group).send({'text': str(random.uniform(0.0, 100.0))})
-            time.sleep(2)
+            out = ''
+            self.__serial_connection.flush()
+            received_string = self.__serial_connection.readline()
+            print(received_string)
 
-    def stop(self):
-        self.__is_running = False
+            try:
+                data = json.loads(received_string)
+                Group(self.__channel_group).send({'text': str(data['Measures']['Altitude']['Altitude_AGL'])})
+            except Exception as e:
+                print(e.message)
+
+
+def stop(self):
+    self.__is_running = False
