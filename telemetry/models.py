@@ -16,8 +16,10 @@ class MonitoredObject(Document):
     meta = {
         'abstract': True,
     }
-    TYPES = {'rocket': "Rocket",
-             'rocket-engine': "Rocket engine"}
+    TYPES = {
+        'rocket': "Rocket",
+        'rocket engine': "Rocket engine"
+    }
     uuid = UUIDField(required=True)
     name = StringField(required=True)
     description = StringField()
@@ -45,17 +47,6 @@ class CommunicationProtocol(Document):
     }
 
 
-class Sensor(Document):
-    TYPES = {
-        'main_input': "Main input",
-        'barometer': "Barometer",
-        'thermometer': "Thermometer",
-    }
-    name = StringField(required=True)
-    uuid = UUIDField(required=True)
-    measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
-
-
 class SensorMeasurement(EmbeddedDocument):
     name = StringField()
 
@@ -68,3 +59,15 @@ class SensorInterface(EmbeddedDocument):
         'serial': "Serial",
         'network': "Network"
     }
+
+
+class Sensor(Document):
+    TYPES = {
+        'main input': "Main input",
+        'barometer': "Barometer",
+        'thermometer': "Thermometer",
+    }
+    name = StringField(required=True)
+    uuid = UUIDField(required=True)
+    sensorInterface = EmbeddedDocumentField(SensorInterface)
+    measurements = ListField(EmbeddedDocumentField(SensorMeasurement))

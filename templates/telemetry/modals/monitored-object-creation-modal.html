@@ -43,9 +43,9 @@
                                 <label for="" class="col-sm-2 control-label">Type:</label>
                                 <div class="col-sm-9">
                                     <select class="form-control input-custom" id="monitoredObjectType">
-                                        <option value="rocket">Rocket</option>
-                                        <option value="engine">Engine</option>
-                                        <option value="other">Other</option>
+                                        {% for monitored_object_type in monitored_object_types %}
+                                            <option value="{{ monitored_object_type }}">{{ monitored_object_type|title }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>

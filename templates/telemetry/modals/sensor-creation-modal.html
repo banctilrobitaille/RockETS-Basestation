@@ -33,6 +33,25 @@
                                            id="sensorDescription">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Type:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="sensorType">
+                                        {% for sensor_type in sensor_types %}
+                                            <option value="{{ sensor_type }}">{{ sensor_type|title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Location:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="sensorType">
+                                        <option value="local">Local</option>
+                                        <option value="remote">Remote</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
