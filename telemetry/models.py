@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from mongoengine import *
 
 
-class Flights(EmbeddedDocument):
+class Flight(EmbeddedDocument):
     flight_number = IntField()
     start_time = DateTimeField()
     end_time = DateTimeField()
@@ -28,7 +28,7 @@ class Aircraft(MonitoredObject):
     meta = {
         'abstract': True,
     }
-    flights = ListField(EmbeddedDocumentField(Flights))
+    flights = ListField(EmbeddedDocumentField(Flight))
 
 
 class Rocket(Aircraft):
@@ -40,4 +40,31 @@ class RocketEngine(MonitoredObject):
 
 
 class CommunicationProtocol(Document):
-    pass
+    TYPES = {
+        'rockets_custom': "Rockets Custom",
+    }
+
+
+class Sensor(Document):
+    TYPES = {
+        'main_input': "Main input",
+        'barometer': "Barometer",
+        'thermometer': "Thermometer",
+    }
+    name = StringField(required=True)
+    uuid = UUIDField(required=True)
+    measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
+
+
+class SensorMeasurement(EmbeddedDocument):
+    name = StringField()
+
+
+class SensorInterface(EmbeddedDocument):
+    meta = {
+        'abstract': True,
+    }
+    TYPES = {
+        'serial': "Serial",
+        'network': "Network"
+    }

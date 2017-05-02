@@ -6,12 +6,19 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+from telemetry.models import Sensor, SensorInterface
+
 
 class Telemetry(APIView):
     @staticmethod
     @api_view(['GET'])
     def get(request):
-        return render_to_response('telemetry/telemetry-index.html', {'content_title': "Telemetry"},
+        sensors = Sensor.objects.all()
+
+        return render_to_response('telemetry/telemetry-index.html',
+                                  {'content_title': "Telemetry",
+                                   'sensor_interface_types': SensorInterface.TYPES.keys(),
+                                   'sensor_types': Sensor.T},
                                   RequestContext(request))
 
 
