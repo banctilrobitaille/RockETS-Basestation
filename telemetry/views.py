@@ -13,8 +13,6 @@ class Telemetry(APIView):
     @staticmethod
     @api_view(['GET'])
     def get(request):
-        sensors = Sensor.objects.all()
-
         return render_to_response('telemetry/telemetry-index.html',
                                   {'content_title': "Telemetry",
                                    'sensor_interface_types': SensorInterface.TYPES.keys(),

@@ -57,11 +57,16 @@ class SensorInterface(EmbeddedDocument):
     }
     TYPES = {
         'serial': "Serial",
-        'network': "Network"
+        'spi': "SPI",
+        'uart': "UART",
+        'i2c': "I2C"
     }
 
 
 class Sensor(Document):
+    meta = {
+        'abstract': True,
+    }
     TYPES = {
         'main input': "Main input",
         'barometer': "Barometer",
@@ -69,5 +74,11 @@ class Sensor(Document):
     }
     name = StringField(required=True)
     uuid = UUIDField(required=True)
-    sensorInterface = EmbeddedDocumentField(SensorInterface)
+
+
+class RemoteSensor(Sensor):
     measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
+
+
+class LocalSensor(Sensor):
+    sensorInterface = EmbeddedDocumentField(SensorInterface)
