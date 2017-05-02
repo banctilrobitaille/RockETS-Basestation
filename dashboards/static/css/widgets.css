@@ -46,3 +46,21 @@
 .widget-style-8 {
     margin-right: 2%;
 }
+
+.gauge-widget-minimum-value-holder {
+    text-align: center;
+    color: white;
+}
+
+.gauge-widget-maximum-value-holder {
+    text-align: center;
+    color: white;
+}
+
+.gauge-widget-maximum-value {
+    margin-top: 0;
+}
+
+.gauge-widget-minimum-value {
+    margin-top: 0;
+}

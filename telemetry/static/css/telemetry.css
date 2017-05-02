@@ -1,0 +1,61 @@
+.telemetry-section-title {
+    color: white;
+    border-bottom: solid 1px dimgray;
+}
+
+.telemetry-section-title-value {
+    margin: 0 0 1%;
+}
+
+.monitored-objects-section {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 2%;
+}
+
+.sensors-section {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 2%;
+}
+
+.telemetry-section-content {
+    padding: 0 2% 2%;
+}
+
+.telemetry-section-header {
+    padding: 2%;
+}
+
+.telemetry-section-collapse-icon {
+
+}
+
+.telemetry-add-monitored-object-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.telemetry-add-monitored-object {
+    margin-left: 1%;
+    display: table;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.telemetry-add-monitored-object:hover {
+    color: rgba(255, 255, 255, 0.8);
+    border: dashed 2px dimgray;
+}
+
+.telemetry-add-sensors {
+    margin-left: 1%;
+    display: table;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.telemetry-add-sensors:hover {
+    color: rgba(255, 255, 255, 0.8);
+    border: dashed 2px dimgray;
+}

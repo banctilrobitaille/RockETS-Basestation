@@ -105,3 +105,19 @@ body {
     white-space: nowrap !important;
     display: block !important;
 }
+
+.additional-information {
+    display: table;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}

@@ -1,0 +1,47 @@
+.sensor-widget {
+    color: white;
+    background-color: rgba(142, 68, 173, 0.8);
+}
+
+.sensor-widget-header {
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sensor-widget-title {
+    overflow: hidden;
+}
+
+.sensor-name {
+    margin: 0;
+}
+
+.sensor-widget-action {
+    margin-top: 1%;
+    padding: 0 1% 0 0;
+}
+
+.sensor-widget-properties-title {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.sensor-widget-properties {
+    display: inline-block;
+}
+
+.sensor-widget-icon {
+    color: #FFF;
+}
+
+.sensor-widget-content {
+    padding: 2%;
+}
+
+.sensor-widget-image {
+    padding: 0;
+}
+
+.sensor-widget-details {
+
+}

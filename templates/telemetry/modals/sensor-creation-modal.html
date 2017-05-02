@@ -1,0 +1,77 @@
+<div class="modal fade" id="sensor-creation-modal" tabindex="-1" role="dialog"
+     aria-labelledby="sensor-creation-modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content custom-modal">
+            <div class="modal-header">
+                <i class="fa  fa-plug fa-4x modal-header-icon"></i>
+                <h3 class="modal-title" id="sensor-creation-modal-label">Sensor creation</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <h4>General</h4>
+                            <hr>
+                            <div class="form-group">
+                                <label for="sensorName" class="col-sm-2 control-label">Name:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" id="sensorName">
+                                </div>
+                                <div class="col-md-9 col-md-offset-2">
+                                    <span class="modal-error-message help-block" id="sensorNameError">The monitored object name should not be empty</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sensorDescription"
+                                       class="col-sm-2 control-label">Description:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom"
+                                           id="sensorDescription">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Type:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="sensorType">
+                                        {% for sensor_type in sensor_types %}
+                                            <option value="{{ sensor_type }}">{{ sensor_type|title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Location:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="sensorType">
+                                        <option value="remote">Remote</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h4>Configuration</h4>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Node:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom"
+                                           id="remoteSensorJSONNode">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-primary-custom"
+                        id="createSensorButton">
+                    Create
+                </button>
+                <button type="button" class="btn btn-secondary btn-secondary-custom" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

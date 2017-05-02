@@ -23,3 +23,19 @@
 .dashboard {
     margin-bottom: 3%;
 }
+
+.dashboard-additional-information {
+    display: table-cell;
+    vertical-align: middle;
+    margin-right: 2%;
+    margin-top: 2%;
+    color: white;
+}
+
+.dashboard-time-content {
+    display: inline-block;
+}
+
+.dashboard-time-icon {
+    display: inline-block;
+}

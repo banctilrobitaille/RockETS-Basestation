@@ -1,0 +1,29 @@
+{% load static %}
+<div class="nav-side-menu col-md-2 full-page">
+    <div class="brand">
+        <a href="/">
+            <img class="brand-logo" src="{% static "resources/images/rocketsLogo_white.png" %}"
+                 alt="RockETS Logo"/>
+        </a>
+    </div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+            <a class="menu-tab-link" href="/">
+                <li class="menu-tab" id="menu-tab-home">
+                    <i class="fa fa-home fa-lg"></i> Home
+                </li>
+            </a>
+            <a class="menu-tab-link" href="/telemetry">
+                <li class="menu-tab" id="menu-tab-targets">
+                    <i class="fa fa-signal fa-lg"></i> Telemetry
+                </li>
+            </a>
+            <a class="menu-tab-link" href="/dashboards">
+                <li class="menu-tab" id="menu-tab-dashboards">
+                    <i class="fa fa-bar-chart fa-lg"></i> Dashboards
+                </li>
+            </a>
+        </ul>
+    </div>
+</div>
