@@ -8,6 +8,7 @@
           <option value="dashboards.models.Dashboard.objects" />
           <option value="dashboards.views.Widgets.objects" />
           <option value="dashboards.models.DashboardWidget.objects" />
+          <option value="telemetry.models.Sensor.objects" />
         </list>
       </option>
     </inspection_tool>

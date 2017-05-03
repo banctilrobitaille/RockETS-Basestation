@@ -41,7 +41,9 @@
         </div>
         <div class="row telemetry-section-content telemetry-section-displayed">
             <div class="col-md-12">
-                {% include "telemetry/sensors-base-template.html" %}
+                {% for sensor in remote_sensors %}
+                    {% include "telemetry/sensors-base-template.html" %}
+                {% endfor %}
                 {% include "telemetry/add-sensors-component.html" %}
             </div>
         </div>

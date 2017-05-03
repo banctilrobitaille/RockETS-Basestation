@@ -6,6 +6,12 @@ class SensorValidator(object):
     @staticmethod
     def validate(query_params):
         SensorValidator.__validate_name_from(query_params)
+        SensorValidator.__validate_description_from(query_params)
+        SensorValidator.__validate_location_from(query_params)
+        SensorValidator.__validate_measure_from(query_params)
+        SensorValidator.__validate_node_from(query_params)
+        SensorValidator.__validate_type_from(query_params)
+        return query_params
 
     @staticmethod
     def __validate_name_from(query_params):

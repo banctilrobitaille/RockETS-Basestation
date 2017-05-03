@@ -24,6 +24,7 @@
 .sensor-widget-properties-title {
     display: inline-block;
     font-weight: bold;
+    margin: 0;
 }
 
 .sensor-widget-properties {

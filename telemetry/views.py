@@ -6,8 +6,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+from telemetry.exceptions import InvalidSensorParametersException
 from telemetry.factories import SensorFactory
-from telemetry.models import Sensor, MonitoredObject
+from telemetry.models import Sensor, MonitoredObject, RemoteSensor
 from telemetry.validators import SensorValidator
 
 
@@ -17,6 +18,7 @@ class Telemetry(APIView):
     def get(request):
         return render_to_response('telemetry/telemetry-index.html',
                                   {'content_title': "Telemetry",
+                                   'remote_sensors': RemoteSensor.objects.all(),
                                    'sensor_types': Sensor.TYPES.keys(),
                                    'monitored_object_types': MonitoredObject.TYPES.keys()},
                                   RequestContext(request))
@@ -56,7 +58,7 @@ class TelemetrySensors(APIView):
             SensorFactory.create_sensor_from_query_params(
                     SensorValidator.validate(request.query_params)).save()
             return Response(status=status.HTTP_201_CREATED)
-        except Exception as e:
+        except InvalidSensorParametersException as e:
             return JsonResponse({'error_message': e.message}, status=400)
 
     @staticmethod

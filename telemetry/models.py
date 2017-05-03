@@ -48,7 +48,7 @@ class CommunicationProtocol(Document):
 
 
 class SensorMeasurement(EmbeddedDocument):
-    name = StringField()
+    name = StringField(required=True)
 
 
 class Sensor(Document):
@@ -60,11 +60,14 @@ class Sensor(Document):
         'thermometer': "Thermometer",
     }
     LOCATIONS = {
-        'remote': "Remote",
+        'remote': "remote",
     }
     name = StringField(required=True)
     uuid = UUIDField(required=True)
+    type = StringField(required=True)
+    description = StringField()
 
 
 class RemoteSensor(Sensor):
     measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
+    node = StringField(required=True)
