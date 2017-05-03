@@ -2,20 +2,22 @@
  * Created by Benoit on 2017-05-03.
  */
 $(document).ready(function () {
+    const REMOTE_SENSOR = "remote";
+
     $("#sensorMeasures").select2({
         tags: true
     });
 
     $('#createSensorButton').on('click', function (event) {
-        const REMOTE_SENSOR = "remote";
         var sensorName = $("#sensorName").val();
         var sensorDescription = $("#sensorDescription").val();
         var sensorType = $("#sensorType").val();
         var sensorLocation = $("#sensorLocation").val();
+        var sensorMeasures = $("#sensorMeasures").val();
         var sensorNode = "";
 
         try {
-            if (sensorLocation == REMOTE_SENSOR) {
+            if (isRemoteSensor(sensorLocation)) {
                 sensorNode = $("#sensorNode").val();
                 validateRemoteSensorParameters(sensorName, sensorNode);
             } else {
@@ -23,10 +25,10 @@ $(document).ready(function () {
             }
 
             var queryParams = "?name=" + sensorName + "&description=" + sensorDescription + "&type=" + sensorType +
-                "&location=" + sensorLocation + "&node=" + sensorNode;
+                "&location=" + sensorLocation + "&node=" + sensorNode + "&measures=" + sensorMeasures;
 
             jQuery.ajax({
-                url: "http://localhost:8000/telemetry/sensors" + queryParams,
+                url: "http://localhost:8000/telemetry/sensor" + queryParams,
                 type: "POST",
                 success: function (resultData) {
                     swal({
@@ -48,4 +50,8 @@ $(document).ready(function () {
             console.log(exception.message);
         }
     });
+
+    function isRemoteSensor(sensorLocation) {
+        return (sensorLocation == REMOTE_SENSOR)
+    }
 });

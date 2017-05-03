@@ -59,6 +59,9 @@ class Sensor(Document):
         'barometer': "Barometer",
         'thermometer': "Thermometer",
     }
+    LOCATIONS = {
+        'remote': "Remote",
+    }
     name = StringField(required=True)
     uuid = UUIDField(required=True)
 

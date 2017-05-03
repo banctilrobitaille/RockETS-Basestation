@@ -6,7 +6,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+from telemetry.factories import SensorFactory
 from telemetry.models import Sensor, MonitoredObject
+from telemetry.validators import SensorValidator
 
 
 class Telemetry(APIView):
@@ -31,7 +33,7 @@ class TelemetryMonitoredObjects(APIView):
 
     @staticmethod
     @api_view(['UPDATE'])
-    def post(request):
+    def update(request):
         try:
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
@@ -51,13 +53,15 @@ class TelemetrySensors(APIView):
     @api_view(['POST'])
     def post(request):
         try:
+            SensorFactory.create_sensor_from_query_params(
+                    SensorValidator.validate(request.query_params)).save()
             return Response(status=status.HTTP_201_CREATED)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=400)
 
     @staticmethod
     @api_view(['UPDATE'])
-    def post(request):
+    def update(request):
         try:
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
