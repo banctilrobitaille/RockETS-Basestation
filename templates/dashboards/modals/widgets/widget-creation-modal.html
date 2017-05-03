@@ -73,7 +73,14 @@
                             <div class="form-group">
                                 <label for="" class="col-sm-2 control-label">Sensor:</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control input-custom" id="widgetSensor">
+                                    <select class="form-control" id="widgetSensor">
+                                        <optgroup label="Remote sensors">
+                                            {% for remote_sensor in remote_sensors %}
+                                                <option value="{{ remote_sensor.uuid }}">{{ remote_sensor.name }}/{{ remote_sensor.description }}</option>
+                                            {% endfor %}
+                                        </optgroup>
+                                        <optgroup label="Local sensors">
+                                        </optgroup>
                                     </select>
                                 </div>
                             </div>

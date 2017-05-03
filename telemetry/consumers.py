@@ -1,9 +1,15 @@
 from channels import Group
 
+from telemetry.models import RemoteSensor
+
 
 def ws_connect(message, sensor_uuid):
     message.reply_channel.send({"accept": True})
-    Group("telemetry").add(message.reply_channel)
+    try:
+        sensor_node = RemoteSensor.objects(uuid=sensor_uuid).first().node
+        Group(sensor_node).add(message.reply_channel)
+    except Exception as e:
+        pass
 
 
 def ws_disconnect(message):

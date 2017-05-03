@@ -33,7 +33,7 @@
             decimals: 2
         });
 
-        window["{{ widget.uuid }}-socket"] = new WebSocket("ws://" + window.location.host + "/telemetry/12rsdf");
+        window["{{ widget.uuid }}-socket"] = new WebSocket("ws://" + window.location.host + "/telemetry/{{ widget.sensor_id }}");
         window["{{ widget.uuid }}-socket"].onmessage = function (e) {
             var value = parseFloat(e.data).toFixed(2);
             if (value < window["{{ widget.uuid }}-minimum-value"]) {

@@ -1,6 +1,8 @@
 .sensor-widget {
     color: white;
     background-color: rgba(142, 68, 173, 0.8);
+    margin-right: 2%;
+    margin-bottom: 2%;
 }
 
 .sensor-widget-header {

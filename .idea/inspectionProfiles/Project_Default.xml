@@ -9,6 +9,7 @@
           <option value="dashboards.views.Widgets.objects" />
           <option value="dashboards.models.DashboardWidget.objects" />
           <option value="telemetry.models.Sensor.objects" />
+          <option value="telemetry.models.RemoteSensor.objects" />
         </list>
       </option>
     </inspection_tool>

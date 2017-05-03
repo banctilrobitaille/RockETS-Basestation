@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from telemetry.communication import CommunicationService
+from telemetry.models import RemoteSensor
 from validators import DashboardValidator, WidgetValidator
 from factories import DashboardFactory, DashboardWidgetFactory, DashboardRowsFactory
 
@@ -32,7 +33,8 @@ class Dashboards(APIView):
                                       {'content_title': dashboard.name, 'dashboards': dashboard,
                                        'dashboard_rows': dashboard_rows,
                                        'widget_types': DashboardWidget.TYPES.keys(),
-                                       'measure_units': DashboardWidget.MEASURE_UNITS.keys()},
+                                       'measure_units': DashboardWidget.MEASURE_UNITS.keys(),
+                                       'remote_sensors': RemoteSensor.objects.all()},
                                       RequestContext(request))
 
     @staticmethod
