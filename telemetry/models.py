@@ -71,3 +71,28 @@ class Sensor(Document):
 class RemoteSensor(Sensor):
     measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
     node = StringField(required=True)
+
+
+class Transmitter(Document):
+    name = StringField(required=True)
+    uuid = UUIDField(required=True)
+    description = StringField()
+
+
+class DeviceInterface(Document):
+    meta = {
+        'abstract': True,
+    }
+    TYPES = {
+        'serial': "serial"
+    }
+
+
+class SerialInterface(DeviceInterface):
+    BAUD_RATES = {
+        '4800': "4800",
+        '9600': "9600",
+        '57600': "57600",
+    }
+    baud_rate = StringField(required=True)
+    port = StringField(required=True)
