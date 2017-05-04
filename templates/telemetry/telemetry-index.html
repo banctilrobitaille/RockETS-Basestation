@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/telemetry.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/monitored-object-widget.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/sensor-widget.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/transmitter-widget.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/monitored-object-modals.css" %}">
 {% endblock %}
 {% block js_import %}
@@ -41,10 +42,11 @@
         </div>
         <div class="row telemetry-section-content telemetry-section-displayed">
             <div class="col-md-12">
-                {% for sensor in remote_sensors %}
-                    {% include "telemetry/sensors-base-template.html" %}
+                {% include "telemetry/transmitters-base-template.html" %}
+                {% for transmitter in transmitters %}
+                    {% include "telemetry/transmitters-base-template.html" %}
                 {% endfor %}
-                {% include "telemetry/add-sensors-component.html" %}
+                {% include "telemetry/add-transmitters-component.html" %}
             </div>
         </div>
     </div>

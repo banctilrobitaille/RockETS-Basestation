@@ -24,6 +24,7 @@
 .monitored-object-widget-properties-title {
     display: inline-block;
     font-weight: bold;
+    margin: 0;
 }
 
 .monitored-object-widget-properties {

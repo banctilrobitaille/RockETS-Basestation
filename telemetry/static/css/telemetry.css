@@ -19,6 +19,12 @@
     margin: 2%;
 }
 
+.transmitters-section {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 2%;
+}
+
 .telemetry-section-content {
     padding: 0 2% 2%;
 }

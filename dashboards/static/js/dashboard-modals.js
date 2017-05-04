@@ -70,6 +70,6 @@ $(document).ready(function () {
         var dashboardEditionModal = $("#dashboard-edition-modal");
         dashboardEditionModal.find("#editedDashboardName").val(dashboardWidget.find(".dashboard-name").html());
         dashboardEditionModal.find("#editedDashboardDescription").val(dashboardWidget.find(".dashboard-description").html());
-        dashboardEditionModal.find("#editedDashboardUUID").val(dashboardWidget.find(".dashboard-uuid").html());
+        dashboardEditionModal.find("#editedDashboardUUID").val(dashboardWidget.attr("id"));
     });
 });

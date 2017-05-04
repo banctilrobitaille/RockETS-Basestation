@@ -40,17 +40,17 @@ class CommunicationDeviceWorker(Thread):
         super(CommunicationDeviceWorker, self).__init__()
         self.__is_running = False
         self.__channel_group = channel_group
-        self.__serial_connection = serial.Serial(port='COM5',
+        """self.__serial_connection = serial.Serial(port='COM5',
                                                  baudrate=57600,
                                                  parity=serial.PARITY_NONE,
                                                  stopbits=serial.STOPBITS_ONE,
-                                                 bytesize=serial.EIGHTBITS)
+                                                 bytesize=serial.EIGHTBITS)"""
 
     def run(self):
         self.__is_running = True
         while self.__is_running:
             out = ''
-            self.__serial_connection.flush()
+            """self.__serial_connection.flush()
             received_string = self.__serial_connection.readline()
             print(received_string)
 
@@ -58,7 +58,7 @@ class CommunicationDeviceWorker(Thread):
                 data = json.loads(received_string)
                 Group(self.__channel_group).send({'text': str(data['Measures']['Altitude']['Altitude_AGL'])})
             except Exception as e:
-                print(e.message)
+                print(e.message)"""
 
 
 def stop(self):

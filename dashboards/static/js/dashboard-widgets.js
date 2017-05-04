@@ -3,7 +3,7 @@
  */
 $(document).ready(function () {
     $(".dashboard-widget-delete-icon").on("click", function (event) {
-        var dashboardId = event.target.id;
+        var dashboardId = event.target.closest(".dashboard-widget").id;
         var queryParams = "?uuid=" + dashboardId;
 
         jQuery.ajax({
