@@ -14,7 +14,7 @@ class Flight(EmbeddedDocument):
 
 class MonitoredObject(Document):
     meta = {
-        'abstract': True,
+        'allow_inheritance': True,
     }
     TYPES = {
         'rocket': "Rocket",
@@ -28,7 +28,7 @@ class MonitoredObject(Document):
 
 class Aircraft(MonitoredObject):
     meta = {
-        'abstract': True,
+        'allow_inheritance': True,
     }
     flights = ListField(EmbeddedDocumentField(Flight))
 
@@ -53,7 +53,7 @@ class SensorMeasurement(EmbeddedDocument):
 
 class Sensor(Document):
     meta = {
-        'abstract': True,
+        'allow_inheritance': True,
     }
     TYPES = {
         'barometer': "Barometer",
@@ -81,7 +81,7 @@ class Transmitter(Document):
 
 class DeviceInterface(Document):
     meta = {
-        'abstract': True,
+        'allow_inheritance': True,
     }
     TYPES = {
         'serial': "serial"

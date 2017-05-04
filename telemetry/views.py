@@ -18,7 +18,7 @@ class Telemetry(APIView):
     def get(request):
         return render_to_response('telemetry/telemetry-index.html',
                                   {'content_title': "Telemetry",
-                                   'remote_sensors': RemoteSensor.objects.all(),
+                                   'remote_sensors': Sensor.objects.all(),
                                    'sensor_types': Sensor.TYPES.keys(),
                                    'monitored_object_types': MonitoredObject.TYPES.keys()},
                                   RequestContext(request))
