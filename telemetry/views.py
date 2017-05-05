@@ -6,10 +6,10 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from telemetry.exceptions import InvalidSensorParametersException
-from telemetry.factories import SensorFactory
+from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException
+from telemetry.factories import SensorFactory, MonitoredObjectFactory
 from telemetry.models import Sensor, MonitoredObject, RemoteSensor
-from telemetry.validators import SensorValidator
+from telemetry.validators import SensorValidator, MonitoredObjectValidator
 
 
 class Telemetry(APIView):
@@ -18,19 +18,32 @@ class Telemetry(APIView):
     def get(request):
         return render_to_response('telemetry/telemetry-index.html',
                                   {'content_title': "Telemetry",
-                                   'remote_sensors': Sensor.objects.all(),
-                                   'sensor_types': Sensor.TYPES.keys(),
                                    'monitored_object_types': MonitoredObject.TYPES.keys()},
                                   RequestContext(request))
 
 
 class TelemetryMonitoredObjects(APIView):
     @staticmethod
+    @api_view(['GET'])
+    def get(request):
+        try:
+            # MonitoredObjectValidator.validate_get_parameters_from(request.query_params)
+            # monitored_object = MonitoredObject.objects(uuid=request.query_params['uuid']).first()
+            return render_to_response('telemetry/monitored-object-index.html',
+                                      {'content_title': "Monitored object's name",
+                                       'sensor_types': Sensor.TYPES.keys()},
+                                      RequestContext(request))
+        except InvalidMonitoredObjectParametersException as e:
+            return JsonResponse({'error_message': e.message}, status=400)
+
+    @staticmethod
     @api_view(['POST'])
     def post(request):
         try:
+            MonitoredObjectFactory.create_monitored_object_from(
+                    MonitoredObjectValidator.validate_post_parameters_from(request.query_params)).save()
             return Response(status=status.HTTP_201_CREATED)
-        except Exception as e:
+        except InvalidMonitoredObjectParametersException as e:
             return JsonResponse({'error_message': e.message}, status=400)
 
     @staticmethod

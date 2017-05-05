@@ -1,6 +1,6 @@
 import uuid
 
-from telemetry.models import Sensor, RemoteSensor, SensorMeasurement
+from telemetry.models import Sensor, RemoteSensor, SensorMeasurement, MonitoredObject, Rocket
 
 
 class SensorFactory(object):
@@ -33,3 +33,19 @@ class SensorFactory(object):
     @staticmethod
     def create_local_sensor_from(query_params):
         return None
+
+
+class MonitoredObjectFactory(object):
+    @staticmethod
+    def create_monitored_object_from(query_params):
+        monitored_object = None
+
+        if query_params['type'] == MonitoredObject.TYPES['rocket']:
+            monitored_object = Rocket()
+            monitored_object.name = query_params['name']
+            monitored_object.description = query_params['description']
+            monitored_object.identifier = query_params['id']
+            monitored_object.uuid = uuid.uuid4()
+            monitored_object.target_altitude = 0
+
+        return monitored_object

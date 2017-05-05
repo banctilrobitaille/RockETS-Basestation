@@ -1,5 +1,5 @@
-from telemetry.exceptions import InvalidSensorParametersException
-from telemetry.models import Sensor
+from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException
+from telemetry.models import Sensor, MonitoredObject
 
 
 class SensorValidator(object):
@@ -48,3 +48,45 @@ class SensorValidator(object):
     def __validate_measure_from(query_params):
         if 'measures' not in query_params.keys() or not query_params['measures']:
             raise InvalidSensorParametersException("Parameter <measures> should not be null or empty")
+
+
+class MonitoredObjectValidator(object):
+    @staticmethod
+    def validate_get_parameters_from(query_params):
+        MonitoredObjectValidator.__validate_uuid_from(query_params)
+        return query_params
+
+    @staticmethod
+    def validate_post_parameters_from(query_params):
+        MonitoredObjectValidator.__validate_name_from(query_params)
+        MonitoredObjectValidator.__validate_description_from(query_params)
+        MonitoredObjectValidator.__validate_type_from(query_params)
+        MonitoredObjectValidator.__validate_id_from(query_params)
+        return query_params
+
+    @staticmethod
+    def __validate_uuid_from(query_params):
+        if 'uuid' not in query_params.keys() or not query_params['uuid']:
+            raise InvalidMonitoredObjectParametersException("Parameter <uuid> should not be null or empty")
+
+    @staticmethod
+    def __validate_name_from(query_params):
+        if 'name' not in query_params.keys() or not query_params['name']:
+            raise InvalidMonitoredObjectParametersException("Parameter <name> should not be null or empty")
+
+    @staticmethod
+    def __validate_description_from(query_params):
+        pass
+
+    @staticmethod
+    def __validate_type_from(query_params):
+        if 'type' not in query_params.keys() or not query_params['type']:
+            raise InvalidSensorParametersException("Parameter <type> should not be null or empty")
+        elif query_params['type'] not in MonitoredObject.TYPES.keys():
+            raise InvalidMonitoredObjectParametersException(
+                    "Parameter <type> should be one of those:" + str(MonitoredObject.TYPES.keys()))
+
+    @staticmethod
+    def __validate_id_from(query_params):
+        if 'id' not in query_params.keys() or not query_params['id']:
+            raise InvalidMonitoredObjectParametersException("Parameter <id> should not be null or empty")

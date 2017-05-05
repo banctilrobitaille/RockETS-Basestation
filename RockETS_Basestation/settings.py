@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'channels',
     'rest_framework',
     'core',
-    'sensors',
     'dashboards',
     'telemetry',
 ]

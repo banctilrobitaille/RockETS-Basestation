@@ -51,24 +51,6 @@
             </div>
         </div>
     </div>
-    <div class="row sensors-section telemetry-section">
-        <div class="row telemetry-section-header">
-            <div class="col-md-11 telemetry-section-title">
-                <h3 class="telemetry-section-title-value">Sensors ({{ remote_sensors.count }}):</h3>
-            </div>
-            <div class="col-md-1 telemetry-section-collapse-icon">
-                <a href="#"><i class="fa  fa-arrow-up fa-2x pull-right"></i></a>
-            </div>
-        </div>
-        <div class="row telemetry-section-content telemetry-section-displayed">
-            <div class="col-md-12">
-                {% for sensor in remote_sensors %}
-                    {% include "telemetry/sensors-base-template.html" %}
-                {% endfor %}
-                {% include "telemetry/add-sensors-component.html" %}
-            </div>
-        </div>
-    </div>
     {% include "telemetry/modals/monitored-object-creation-modal.html" %}
     {% include "telemetry/modals/sensor-creation-modal.html" %}
 {% endblock %}

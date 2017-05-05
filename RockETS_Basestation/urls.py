@@ -2,7 +2,6 @@ from django.conf.urls import url
 
 from telemetry.views import Telemetry, TelemetryMonitoredObjects, TelemetrySensors
 from dashboards.views import Dashboards, Widgets
-from sensors.views import Sensors
 from core.views import Core
 
 __BASE_PATH = "rest/api/"
