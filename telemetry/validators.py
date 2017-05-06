@@ -4,7 +4,7 @@ from telemetry.models import Sensor, MonitoredObject
 
 class SensorValidator(object):
     @staticmethod
-    def validate(query_params):
+    def validate_post_parameters_from(query_params):
         SensorValidator.__validate_name_from(query_params)
         SensorValidator.__validate_description_from(query_params)
         SensorValidator.__validate_location_from(query_params)
@@ -48,6 +48,11 @@ class SensorValidator(object):
     def __validate_measure_from(query_params):
         if 'measures' not in query_params.keys() or not query_params['measures']:
             raise InvalidSensorParametersException("Parameter <measures> should not be null or empty")
+
+    @staticmethod
+    def __validate_dashboard_uuid_from(query_params):
+        if 'monitored-object-uuid' not in query_params.keys() or not query_params['monitored-object-uuid']:
+            raise InvalidSensorParametersException("Parameter <monitored-object-uuid> should not be null or empty")
 
 
 class MonitoredObjectValidator(object):

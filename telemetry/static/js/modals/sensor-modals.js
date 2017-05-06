@@ -14,7 +14,7 @@ $(document).ready(function () {
         var sensorType = $("#sensorType").val();
         var sensorLocation = $("#sensorLocation").val();
         var sensorMeasures = $("#sensorMeasures").val();
-        var monitoredObjectUUID = $(".monitored-object-content").id;
+        var monitoredObjectUUID = $(".monitored-object-content").attr("id");
         var sensorNode = "";
 
         try {

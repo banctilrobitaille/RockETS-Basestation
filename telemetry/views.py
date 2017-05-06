@@ -74,8 +74,12 @@ class TelemetrySensors(APIView):
     @api_view(['POST'])
     def post(request):
         try:
-            SensorFactory.create_sensor_from_query_params(
-                    SensorValidator.validate(request.query_params)).save()
+            sensor = SensorFactory.create_sensor_from_query_params(
+                    SensorValidator.validate_post_parameters_from(request.query_params))
+            monitored_object = MonitoredObject.objects(uuid=request.query_params['monitored-object-uuid']).first()
+            monitored_object.sensor_ids.append(sensor.uuid)
+            monitored_object.save()
+            sensor.save()
             return Response(status=status.HTTP_201_CREATED)
         except InvalidSensorParametersException as e:
             return JsonResponse({'error_message': e.message}, status=400)
