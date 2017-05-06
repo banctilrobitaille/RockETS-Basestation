@@ -13,6 +13,7 @@
     <script src="{% static "js/modals/validators/sensor-modals-validator.js" %}"></script>
     <script src="{% static "js/modals/monitored-object-modals.js" %}"></script>
     <script src="{% static "js/modals/sensor-modals.js" %}"></script>
+    <script src="{% static "js/modals/transmitter-modals.js" %}"></script>
     <script src="{% static "js/monitored-object-widget.js" %}"></script>
 {% endblock %}
 {% block content %}
@@ -46,7 +47,6 @@
         </div>
         <div class="row telemetry-section-content telemetry-section-displayed">
             <div class="col-md-12">
-                {% include "telemetry/transmitters-base-template.html" %}
                 {% for transmitter in transmitters %}
                     {% include "telemetry/transmitters-base-template.html" %}
                 {% endfor %}

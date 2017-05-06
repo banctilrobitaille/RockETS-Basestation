@@ -31,6 +31,6 @@ $(document).ready(function () {
 
             timeout: 12000000,
         });
-        $("#dashboard-creation-modal").modal('toggle');
+        $("#monitored-object-creation-modal").modal('toggle');
     });
 });

@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from rest_framework_swagger.views import get_swagger_view
-from telemetry.views import Telemetry, TelemetryMonitoredObjects, TelemetrySensors
+from telemetry.views import Telemetry, TelemetryMonitoredObjects, TelemetrySensors, TelemetryTransmitters
 from dashboards.views import Dashboards, Widgets
 from core.views import Core
 
@@ -15,12 +15,15 @@ urlpatterns = [
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry/sensor"), TelemetrySensors.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry/monitored-object"),
         TelemetryMonitoredObjects.as_view()),
+    url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry/transmitter"),
+        TelemetryTransmitters.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry"), Telemetry.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards/widget"), Widgets.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards"), Dashboards.as_view()),
     url(r'^{}{}{}$'.format("", "", "telemetry"), Telemetry.as_view()),
     url(r'^{}{}{}$'.format("", "", "telemetry/monitored-object"), TelemetryMonitoredObjects.as_view()),
     url(r'^{}{}{}$'.format("", "", "telemetry/sensor"), TelemetrySensors.as_view()),
+    url(r'^{}{}{}$'.format("", "", "telemetry/transmitter"), TelemetryTransmitters.as_view()),
     url(r'^{}{}{}$'.format("", "", "dashboards"), Dashboards.as_view()),
     url(r'^{}{}{}$'.format("", "", "dashboards/widget"), Widgets.as_view()),
     url(r'^{}{}{}'.format("", "", ""), Core.as_view()),

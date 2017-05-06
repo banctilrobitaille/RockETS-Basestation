@@ -109,7 +109,7 @@ class TelemetrySensors(APIView):
             return JsonResponse({'error_message': e.message}, status=400)
 
 
-class TelemetryTransmitter(APIView):
+class TelemetryTransmitters(APIView):
     @staticmethod
     @api_view(['POST'])
     def post(request):
