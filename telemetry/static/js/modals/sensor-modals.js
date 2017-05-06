@@ -47,7 +47,7 @@ $(document).ready(function () {
 
                 timeout: 12000000
             });
-            $("#dashboard-creation-modal").modal('toggle');
+            $("#sensor-creation-modal").modal('toggle');
         } catch (exception) {
             console.log(exception.message);
         }

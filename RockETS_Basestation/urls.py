@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from rest_framework_swagger.views import get_swagger_view
-from telemetry.views import Telemetry, TelemetryMonitoredObjects, TelemetrySensors, TelemetryTransmitters
+from telemetry.views import Telemetry, TelemetryMonitoredObjects, TelemetrySensors, TelemetryTransmitters, \
+    TelemetryTransmitterStart, TelemetryTransmitterStop
 from dashboards.views import Dashboards, Widgets
 from core.views import Core
 
@@ -17,6 +18,10 @@ urlpatterns = [
         TelemetryMonitoredObjects.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry/transmitter"),
         TelemetryTransmitters.as_view()),
+    url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry/transmitter/start"),
+        TelemetryTransmitterStart.as_view()),
+    url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry/transmitter/stop"),
+        TelemetryTransmitterStop.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/telemetry"), Telemetry.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards/widget"), Widgets.as_view()),
     url(r'^{}{}{}$'.format(__BASE_PATH, __API_VERSION, "basestation/dashboards"), Dashboards.as_view()),

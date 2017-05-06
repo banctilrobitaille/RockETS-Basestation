@@ -1,5 +1,6 @@
 from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException, \
-    InvalidTransmitterParametersException, InvalidTransmitterInterfaceParametersException
+    InvalidTransmitterParametersException, InvalidTransmitterInterfaceParametersException, \
+    InvalidTransmitterActionParametersException
 from telemetry.models import Sensor, MonitoredObject, TransmitterInterface
 
 
@@ -145,3 +146,25 @@ class TransmitterInterfaceValidator(object):
     def __validate_port_from(query_params):
         if 'port' not in query_params.keys() or not query_params['port']:
             raise InvalidTransmitterInterfaceParametersException("Parameter <port> should not be null or empty")
+
+
+class TransmitterStartValidator(object):
+    @staticmethod
+    def validate_get_parameters_from(query_params):
+        TransmitterStartValidator.__validate_uuid_from(query_params)
+
+    @staticmethod
+    def __validate_uuid_from(query_params):
+        if 'uuid' not in query_params.keys() or not query_params['uuid']:
+            raise InvalidTransmitterActionParametersException("Parameter <uuid> should not be null or empty")
+
+
+class TransmitterStopValidator(object):
+    @staticmethod
+    def validate_get_parameters_from(query_params):
+        TransmitterStopValidator.__validate_uuid_from(query_params)
+
+    @staticmethod
+    def __validate_uuid_from(query_params):
+        if 'uuid' not in query_params.keys() or not query_params['uuid']:
+            raise InvalidTransmitterActionParametersException("Parameter <uuid> should not be null or empty")

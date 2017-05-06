@@ -16,3 +16,8 @@ class InvalidTransmitterParametersException(ValueError):
 class InvalidTransmitterInterfaceParametersException(ValueError):
     def __init__(self, message):
         self.message = message
+
+
+class InvalidTransmitterActionParametersException(ValueError):
+    def __init__(self, message):
+        self.message = message
