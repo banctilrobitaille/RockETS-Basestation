@@ -17,8 +17,8 @@ class MonitoredObject(Document):
         'allow_inheritance': True,
     }
     TYPES = {
-        'rocket': "Rocket",
-        'rocket engine': "Rocket engine"
+        'rocket': "rocket",
+        'rocket engine': "rocket engine"
     }
     uuid = UUIDField(required=True)
     name = StringField(required=True)

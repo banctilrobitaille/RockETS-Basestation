@@ -8,7 +8,7 @@ from rest_framework import status
 
 from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException
 from telemetry.factories import SensorFactory, MonitoredObjectFactory
-from telemetry.models import Sensor, MonitoredObject, RemoteSensor
+from telemetry.models import Sensor, MonitoredObject, RemoteSensor, Transmitter
 from telemetry.validators import SensorValidator, MonitoredObjectValidator
 
 
@@ -16,8 +16,11 @@ class Telemetry(APIView):
     @staticmethod
     @api_view(['GET'])
     def get(request):
+        monitored_objects = MonitoredObject.objects.all()
+        transmitters = Transmitter.objects.all()
         return render_to_response('telemetry/telemetry-index.html',
                                   {'content_title': "Telemetry",
+                                   'monitored_objects': monitored_objects,
                                    'monitored_object_types': MonitoredObject.TYPES.keys()},
                                   RequestContext(request))
 

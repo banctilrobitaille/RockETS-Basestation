@@ -27,7 +27,9 @@
         </div>
         <div class="row  telemetry-section-content telemetry-section-displayed">
             <div class="col-md-12">
-                {% include "telemetry/monitored-object-base-template.html" %}
+                {% for monitored_object in monitored_objects %}
+                    {% include "telemetry/monitored-object-base-template.html" %}
+                {% endfor %}
                 {% include "telemetry/add-monitored-object-component.html" %}
             </div>
         </div>
