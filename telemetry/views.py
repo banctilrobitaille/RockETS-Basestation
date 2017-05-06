@@ -1,4 +1,4 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from rest_framework.decorators import api_view
@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+from telemetry.communication import CommunicationService
 from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException
 from telemetry.factories import SensorFactory, MonitoredObjectFactory, TransmitterFactory
 from telemetry.models import Sensor, MonitoredObject, RemoteSensor, Transmitter, TransmitterInterface
@@ -75,7 +76,7 @@ class TelemetrySensors(APIView):
     @api_view(['GET'])
     def get(request):
         try:
-            return JsonResponse(Sensor.objects(uuid=request.query_params['uuid']).first().to_json(), status=200)
+            return HttpResponse(Sensor.objects(uuid=request.query_params['uuid']).first().to_json())
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=400)
 
@@ -128,6 +129,7 @@ class TelemetryTransmitterStart(APIView):
     def get(request):
         try:
             TransmitterStartValidator.validate_get_parameters_from(request.query_params)
+            CommunicationService.get_instance()
         except Exception as e:
             pass
 
@@ -138,5 +140,6 @@ class TelemetryTransmitterStop(APIView):
     def get(request):
         try:
             TransmitterStopValidator.validate_get_parameters_from(request.query_params)
+            CommunicationService.get_instance()
         except Exception as e:
             pass

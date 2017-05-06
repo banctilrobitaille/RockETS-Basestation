@@ -10,8 +10,11 @@ $(document).ready(function () {
     }
 
     $("#dashboard-play-icon").on("click", function () {
+        var dashboardTransmitterUuid = $("#dashboardTransmitterId").val();
+        var queryParams = "?uuid=" + dashboardTransmitterUuid;
+
         jQuery.ajax({
-            url: "http://localhost:8000/telemetry/transmitter/stop" + queryParams,
+            url: "http://localhost:8000/telemetry/transmitter/start" + queryParams,
             type: "GET",
             success: function (resultData) {
 
@@ -25,6 +28,9 @@ $(document).ready(function () {
     });
 
     $("#dashboard-stop-icon").on("click", function () {
+        var dashboardTransmitterUuid = $("#dashboardTransmitterId").val();
+        var queryParams = "?uuid=" + dashboardTransmitterUuid;
+
         jQuery.ajax({
             url: "http://localhost:8000/telemetry/transmitter/stop" + queryParams,
             type: "GET",

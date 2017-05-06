@@ -29,6 +29,8 @@ urlpatterns = [
     url(r'^{}{}{}$'.format("", "", "telemetry/monitored-object"), TelemetryMonitoredObjects.as_view()),
     url(r'^{}{}{}$'.format("", "", "telemetry/sensor"), TelemetrySensors.as_view()),
     url(r'^{}{}{}$'.format("", "", "telemetry/transmitter"), TelemetryTransmitters.as_view()),
+    url(r'^{}{}{}$'.format("", "", "telemetry/transmitter/start"), TelemetryTransmitterStart.as_view()),
+    url(r'^{}{}{}$'.format("", "", "telemetry/transmitter/stop"), TelemetryTransmitterStop.as_view()),
     url(r'^{}{}{}$'.format("", "", "dashboards"), Dashboards.as_view()),
     url(r'^{}{}{}$'.format("", "", "dashboards/widget"), Widgets.as_view()),
     url(r'^{}{}{}'.format("", "", ""), Core.as_view()),

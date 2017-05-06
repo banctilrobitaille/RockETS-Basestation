@@ -28,14 +28,15 @@ class Dashboards(APIView):
         else:
             dashboard = Dashboard.objects(uuid=request.query_params["uuid"]).first()
             dashboard_rows = DashboardRowsFactory.create_dashboard_rows_from(dashboard.widgets)
-
             return render_to_response('dashboards/dashboard.html',
                                       {'content_title': dashboard.name,
                                        'dashboards': dashboard,
                                        'dashboard_rows': dashboard_rows,
                                        'widget_types': DashboardWidget.TYPES.keys(),
                                        'measure_units': DashboardWidget.MEASURE_UNITS.keys(),
-                                       'sensors': Sensor.objects.all()},
+                                       'sensors': map(lambda sensor_uuid: Sensor.objects(uuid=sensor_uuid).first(),
+                                                      MonitoredObject.objects(
+                                                              uuid=dashboard.monitored_object_id).first().sensor_ids)},
                                       RequestContext(request))
 
     @staticmethod

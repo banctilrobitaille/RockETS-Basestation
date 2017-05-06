@@ -36,6 +36,8 @@
 {% endblock %}
 {% block content %}
     <div class="dashboard" id="{{ dashboards.uuid }}">
+        <input type="hidden" value="{{ dashboards.transmitter_id }}" id="dashboardTransmitterId">
+        <input type="hidden" value="{{ dashboards.monitored_object_id }}" id="dashboardMonitoredObjectId">
         {% for row in dashboard_rows %}
             <div class="row dashboard-row">
                 {% for widget in row.widgets %}

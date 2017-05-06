@@ -5,6 +5,15 @@
  * Created by Benoit on 2017-03-26.
  */
 $(document).ready(function () {
+    $('#widget-creation-modal').on("shown.bs.modal", function () {
+        updateSensorMeasures($("#widgetSensor").val());
+
+    });
+
+    $("#widgetSensor").on("change", function () {
+        updateSensorMeasures($("#widgetSensor").val());
+    });
+
     $('#addWidgetModalButton').on('click', function () {
         var widgetName = $("#widgetName").val();
         var widgetDescription = $("#widgetDescription").val();
@@ -79,3 +88,24 @@ $(document).ready(function () {
         });
     });
 });
+
+function updateSensorMeasures(sensorUUID) {
+    $("#widgetSensorMeasure").empty();
+    var queryParams = "?uuid=" + sensorUUID;
+
+    jQuery.ajax({
+        url: "http://localhost:8000/telemetry/sensor" + queryParams,
+        type: "GET",
+        success: function (resultData) {
+            var sensor = jQuery.parseJSON(resultData);
+            jQuery.each(sensor.measurements, function () {
+                $("#widgetSensorMeasure").append("<option value='" + this.name + "'>" + this.name + "</option>");
+            });
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log("shit");
+        },
+
+        timeout: 12000000
+    });
+}
