@@ -112,6 +112,7 @@ class DashboardWidgetFactory(object):
         widget.category = DashboardWidget.TYPES_TO_CATEGORY[query_params['type']]
         widget.uuid = uuid.uuid4()
         widget.sensor_id = query_params['sensor']
+        widget.sensor_measure = query_params['sensor-measure']
 
         return widget
 

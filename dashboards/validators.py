@@ -64,6 +64,7 @@ class WidgetValidator(object):
         WidgetValidator.__validate_width_from(query_params)
         WidgetValidator.__validate_dashboard_from(query_params)
         WidgetValidator.__validate_sensor_from(query_params)
+        WidgetValidator.__validate_sensor_measure_from(query_params)
         WidgetValidator.__validate_refresh_rate_from(query_params)
         return query_params
 
@@ -115,6 +116,11 @@ class WidgetValidator(object):
     def __validate_sensor_from(query_params):
         if 'sensor' not in query_params.keys() or not query_params['sensor']:
             raise InvalidWidgetParametersException("Parameter <sensor> should not be null or empty")
+
+    @staticmethod
+    def __validate_sensor_measure_from(query_params):
+        if 'sensor-measure' not in query_params.keys() or not query_params['sensor-measure']:
+            raise InvalidWidgetParametersException("Parameter <sensor-measure> should not be null or empty")
 
     @staticmethod
     def __validate_refresh_rate_from(query_params):

@@ -21,10 +21,12 @@ $(document).ready(function () {
         var widgetType = $("#widgetType").val().toLowerCase();
         var widgetWidth = $("#widgetWidth").val();
         var widgetSensor = $("#widgetSensor").val();
+        var widgetSensorMeasure = $("#widgetSensorMeasure").val();
         var widgetRefreshRate = $("#widgetRefreshRate").val();
         var widgetDashboardUUID = $("#widgetDashboardUUID").val();
         var queryParams = "?name=" + widgetName + "&description=" + widgetDescription + "&type=" + widgetType +
-            "&measure-units=" + widgetMeasureUnits + "&width=" + widgetWidth + "&sensor=" + widgetSensor + "&refresh-rate=" + widgetRefreshRate +
+            "&measure-units=" + widgetMeasureUnits + "&width=" + widgetWidth + "&sensor=" + widgetSensor +
+            "&sensor-measure=" + widgetSensorMeasure + "&refresh-rate=" + widgetRefreshRate +
             "&dashboard-uuid=" + widgetDashboardUUID;
 
         jQuery.ajax({

@@ -6,11 +6,9 @@ from mongoengine import *
 class DashboardWidget(EmbeddedDocument):
     MINIMUM_WIDTH = 2
     MAXIMUM_WIDTH = 10
-
     meta = {
         'abstract': True,
     }
-
     TYPES = {'line-chart': "line-chart",
              'altimeter': "altimeter",
              'variometer': "variometer",
@@ -30,7 +28,6 @@ class DashboardWidget(EmbeddedDocument):
     CATEGORIES = {'gauge': "gauge",
                   'chart': "chart",
                   'map': "map"}
-
     TYPES_TO_CATEGORY = {
         'line-chart': "chart",
         'altimeter': "gauge",
@@ -44,6 +41,7 @@ class DashboardWidget(EmbeddedDocument):
 
     uuid = UUIDField(required=True)
     sensor_id = UUIDField()
+    sensor_measure = StringField()
     name = StringField(required=True)
     description = StringField()
     type = StringField()
