@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4682eee8-212f-4da9-9e47-9f4895f3fca8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/telemetry/static/js/monitored-object-widget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/models.py" afterPath="$PROJECT_DIR$/telemetry/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/static/css/monitored-object-widget.css" afterPath="$PROJECT_DIR$/telemetry/static/css/monitored-object-widget.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/static/js/modals/monitored-object-modals.js" afterPath="$PROJECT_DIR$/telemetry/static/js/modals/monitored-object-modals.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/views.py" afterPath="$PROJECT_DIR$/telemetry/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/monitored-object-base-template.html" afterPath="$PROJECT_DIR$/templates/telemetry/monitored-object-base-template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/monitored-object-index.html" afterPath="$PROJECT_DIR$/templates/telemetry/monitored-object-index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/telemetry-index.html" afterPath="$PROJECT_DIR$/templates/telemetry/telemetry-index.html" />
     </list>
     <ignored path="RockETS_Basestation.iws" />
@@ -38,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/telemetry/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -48,27 +44,7 @@
         <entry file="file://$PROJECT_DIR$/telemetry/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="request.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/rest_framework/request.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="378" column="0" selection-start-line="378" selection-start-column="0" selection-end-line="378" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="factories.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/telemetry/factories.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+              <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -84,11 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validators.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/telemetry/validators.py">
+      <file leaf-file-name="monitored-object-index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/telemetry/monitored-object-index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.62126243">
+              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="telemetry-index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/telemetry/telemetry-index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.225806">
+              <caret line="13" column="79" selection-start-line="13" selection-start-column="79" selection-end-line="13" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -114,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="monitored-object-widget.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="monitored-object-widget.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/telemetry/static/js/monitored-object-widget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3127962">
-              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
               </folding>
@@ -191,7 +177,6 @@
         <option value="$PROJECT_DIR$/templates/core/base-template.html" />
         <option value="$PROJECT_DIR$/templates/dashboards/dashboard.html" />
         <option value="$PROJECT_DIR$/telemetry/exceptions.py" />
-        <option value="$PROJECT_DIR$/templates/telemetry/monitored-object-index.html" />
         <option value="$PROJECT_DIR$/core/models.py" />
         <option value="$PROJECT_DIR$/RockETS_Basestation/settings.py" />
         <option value="$PROJECT_DIR$/RockETS_Basestation/urls.py" />
@@ -199,12 +184,13 @@
         <option value="$PROJECT_DIR$/telemetry/validators.py" />
         <option value="$PROJECT_DIR$/telemetry/factories.py" />
         <option value="$PROJECT_DIR$/telemetry/static/js/modals/monitored-object-modals.js" />
-        <option value="$PROJECT_DIR$/templates/telemetry/telemetry-index.html" />
-        <option value="$PROJECT_DIR$/telemetry/views.py" />
-        <option value="$PROJECT_DIR$/telemetry/models.py" />
         <option value="$PROJECT_DIR$/telemetry/static/css/monitored-object-widget.css" />
         <option value="$PROJECT_DIR$/templates/telemetry/monitored-object-base-template.html" />
         <option value="$PROJECT_DIR$/telemetry/static/js/monitored-object-widget.js" />
+        <option value="$PROJECT_DIR$/templates/telemetry/telemetry-index.html" />
+        <option value="$PROJECT_DIR$/telemetry/models.py" />
+        <option value="$PROJECT_DIR$/telemetry/views.py" />
+        <option value="$PROJECT_DIR$/templates/telemetry/monitored-object-index.html" />
       </list>
     </option>
   </component>
@@ -733,13 +719,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/telemetry/views.py</url>
-          <line>45</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
@@ -986,14 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/telemetry/monitored-object-index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1036,34 +1007,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/telemetry/telemetry-index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.774194">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/rest_framework/request.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="378" column="0" selection-start-line="378" selection-start-column="0" selection-end-line="378" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telemetry/validators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telemetry/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1080,14 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telemetry/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1118,11 +1057,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/telemetry/static/js/monitored-object-widget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3127962">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="e#0#43#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/telemetry/validators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/telemetry/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/telemetry/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/telemetry/telemetry-index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.225806">
+          <caret line="13" column="79" selection-start-line="13" selection-start-column="79" selection-end-line="13" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/telemetry/monitored-object-index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62126243">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -24,6 +24,7 @@ class MonitoredObject(Document):
     name = StringField(required=True)
     description = StringField()
     identifier = StringField()
+    sensor_ids = ListField(UUIDField())
 
 
 class Aircraft(MonitoredObject):

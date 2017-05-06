@@ -30,10 +30,13 @@ class TelemetryMonitoredObjects(APIView):
     @api_view(['GET'])
     def get(request):
         try:
-            # MonitoredObjectValidator.validate_get_parameters_from(request.query_params)
-            # monitored_object = MonitoredObject.objects(uuid=request.query_params['uuid']).first()
+            MonitoredObjectValidator.validate_get_parameters_from(request.query_params)
+            monitored_object = MonitoredObject.objects(uuid=request.query_params['uuid']).first()
             return render_to_response('telemetry/monitored-object-index.html',
-                                      {'content_title': "Monitored object's name",
+                                      {'content_title': monitored_object.name,
+                                       'monitored_object': monitored_object,
+                                       'sensors': map(lambda sensor_id: Sensor.objects(uuid=sensor_id).first(),
+                                                      monitored_object.sensor_ids),
                                        'sensor_types': Sensor.TYPES.keys()},
                                       RequestContext(request))
         except InvalidMonitoredObjectParametersException as e:
