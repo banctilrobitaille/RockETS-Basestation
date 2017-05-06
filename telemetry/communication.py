@@ -12,7 +12,7 @@ class CommunicationService(object):
 
     def open_communication_channel_for(self, device):
         device_worker = CommunicationDeviceWorker(device)
-        device_worker.start()
+        # device_worker.start()
         self.__active_communication_devices[str(device)] = device_worker
 
     def close_communication_channel_of(self, device):

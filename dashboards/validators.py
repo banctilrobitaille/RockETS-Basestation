@@ -39,6 +39,17 @@ class DashboardValidator(object):
             raise InvalidDashboardParametersException(
                     "Parameter <template> should be one of those:" + str(Dashboard.TEMPLATES.keys()))
 
+    @staticmethod
+    def __validate_monitored_object_uuid_from(query_params):
+        if 'monitored-object-uuid' not in query_params.keys() or not query_params['monitored-object-uuid']:
+            raise InvalidDashboardParametersException(
+                    "Parameter <monitored-object-uuid> should should not be null or empty")
+
+    @staticmethod
+    def __validate_transmitter_uuid_from(query_params):
+        if 'transmitter-uuid' not in query_params.keys() or not query_params['transmitter-uuid']:
+            raise InvalidDashboardParametersException("Parameter <transmitter-uuid> should should not be null or empty")
+
 
 class WidgetValidator(object):
     WIDGET_SIZE_LOWER_BOUND = 2

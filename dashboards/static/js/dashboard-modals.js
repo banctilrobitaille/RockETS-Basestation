@@ -2,11 +2,16 @@
  * Created by Benoit on 2017-03-26.
  */
 $(document).ready(function () {
-    $('#createDashboardButton').on('click', function (event) {
+    $('#createDashboardButton').on('click', function () {
         var dashboardName = $("#dashboardName").val();
         var dashboardDescription = $("#dashboardDescription").val();
         var dashboardTemplate = $("#dashboardTemplate").val();
-        var queryParams = "?name=" + dashboardName + "&description=" + dashboardDescription + "&template=" + dashboardTemplate;
+        var dashboardMonitoredObjectUuid = $("#dashboardMonitoredObject").val();
+        var dashboardTransmitterUuid = $("#dashboardTransmitter").val();
+
+        var queryParams = "?name=" + dashboardName + "&description=" + dashboardDescription + "&template=" +
+            dashboardTemplate + "&monitored-object-uuid=" + dashboardMonitoredObjectUuid +
+            "&transmitter-uuid=" + dashboardTransmitterUuid;
         if (dashboardName) {
             $("#dashboardNameError").hide();
             jQuery.ajax({
@@ -25,7 +30,7 @@ $(document).ready(function () {
                     sweetAlert("Oops...", "An error has occurred while creating the dashboard", "error");
                 },
 
-                timeout: 12000000,
+                timeout: 12000000
             });
             $("#dashboard-creation-modal").modal('toggle');
         } else {

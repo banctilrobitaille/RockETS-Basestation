@@ -6,8 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from telemetry.communication import CommunicationService
-from telemetry.models import RemoteSensor, MonitoredObject
+from telemetry.models import MonitoredObject, Sensor, Transmitter
 from validators import DashboardValidator, WidgetValidator
 from factories import DashboardFactory, DashboardWidgetFactory, DashboardRowsFactory
 
@@ -23,19 +22,20 @@ class Dashboards(APIView):
             return render_to_response('dashboards/dashboards-index.html',
                                       {'content_title': "Dashboards",
                                        'dashboards': Dashboard.objects.all(),
-                                       'monitored_objects': MonitoredObject.objects.all()},
+                                       'monitored_objects': MonitoredObject.objects.all(),
+                                       'transmitters': Transmitter.objects.all()},
                                       RequestContext(request))
         else:
-            CommunicationService.get_instance().open_communication_channel_for("telemetry")
             dashboard = Dashboard.objects(uuid=request.query_params["uuid"]).first()
             dashboard_rows = DashboardRowsFactory.create_dashboard_rows_from(dashboard.widgets)
 
             return render_to_response('dashboards/dashboard.html',
-                                      {'content_title': dashboard.name, 'dashboards': dashboard,
+                                      {'content_title': dashboard.name,
+                                       'dashboards': dashboard,
                                        'dashboard_rows': dashboard_rows,
                                        'widget_types': DashboardWidget.TYPES.keys(),
                                        'measure_units': DashboardWidget.MEASURE_UNITS.keys(),
-                                       'remote_sensors': RemoteSensor.objects.all()},
+                                       'sensors': Sensor.objects.all()},
                                       RequestContext(request))
 
     @staticmethod

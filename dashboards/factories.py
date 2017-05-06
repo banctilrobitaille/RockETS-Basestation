@@ -11,6 +11,8 @@ class DashboardFactory(object):
         dashboard.name = query_params['name']
         dashboard.description = query_params['description']
         dashboard.template = query_params['template']
+        dashboard.monitored_object_id = query_params['monitored-object-uuid']
+        dashboard.transmitter_id = query_params['transmitter-uuid']
         dashboard.uuid = uuid.uuid4()
         for widget in DashboardFactory.__get_default_widgets_for(template=query_params['template']):
             dashboard.widgets.append(widget)
