@@ -2,6 +2,8 @@
  * Created by Benoit on 2017-05-05.
  */
 $(document).ready(function () {
+    $(".transmitter-interface-configuration").hide();
+
     $('#createTransmitterButton').on('click', function (event) {
         var transmitterName = $("#transmitterName").val();
         var transmitterDescription = $("#transmitterDescription").val();
@@ -32,4 +34,23 @@ $(document).ready(function () {
         });
         $("#transmitter-creation-modal").modal('toggle');
     });
+
+    $("#transmitterInterfaceType").on("change", function () {
+        $(".transmitter-interface-configuration").slideUp();
+        showInterfaceConfigurationFrom($("#transmitterInterfaceType").val())
+    });
+
+    $("#transmitter-creation-modal").on("shown.bs.modal", function () {
+        showInterfaceConfigurationFrom($("#transmitterInterfaceType").val())
+    });
 });
+
+function showInterfaceConfigurationFrom(transmitterInterfaceType) {
+    const SERIAL_INTERFACE_TYPE = "serial";
+
+    if (transmitterInterfaceType == SERIAL_INTERFACE_TYPE) {
+        $("#serialTransmitterInterfaceConfiguration").slideDown();
+    } else {
+        $("#ethernetTransmitterInterfaceConfiguration").slideDown();
+    }
+}
