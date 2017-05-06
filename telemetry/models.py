@@ -82,6 +82,7 @@ class TransmitterInterface(Document):
     TYPES = {
         'serial': "serial",
     }
+    uuid = UUIDField(required=True)
 
 
 class SerialTransmitterInterface(TransmitterInterface):

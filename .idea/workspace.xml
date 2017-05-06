@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4682eee8-212f-4da9-9e47-9f4895f3fca8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/telemetry/modals/transmitter-creation-modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/telemetry/modals/transmitter-edition-modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/exceptions.py" afterPath="$PROJECT_DIR$/telemetry/exceptions.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/factories.py" afterPath="$PROJECT_DIR$/telemetry/factories.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/models.py" afterPath="$PROJECT_DIR$/telemetry/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/validators.py" afterPath="$PROJECT_DIR$/telemetry/validators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/views.py" afterPath="$PROJECT_DIR$/telemetry/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/add-transmitters-component.html" afterPath="$PROJECT_DIR$/templates/telemetry/add-transmitters-component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/telemetry-index.html" afterPath="$PROJECT_DIR$/templates/telemetry/telemetry-index.html" />
     </list>
     <ignored path="RockETS_Basestation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/telemetry/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+              <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -60,8 +51,8 @@
       <file leaf-file-name="factories.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/telemetry/factories.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7914692">
-              <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.33965245">
+              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,7 +114,9 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
               <folding>
-                <element signature="e#0#201#0" expanded="true" />
+                <marker date="1494041434892" expanded="true" signature="0:276" placeholder="import ..." />
+                <marker date="1494041434892" expanded="true" signature="4757:5958" placeholder="..." />
+                <marker date="1494041434892" expanded="true" signature="6362:6513" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -204,9 +197,9 @@
         <option value="$PROJECT_DIR$/templates/telemetry/telemetry-index.html" />
         <option value="$PROJECT_DIR$/templates/telemetry/modals/transmitter-creation-modal.html" />
         <option value="$PROJECT_DIR$/telemetry/views.py" />
-        <option value="$PROJECT_DIR$/telemetry/models.py" />
         <option value="$PROJECT_DIR$/telemetry/exceptions.py" />
         <option value="$PROJECT_DIR$/telemetry/validators.py" />
+        <option value="$PROJECT_DIR$/telemetry/models.py" />
         <option value="$PROJECT_DIR$/telemetry/factories.py" />
       </list>
     </option>
@@ -1028,14 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/telemetry/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/telemetry/exceptions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1049,15 +1034,25 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding>
-            <element signature="e#0#201#0" expanded="true" />
+            <marker date="1494041434892" expanded="true" signature="0:276" placeholder="import ..." />
+            <marker date="1494041434892" expanded="true" signature="4757:5958" placeholder="..." />
+            <marker date="1494041434892" expanded="true" signature="6362:6513" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/telemetry/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/telemetry/factories.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7914692">
-          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.33965245">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,6 +1,7 @@
 import uuid
 
-from telemetry.models import Sensor, RemoteSensor, SensorMeasurement, MonitoredObject, Rocket, TransmitterInterface
+from telemetry.models import Sensor, RemoteSensor, SensorMeasurement, MonitoredObject, Rocket, TransmitterInterface, \
+    SerialTransmitterInterface, Transmitter
 
 
 class SensorFactory(object):
@@ -54,5 +55,27 @@ class MonitoredObjectFactory(object):
 class TransmitterFactory(object):
     @staticmethod
     def create_transmitter_from(query_params):
+        transmitter = Transmitter()
+        transmitter.name = query_params['name']
+        transmitter.description = query_params['description']
+        transmitter.uuid = uuid.uuid4()
+
+        transmitter_interface = TransmitterInterfaceFactory.create_transmitter_interface_from(query_params)
+        transmitter.interface_id = transmitter_interface.uuid
+        transmitter_interface.save()
+
+        return transmitter
+
+
+class TransmitterInterfaceFactory(object):
+    @staticmethod
+    def create_transmitter_interface_from(query_params):
+        transmitter_interface = None
+
         if query_params['interface-type'] == TransmitterInterface.TYPES['serial']:
-            pass
+            transmitter_interface = SerialTransmitterInterface()
+            transmitter_interface.baud_rate = query_params['baud-rate']
+            transmitter_interface.port = query_params['port']
+            transmitter_interface.uuid = uuid.uuid4()
+
+        return transmitter_interface
