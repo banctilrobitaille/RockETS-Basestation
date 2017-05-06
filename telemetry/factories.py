@@ -1,6 +1,6 @@
 import uuid
 
-from telemetry.models import Sensor, RemoteSensor, SensorMeasurement, MonitoredObject, Rocket
+from telemetry.models import Sensor, RemoteSensor, SensorMeasurement, MonitoredObject, Rocket, TransmitterInterface
 
 
 class SensorFactory(object):
@@ -49,3 +49,10 @@ class MonitoredObjectFactory(object):
             monitored_object.target_altitude = 0
 
         return monitored_object
+
+
+class TransmitterFactory(object):
+    @staticmethod
+    def create_transmitter_from(query_params):
+        if query_params['interface-type'] == TransmitterInterface.TYPES['serial']:
+            pass

@@ -42,12 +42,6 @@ class RocketEngine(MonitoredObject):
     pass
 
 
-class CommunicationProtocol(Document):
-    TYPES = {
-        'rockets_custom': "Rockets Custom",
-    }
-
-
 class SensorMeasurement(EmbeddedDocument):
     name = StringField(required=True)
 
@@ -78,18 +72,19 @@ class Transmitter(Document):
     name = StringField(required=True)
     uuid = UUIDField(required=True)
     description = StringField()
+    interface_id = UUIDField(required=True)
 
 
-class DeviceInterface(Document):
+class TransmitterInterface(Document):
     meta = {
         'allow_inheritance': True,
     }
     TYPES = {
-        'serial': "serial"
+        'serial': "serial",
     }
 
 
-class SerialInterface(DeviceInterface):
+class SerialTransmitterInterface(TransmitterInterface):
     BAUD_RATES = {
         '4800': "4800",
         '9600': "9600",

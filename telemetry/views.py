@@ -7,21 +7,21 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException
-from telemetry.factories import SensorFactory, MonitoredObjectFactory
-from telemetry.models import Sensor, MonitoredObject, RemoteSensor, Transmitter
-from telemetry.validators import SensorValidator, MonitoredObjectValidator
+from telemetry.factories import SensorFactory, MonitoredObjectFactory, TransmitterFactory
+from telemetry.models import Sensor, MonitoredObject, RemoteSensor, Transmitter, TransmitterInterface
+from telemetry.validators import SensorValidator, MonitoredObjectValidator, TransmitterValidator
 
 
 class Telemetry(APIView):
     @staticmethod
     @api_view(['GET'])
     def get(request):
-        monitored_objects = MonitoredObject.objects.all()
-        transmitters = Transmitter.objects.all()
         return render_to_response('telemetry/telemetry-index.html',
                                   {'content_title': "Telemetry",
-                                   'monitored_objects': monitored_objects,
-                                   'monitored_object_types': MonitoredObject.TYPES.keys()},
+                                   'monitored_objects': MonitoredObject.objects.all(),
+                                   'monitored_object_types': MonitoredObject.TYPES.keys(),
+                                   'transmitters': Transmitter.objects.all(),
+                                   'transmitter_interface_types': TransmitterInterface.TYPES.keys()},
                                   RequestContext(request))
 
 
@@ -71,6 +71,14 @@ class TelemetryMonitoredObjects(APIView):
 
 class TelemetrySensors(APIView):
     @staticmethod
+    @api_view(['GET'])
+    def get(request):
+        try:
+            return JsonResponse(Sensor.objects(uuid=request.query_params['uuid']).first().to_json(), status=200)
+        except Exception as e:
+            return JsonResponse({'error_message': e.message}, status=400)
+
+    @staticmethod
     @api_view(['POST'])
     def post(request):
         try:
@@ -98,4 +106,16 @@ class TelemetrySensors(APIView):
         try:
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
+            return JsonResponse({'error_message': e.message}, status=400)
+
+
+class TelemetryTransmitter(APIView):
+    @staticmethod
+    @api_view(['POST'])
+    def post(request):
+        try:
+            TransmitterFactory.create_transmitter_from(
+                    TransmitterValidator.validate_post_parameters_from(request.query_params)).save()
+            return Response(status=status.HTTP_201_CREATED)
+        except InvalidSensorParametersException as e:
             return JsonResponse({'error_message': e.message}, status=400)
