@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from telemetry.communication import CommunicationService
-from telemetry.models import RemoteSensor
+from telemetry.models import RemoteSensor, MonitoredObject
 from validators import DashboardValidator, WidgetValidator
 from factories import DashboardFactory, DashboardWidgetFactory, DashboardRowsFactory
 
@@ -20,9 +20,10 @@ class Dashboards(APIView):
     @api_view(['GET'])
     def get(request):
         if "uuid" not in request.query_params.keys():
-            dashboards = Dashboard.objects.all()
             return render_to_response('dashboards/dashboards-index.html',
-                                      {'content_title': "Dashboards", 'dashboards': dashboards},
+                                      {'content_title': "Dashboards",
+                                       'dashboards': Dashboard.objects.all(),
+                                       'monitored_objects': MonitoredObject.objects.all()},
                                       RequestContext(request))
         else:
             CommunicationService.get_instance().open_communication_channel_for("telemetry")

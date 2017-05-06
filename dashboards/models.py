@@ -65,6 +65,7 @@ class Dashboard(Document):
     description = StringField(max_length=200)
     template = StringField()
     widgets = ListField(EmbeddedDocumentField(DashboardWidget))
+    monitored_object_id = UUIDField(required=True)
 
     def update_with(self, params):
         if 'name' in params.keys():
