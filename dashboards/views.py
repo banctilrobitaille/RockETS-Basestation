@@ -40,6 +40,23 @@ class Dashboards(APIView):
     @staticmethod
     @api_view(['POST'])
     def post(request):
+        """
+            Create a new dashboard.
+            ---
+            parameters:
+                - name: name
+                  description: The dashboard's name.
+                  type: string
+                  required: true
+                - name: description
+                  description: The dashboard's description.
+                  type: string
+                  required: false
+                - name: template
+                  description: The dashboard's template.
+                  type: string
+                  required: true
+        """
         try:
             DashboardFactory.create_dashboard_from_query_params(
                     DashboardValidator.validate(request.query_params)).save()
@@ -50,6 +67,15 @@ class Dashboards(APIView):
     @staticmethod
     @api_view(['DELETE'])
     def delete(request):
+        """
+            Delete a dashboard.
+            ---
+            parameters:
+                - name: uuid
+                  description: The dashboard's uuid.
+                  type: string
+                  required: true
+        """
         try:
             if 'uuid' in request.query_params.keys():
                 dashboard = Dashboard.objects(uuid=request.query_params['uuid'])

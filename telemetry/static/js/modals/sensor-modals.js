@@ -14,6 +14,7 @@ $(document).ready(function () {
         var sensorType = $("#sensorType").val();
         var sensorLocation = $("#sensorLocation").val();
         var sensorMeasures = $("#sensorMeasures").val();
+        var monitoredObjectUUID = $(".monitored-object-content").id;
         var sensorNode = "";
 
         try {
@@ -25,7 +26,8 @@ $(document).ready(function () {
             }
 
             var queryParams = "?name=" + sensorName + "&description=" + sensorDescription + "&type=" + sensorType +
-                "&location=" + sensorLocation + "&node=" + sensorNode + "&measures=" + sensorMeasures;
+                "&location=" + sensorLocation + "&node=" + sensorNode + "&measures=" + sensorMeasures +
+                "&monitored-object-uuid=" + monitoredObjectUUID;
 
             jQuery.ajax({
                 url: "http://localhost:8000/telemetry/sensor" + queryParams,

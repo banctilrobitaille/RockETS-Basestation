@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'core',
     'dashboards',
     'telemetry',
+    'rest_framework_swagger'
 ]
 
 MIDDLEWARE = [
