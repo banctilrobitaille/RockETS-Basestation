@@ -10,14 +10,15 @@
 {% block script %}
     <script>
         Chart.defaults.global.defaultFontColor = 'white';
-        var ctx = document.getElementById('{{ widget.name|cut:" "}}-{{ widget.uuid }}').getContext('2d');
-        var myChart = new Chart(ctx, {
+        window["{{ widget.uuid }}-ctx"] = document.getElementById('{{ widget.name|cut:" " }}-{{ widget.uuid }}').getContext('2d');
+        window["{{ widget.uuid }}-index"] = 0;
+        window["{{ widget.uuid }}-chart"] = new Chart(window["{{ widget.uuid }}-ctx"], {
             type: 'line',
             data: {
-                labels: [moment().add(1, 's'), moment().add(3, 's'), moment().add(5, 's'), moment().add(7, 's'), moment().add(9, 's')],
+                labels: [],
                 datasets: [{
                     label: '{{ widget.name }}',
-                    data: [Math.random() * 100 + Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100],
+                    data: [],
                     backgroundColor: "rgba(207, 0,15,0)",
                     borderColor: getRandomColor()
                 }]
@@ -36,9 +37,7 @@
                     }],
                     xAxes: [{
                         type: 'time',
-                        time: {
-                            unit: 'second'
-                        }
+                        
                     }]
                 }
             }
@@ -52,5 +51,23 @@
             }
             return color;
         }
+
+        window["{{ widget.uuid }}-socket"] = new WebSocket("ws://" + window.location.host +
+                "/telemetry/{{ widget.sensor_id }}/{{ widget.sensor_measure }}");
+        window["{{ widget.uuid }}-socket"].onmessage = function (e) {
+            var value = parseFloat(e.data).toFixed(2);
+            window["{{ widget.uuid }}-chart"].data.datasets[0].data[window["{{ widget.uuid }}-index"]] = value;
+            window["{{ widget.uuid }}-chart"].data.labels[window["{{ widget.uuid }}-index"]++] = moment();
+            window["{{ widget.uuid }}-chart"].update();
+            if (window["{{ widget.uuid }}-index"] % 15) {
+                window["{{ widget.uuid }}-chart"].removeData();
+                window["{{ widget.uuid }}-index"]--;
+            }
+        };
+        window["{{ widget.uuid }}-socket"].onopen = function () {
+            console.log("Socket opened")
+        };
+        // Call onopen directly if socket is already open
+        if (window["{{ widget.uuid }}-socket"].readyState == WebSocket.OPEN) window["{{ widget.uuid }}-socket"].onopen();
     </script>
 {% endblock %}
