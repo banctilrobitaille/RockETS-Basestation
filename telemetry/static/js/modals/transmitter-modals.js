@@ -43,6 +43,29 @@ $(document).ready(function () {
     $("#transmitter-creation-modal").on("shown.bs.modal", function () {
         showInterfaceConfigurationFrom($("#transmitterInterfaceType").val())
     });
+
+    $('#editTransmitterButton').on('click', function (event) {
+
+        jQuery.ajax({
+            url: "http://localhost:8000/telemetry/transmitter" + queryParams,
+            type: "PUT",
+            success: function (resultData) {
+                swal({
+                    title: "Updated",
+                    text: "The transmitter has been successfully updated",
+                    type: "success"
+                }, function () {
+                    location.reload();
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                sweetAlert("Oops...", "An error has occurred while updating the transmitter", "error");
+            },
+
+            timeout: 12000000,
+        });
+        $("#transmitter-edition-modal").modal('toggle');
+    });
 });
 
 function showInterfaceConfigurationFrom(transmitterInterfaceType) {

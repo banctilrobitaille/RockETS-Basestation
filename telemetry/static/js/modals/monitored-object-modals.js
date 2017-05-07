@@ -36,11 +36,12 @@ $(document).ready(function () {
         $("#monitored-object-creation-modal").modal('toggle');
     });
     $("#monitoredObjectType").on("change", function () {
-        $(".monitored-object-modal-configuration-configuration").slideUp();
+        $(".monitored-object-modal-configuration").slideUp();
         showMonitoredObjectConfigurationFrom($("#monitoredObjectType").val())
     });
 
     $("#monitored-object-creation-modal").on("shown.bs.modal", function () {
+        $(".monitored-object-modal-configuration").hide();
         showMonitoredObjectConfigurationFrom($("#monitoredObjectType").val())
     });
 });
