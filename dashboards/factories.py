@@ -51,7 +51,7 @@ class DashboardWidgetFactory(object):
         if widget_type is DashboardWidget.TYPES['variometer']:
             widget.name = "Vertical speed"
             widget.description = "The vertical speed gauge(variometer) inform of the rate of descent or climb"
-            widget.measure_units = DashboardWidget.MEASURE_UNITS['feet_per_minute']
+            widget.measure_units = DashboardWidget.MEASURE_UNITS['ft/min']
             widget.width = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_VERTICAL_SPEED_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['variometer']
@@ -61,7 +61,7 @@ class DashboardWidgetFactory(object):
             widget.name = "Air speed"
             widget.description = "The airspeed indicator or airspeed gauge is an instrument used in an aircraft to " \
                                  "display the craft's airspeed, typically in knots"
-            widget.measure_units = DashboardWidget.MEASURE_UNITS['knots']
+            widget.measure_units = DashboardWidget.MEASURE_UNITS['kn']
             widget.width = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_AIR_SPEED_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['airspeed']
@@ -71,7 +71,7 @@ class DashboardWidgetFactory(object):
             widget.name = "Altitude"
             widget.description = "An altimeter or an altitude meter is an instrument used to measure the altitude" \
                                  " of an object above a fixed level."
-            widget.measure_units = DashboardWidget.MEASURE_UNITS['feet']
+            widget.measure_units = DashboardWidget.MEASURE_UNITS['ft']
             widget.width = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_ALTITUDE_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['altimeter']

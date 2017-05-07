@@ -17,13 +17,15 @@ class DashboardWidget(EmbeddedDocument):
              'gauge': "gauge",
              'gps-map': "GPS map",
              'guided-chute-planner': "Guided chute planner"}
-    MEASURE_UNITS = {'knots': "kn",
-                     'meters': "m",
-                     'feet': "ft",
-                     'meters_per_minute': "m/min",
-                     'meters_per_second': "m/sec",
-                     'feet_per_minute': "ft/min",
-                     'feet_per_second': "ft/sec",
+    MEASURE_UNITS = {'kn': "kn",
+                     'm': "m",
+                     'ft': "ft",
+                     'm/min': "m/min",
+                     'm/sec': "m/sec",
+                     'ft/min': "ft/min",
+                     'ft/sec': "ft/sec",
+                     'ft/sec2': "ft/sec2",
+                     'm/sec2': "m/sec2"
                      }
     CATEGORIES = {'gauge': "gauge",
                   'chart': "chart",
