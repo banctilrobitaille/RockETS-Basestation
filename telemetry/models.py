@@ -53,6 +53,8 @@ class Sensor(Document):
     TYPES = {
         'barometer': "Barometer",
         'thermometer': "Thermometer",
+        'altimeter': "altimeter",
+        'gps': "gps",
     }
     LOCATIONS = {
         'remote': "remote",
@@ -93,3 +95,4 @@ class SerialTransmitterInterface(TransmitterInterface):
     }
     baud_rate = StringField(required=True)
     port = StringField(required=True)
+    type = StringField(default="serial")

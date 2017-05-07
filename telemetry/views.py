@@ -129,7 +129,9 @@ class TelemetryTransmitterStart(APIView):
     def get(request):
         try:
             TransmitterStartValidator.validate_get_parameters_from(request.query_params)
-            CommunicationService.get_instance()
+            CommunicationService.get_instance().start_reception_with(
+                    Transmitter.objects(uuid=request.query_params['uuid']).first())
+            return Response(status=status.HTTP_200_OK)
         except Exception as e:
             pass
 
@@ -140,6 +142,6 @@ class TelemetryTransmitterStop(APIView):
     def get(request):
         try:
             TransmitterStopValidator.validate_get_parameters_from(request.query_params)
-            CommunicationService.get_instance()
+            return Response(status=status.HTTP_200_OK)
         except Exception as e:
             pass

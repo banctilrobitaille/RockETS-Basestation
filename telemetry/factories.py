@@ -2,6 +2,7 @@ import uuid
 
 from telemetry.models import Sensor, RemoteSensor, SensorMeasurement, MonitoredObject, Rocket, TransmitterInterface, \
     SerialTransmitterInterface, Transmitter
+from telemetry.workers import SerialTransmitterWorker
 
 
 class SensorFactory(object):
@@ -79,3 +80,11 @@ class TransmitterInterfaceFactory(object):
             transmitter_interface.uuid = uuid.uuid4()
 
         return transmitter_interface
+
+
+class TransmitterWorkerFactory(object):
+    @staticmethod
+    def create_transmitter_worker_with(transmitter_interface):
+        if transmitter_interface.type == TransmitterInterface.TYPES['serial']:
+            return SerialTransmitterWorker(serial_port=transmitter_interface.port,
+                                           baud_rate=transmitter_interface.baud_rate)

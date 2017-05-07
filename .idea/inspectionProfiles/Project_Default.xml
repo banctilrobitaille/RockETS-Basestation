@@ -12,6 +12,7 @@
           <option value="telemetry.models.RemoteSensor.objects" />
           <option value="telemetry.models.MonitoredObject.objects" />
           <option value="telemetry.models.Transmitter.objects" />
+          <option value="telemetry.models.TransmitterInterface.objects" />
         </list>
       </option>
     </inspection_tool>
