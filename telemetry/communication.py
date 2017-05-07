@@ -13,11 +13,12 @@ class CommunicationService(object):
             transmitter_worker = TransmitterWorkerFactory.create_transmitter_worker_with(
                     TransmitterInterface.objects(uuid=transmitter.interface_id).first())
             transmitter_worker.start()
-            self.__active_transmitter_workers[str(transmitter.uuid)] = transmitter_worker
+            self.__active_transmitter_workers[transmitter.uuid] = transmitter_worker
 
     def stop_reception_from(self, transmitter):
         if transmitter.uuid in self.__active_transmitter_workers.keys():
             self.__active_transmitter_workers[transmitter.uuid].stop()
+            del self.__active_transmitter_workers[transmitter.uuid]
 
     @staticmethod
     def get_instance():

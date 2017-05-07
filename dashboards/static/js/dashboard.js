@@ -17,7 +17,7 @@ $(document).ready(function () {
             url: "http://localhost:8000/telemetry/transmitter/start" + queryParams,
             type: "GET",
             success: function (resultData) {
-
+                alertify.success("Transmitter worker successfully started !");
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 sweetAlert("Oops...", "An error has occurred while starting the communication", "error");
@@ -35,7 +35,7 @@ $(document).ready(function () {
             url: "http://localhost:8000/telemetry/transmitter/stop" + queryParams,
             type: "GET",
             success: function (resultData) {
-
+                alertify.success("Transmitter worker successfully stopped !");
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 sweetAlert("Oops...", "An error has occurred while stopping the communication", "error");
