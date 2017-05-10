@@ -1,9 +1,7 @@
 # RockETS Basestation
 
 #### Setup
-> pip install djangorestframework
-
-> pip install mongoengine
+> pip install -r [path/to/requirements.txt]
 
 > Install Redis from https://github.com/MSOpenTech/redis/releases
 
