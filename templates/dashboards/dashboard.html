@@ -10,13 +10,13 @@
 {% endblock %}
 
 {% block js_import %}
-    <script src="{% static "js/mapbox-gl.js" %}"></script>
-    <script src="{% static "js/moment.js" %}"></script>
-    <script src="{% static "js/chart.min.js" %}"></script>
-    <script src="{% static "js/widget-modals.js" %}"></script>
+    <script src="{% static "js/vendors/mapbox-gl.js" %}"></script>
+    <script src="{% static "js/vendors/moment.js" %}"></script>
+    <script src="{% static "js/vendors/Chart.min.js" %}"></script>
+    <script src="{% static "js/modals/widget-modals.js" %}"></script>
     <script src="{% static "js/widget.js" %}"></script>
-    <script src="{% static "js/raphael-2.1.4.min.js" %}"></script>
-    <script src="{% static "js/justgage.js" %}"></script>
+    <script src="{% static "js/vendors/raphael-2.1.4.min.js" %}"></script>
+    <script src="{% static "js/vendors/justgage.js" %}"></script>
     <script src="{% static "js/dashboard.js" %}"></script>
 {% endblock %}
 {% block content_section_action %}
