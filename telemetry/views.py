@@ -107,6 +107,8 @@ class TelemetrySensors(APIView):
     def delete(request):
         try:
             SensorValidator.validate_delete_parameters_from(request.query_params)
+            MonitoredObject.objects(uuid=request.query_params['monitored-object-uuid']).update(
+                    pull__sensor_ids=request.query_params['uuid'])
             Sensor.objects(uuid=request.query_params['uuid']).delete()
             return Response(status=status.HTTP_200_OK)
         except InvalidSensorParametersException as e:
