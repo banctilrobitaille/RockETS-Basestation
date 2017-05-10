@@ -16,6 +16,10 @@ class SensorValidator(object):
         return query_params
 
     @staticmethod
+    def validate_delete_parameters_from(query_params):
+        pass
+
+    @staticmethod
     def __validate_name_from(query_params):
         if 'name' not in query_params.keys() or not query_params['name']:
             raise InvalidSensorParametersException("Parameter <name> should not be null or empty")
@@ -52,9 +56,14 @@ class SensorValidator(object):
             raise InvalidSensorParametersException("Parameter <measures> should not be null or empty")
 
     @staticmethod
-    def __validate_dashboard_uuid_from(query_params):
-        if 'monitored-object-uuid' not in query_params.keys() or not query_params['monitored-object-uuid']:
+    def __validate_monitored_uuid_from(query_params):
+        if 'monitored_object-uuid' not in query_params.keys() or not query_params['monitored_object-uuid']:
             raise InvalidSensorParametersException("Parameter <monitored-object-uuid> should not be null or empty")
+
+    @staticmethod
+    def __validate_uuid_from(query_params):
+        if 'uuid' not in query_params.keys() or not query_params['uuid']:
+            raise InvalidSensorParametersException("Parameter <uuid> should not be null or empty")
 
 
 class MonitoredObjectValidator(object):

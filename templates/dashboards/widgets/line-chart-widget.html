@@ -37,7 +37,10 @@
                     }],
                     xAxes: [{
                         type: 'time',
-                        
+                        ticks: {
+                            autoSkip: true,
+                            maxTicksLimit: 7
+                        }
                     }]
                 }
             }
@@ -59,8 +62,9 @@
             window["{{ widget.uuid }}-chart"].data.datasets[0].data[window["{{ widget.uuid }}-index"]] = value;
             window["{{ widget.uuid }}-chart"].data.labels[window["{{ widget.uuid }}-index"]++] = moment();
             window["{{ widget.uuid }}-chart"].update();
-            if (window["{{ widget.uuid }}-index"] % 15) {
-                window["{{ widget.uuid }}-chart"].removeData();
+            if (window["{{ widget.uuid }}-index"] % 30 == 0) {
+                window["{{ widget.uuid }}-chart"].data.datasets[0].data.shift();
+                window["{{ widget.uuid }}-chart"].data.labels.shift();
                 window["{{ widget.uuid }}-index"]--;
             }
         };
