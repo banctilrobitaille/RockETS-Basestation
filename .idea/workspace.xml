@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4682eee8-212f-4da9-9e47-9f4895f3fca8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboards/static/js/vendors/Chart.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/static/js/alertify.min.js" afterPath="$PROJECT_DIR$/core/static/js/vendors/alertify.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/static/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/core/static/js/vendors/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/static/js/jquery-3.1.1.min.js" afterPath="$PROJECT_DIR$/core/static/js/vendors/jquery-3.1.1.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/static/js/select2.min.js" afterPath="$PROJECT_DIR$/core/static/js/vendors/select2.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/static/js/sweetalert.min.js" afterPath="$PROJECT_DIR$/core/static/js/vendors/sweetalert.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/static/js/tether.min.js" afterPath="$PROJECT_DIR$/core/static/js/vendors/tether.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboards/static/js/dashboard-modals.js" afterPath="$PROJECT_DIR$/dashboards/static/js/modals/dashboard-modals.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboards/static/js/jquery.flightindicators.js" afterPath="$PROJECT_DIR$/dashboards/static/js/vendors/jquery.flightindicators.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboards/static/js/justgage.js" afterPath="$PROJECT_DIR$/dashboards/static/js/vendors/justgage.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboards/static/js/mapbox-gl.js" afterPath="$PROJECT_DIR$/dashboards/static/js/vendors/mapbox-gl.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboards/static/js/moment.js" afterPath="$PROJECT_DIR$/dashboards/static/js/vendors/moment.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboards/static/js/raphael-2.1.4.min.js" afterPath="$PROJECT_DIR$/dashboards/static/js/vendors/raphael-2.1.4.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboards/static/js/widget-modals.js" afterPath="$PROJECT_DIR$/dashboards/static/js/modals/widget-modals.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/core/base-template.html" afterPath="$PROJECT_DIR$/templates/core/base-template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboards/dashboard.html" afterPath="$PROJECT_DIR$/templates/dashboards/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" afterPath="$PROJECT_DIR$/templates/dashboards/dashboards-index.html" />
-    </list>
+    <list default="true" id="4682eee8-212f-4da9-9e47-9f4895f3fca8" name="Default" comment="" />
     <ignored path="RockETS_Basestation.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -56,8 +38,8 @@
       <file leaf-file-name="base-template.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6010929">
-              <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+            <state vertical-scroll-proportion="-1.284153">
+              <caret line="9" column="90" selection-start-line="9" selection-start-column="90" selection-end-line="9" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -1012,8 +994,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6010929">
-          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+        <state vertical-scroll-proportion="-1.284153">
+          <caret line="9" column="90" selection-start-line="9" selection-start-column="90" selection-end-line="9" selection-end-column="90" />
           <folding />
         </state>
       </provider>
