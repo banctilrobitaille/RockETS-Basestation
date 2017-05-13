@@ -54,15 +54,14 @@
 }
 
 .telemetry-add-sensors {
-    margin-right: 2%;
     display: table;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
+    border: dashed 2px dimgray;
 }
 
 .telemetry-add-sensors:hover {
     color: rgba(255, 255, 255, 0.8);
-    border: dashed 2px dimgray;
 }
 
 .telemetry-add-transmitters {
@@ -80,6 +79,11 @@
 .telemetry-add-transmitters-content {
     vertical-align: middle;
     margin: 1%;
+}
+
+.telemetry-widget-holder {
+    padding-left: 0.1%;
+    margin-bottom: 1%;
 }
 
 .telemetry-add-widget-holder {

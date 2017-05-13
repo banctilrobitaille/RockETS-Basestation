@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4682eee8-212f-4da9-9e47-9f4895f3fca8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/static/css/monitored-object-widget.css" afterPath="$PROJECT_DIR$/telemetry/static/css/monitored-object-widget.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/static/css/sensor-widget.css" afterPath="$PROJECT_DIR$/telemetry/static/css/sensor-widget.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telemetry/static/css/telemetry.css" afterPath="$PROJECT_DIR$/telemetry/static/css/telemetry.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/add-monitored-object-component.html" afterPath="$PROJECT_DIR$/templates/telemetry/add-monitored-object-component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/add-sensors-component.html" afterPath="$PROJECT_DIR$/templates/telemetry/add-sensors-component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/add-transmitters-component.html" afterPath="$PROJECT_DIR$/templates/telemetry/add-transmitters-component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/monitored-object-widget.html" afterPath="$PROJECT_DIR$/templates/telemetry/monitored-object-widget.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/transmitters-widget.html" afterPath="$PROJECT_DIR$/templates/telemetry/transmitters-widget.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/telemetry/sensors-widget.html" afterPath="$PROJECT_DIR$/templates/telemetry/sensors-widget.html" />
     </list>
     <ignored path="RockETS_Basestation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,28 +33,8 @@
       <file leaf-file-name="transmitters-widget.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/telemetry/transmitters-widget.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.258064">
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="telemetry-index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/telemetry/telemetry-index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.064516">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monitored-object-index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/telemetry/monitored-object-index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.580646">
-              <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -66,8 +43,8 @@
       <file leaf-file-name="add-monitored-object-component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/telemetry/add-monitored-object-component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7096774">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="54" />
+            <state vertical-scroll-proportion="-6.387097">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -76,8 +53,38 @@
       <file leaf-file-name="add-sensors-component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/telemetry/add-sensors-component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.387097">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state vertical-scroll-proportion="-1.4193548">
+              <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monitored-object-index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/telemetry/monitored-object-index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.8387096">
+              <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sensor-widget.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/telemetry/static/css/sensor-widget.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.806452">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sensors-widget.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/telemetry/sensors-widget.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.7096774">
+              <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -86,8 +93,8 @@
       <file leaf-file-name="monitored-object-widget.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/telemetry/monitored-object-widget.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="67" />
+            <state vertical-scroll-proportion="-0.7096774">
+              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -97,37 +104,27 @@
         <entry file="file://$PROJECT_DIR$/telemetry/static/css/monitored-object-widget.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="telemetry.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="telemetry.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/telemetry/static/css/telemetry.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.419354">
-              <caret line="84" column="28" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.6226415">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add-transmitters-component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add-transmitters-component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/telemetry/add-transmitters-component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1509434">
+            <state vertical-scroll-proportion="-2.8387096">
               <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base-template.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/core/base-template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.290323">
-              <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -151,7 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/telemetry/modals/transmitter-creation-modal.html" />
         <option value="$PROJECT_DIR$/templates/telemetry/modals/monitored-object-creation-modal.html" />
         <option value="$PROJECT_DIR$/telemetry/static/js/modals/sensor-modals.js" />
         <option value="$PROJECT_DIR$/telemetry/exceptions.py" />
@@ -190,18 +186,19 @@
         <option value="$PROJECT_DIR$/telemetry/static/js/sensor-widget.js" />
         <option value="$PROJECT_DIR$/core/views.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/telemetry/static/css/sensor-widget.css" />
         <option value="$PROJECT_DIR$/telemetry/static/css/transmitter-widget.css" />
         <option value="$PROJECT_DIR$/templates/telemetry/monitored-object-index.html" />
         <option value="$PROJECT_DIR$/templates/core/base-template.html" />
         <option value="$PROJECT_DIR$/templates/telemetry/telemetry-index.html" />
-        <option value="$PROJECT_DIR$/telemetry/static/css/telemetry.css" />
-        <option value="$PROJECT_DIR$/telemetry/static/css/monitored-object-widget.css" />
         <option value="$PROJECT_DIR$/templates/telemetry/add-monitored-object-component.html" />
         <option value="$PROJECT_DIR$/templates/telemetry/add-sensors-component.html" />
         <option value="$PROJECT_DIR$/templates/telemetry/monitored-object-widget.html" />
         <option value="$PROJECT_DIR$/templates/telemetry/transmitters-widget.html" />
         <option value="$PROJECT_DIR$/templates/telemetry/add-transmitters-component.html" />
+        <option value="$PROJECT_DIR$/templates/telemetry/sensors-widget.html" />
+        <option value="$PROJECT_DIR$/telemetry/static/css/sensor-widget.css" />
+        <option value="$PROJECT_DIR$/telemetry/static/css/monitored-object-widget.css" />
+        <option value="$PROJECT_DIR$/telemetry/static/css/telemetry.css" />
       </list>
     </option>
   </component>
@@ -931,21 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/telemetry/sensors-widget.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telemetry/static/css/sensor-widget.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8387096">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/dashboards/dashboard-widget.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -958,14 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4193548">
           <caret line="2" column="45" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/telemetry/monitored-object-index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.580646">
-          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -986,39 +960,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/telemetry/static/css/telemetry.css">
+    <entry file="file://$PROJECT_DIR$/templates/telemetry/add-transmitters-component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.419354">
-          <caret line="84" column="28" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="28" />
+        <state vertical-scroll-proportion="-2.8387096">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/telemetry/add-sensors-component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.387097">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/telemetry/add-monitored-object-component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7096774">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telemetry/static/css/monitored-object-widget.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/telemetry/monitored-object-widget.html">
+    <entry file="file://$PROJECT_DIR$/templates/telemetry/transmitters-widget.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="67" />
@@ -1026,18 +976,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/telemetry/transmitters-widget.html">
+    <entry file="file://$PROJECT_DIR$/templates/telemetry/add-monitored-object-component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.258064">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        <state vertical-scroll-proportion="-6.387097">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/telemetry/add-transmitters-component.html">
+    <entry file="file://$PROJECT_DIR$/templates/telemetry/add-sensors-component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1509434">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        <state vertical-scroll-proportion="-1.4193548">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/telemetry/monitored-object-index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8387096">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/telemetry/monitored-object-widget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/telemetry/sensors-widget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/telemetry/static/css/sensor-widget.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.806452">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/telemetry/static/css/monitored-object-widget.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/telemetry/static/css/telemetry.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6226415">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
         </state>
       </provider>
