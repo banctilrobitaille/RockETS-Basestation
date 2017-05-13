@@ -1,31 +1,33 @@
-<div class="col-md-4 col-sm-6 monitored-object-widget hvr-forward" id="{{ monitored_object.uuid }}">
-    <div class="row monitored-object-widget-header">
-        <div class="col-md-10 col-sm-9 monitored-object-widget-title">
-            <h4 class="ellipsis-text monitored-object-name">{{ monitored_object.name }}</h4>
+<div class="col-md-4 col-sm-6 monitored-object-widget-holder hvr-forward">
+    <div class="col-md-12 monitored-object-widget" id="{{ monitored_object.uuid }}">
+        <div class="row monitored-object-widget-header">
+            <div class="col-md-10 col-sm-9 monitored-object-widget-title">
+                <h4 class="ellipsis-text monitored-object-name">{{ monitored_object.name }}</h4>
+            </div>
+            <div class="col-md-2 col-sm-3 monitored-object-widget-action pull-right">
+                <a href="#">
+                    <i class="pull-right fa  fa-trash-o fa-1x hvr-grow monitored-object-widget-delete-icon"></i>
+                </a>
+                <a href="#" data-toggle="modal" data-target="#monitored-object-edition-modal">
+                    <i class="pull-right fa  fa-cog fa-1x hvr-grow monitored-object-widget-edit-icon"></i>
+                </a>
+            </div>
         </div>
-        <div class="col-md-2 col-sm-3 monitored-object-widget-action pull-right">
-            <a href="#">
-                <i class="pull-right fa  fa-trash-o fa-1x hvr-grow monitored-object-widget-delete-icon"></i>
-            </a>
-            <a href="#" data-toggle="modal" data-target="#monitored-object-edition-modal">
-                <i class="pull-right fa  fa-cog fa-1x hvr-grow monitored-object-widget-edit-icon"></i>
-            </a>
-        </div>
-    </div>
-    <div class="row monitored-object-widget-content">
-        <div class="col-md-2 monitored-object-widget-image">
-            <i class="fa  fa-rocket fa-4x"></i>
-        </div>
-        <div class="col-md-10 monitored-object-widget-details">
-            <h5 class="monitored-object-widget-properties-title">ID: </h5>
-            <span class="monitored-object-id">{{ monitored_object.identifier }}</span>
-            <br/>
-            <h5 class="monitored-object-widget-properties-title">Description: </h5>
-            <span class="monitored-object-description">{{ monitored_object.description }}</span>
-            <br/>
-        </div>
+        <div class="row monitored-object-widget-content">
+            <div class="col-md-2 monitored-object-widget-image">
+                <i class="fa  fa-rocket fa-4x"></i>
+            </div>
+            <div class="col-md-10 monitored-object-widget-details">
+                <h5 class="monitored-object-widget-properties-title">ID: </h5>
+                <span class="monitored-object-id">{{ monitored_object.identifier }}</span>
+                <br/>
+                <h5 class="monitored-object-widget-properties-title">Description: </h5>
+                <span class="monitored-object-description">{{ monitored_object.description }}</span>
+                <br/>
+            </div>
 
-    </div>
-    <div class="row monitored-object-widget-footer">
+        </div>
+        <div class="row monitored-object-widget-footer">
+        </div>
     </div>
 </div>
