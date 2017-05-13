@@ -3,6 +3,7 @@
     background-color: rgba(22, 160, 133, 0.8);
     margin-right: 2%;
     margin-bottom: 2%;
+    cursor: pointer;
 }
 
 .transmitter-widget-header {

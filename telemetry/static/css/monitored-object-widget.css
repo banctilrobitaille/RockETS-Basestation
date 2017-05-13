@@ -3,6 +3,7 @@
     background-color: rgba(230, 126, 34, 0.8);
     margin-right: 2%;
     margin-bottom: 2%;
+    cursor: pointer;
 }
 
 .monitored-object-widget-header {
