@@ -14,15 +14,19 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/sweetalert.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/select2.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/select2-custom.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/alertify.core.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/alertify.bootstrap.css" %}">
     {% block stylesheet_import %}
     {% endblock %}
-    <script src="{% static "js/jquery-3.1.1.min.js" %}"></script>
-    <script src="{% static "js/tether.min.js" %}"></script>
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
-    <script src="{% static "js/chart.min.js" %}"></script>
-    <script src="{% static "js/sweetalert.min.js" %}"></script>
+    <script src="{% static "js/vendors/jquery-3.1.1.min.js" %}"></script>
+    <script src="{% static "js/vendors/tether.min.js" %}"></script>
+    <script src="{% static "js/vendors/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/vendors/Chart.min.js" %}"></script>
+    <script src="{% static "js/vendors/sweetalert.min.js" %}"></script>
     <script src="{% static "js/sidebar.js" %}"></script>
-    <script src="{% static "js/select2.min.js" %}"></script>
+    <script src="{% static "js/vendors/select2.min.js" %}"></script>
+    <script src="{% static "js/exceptions.js" %}"></script>
+    <script src="{% static "js/vendors/alertify.min.js" %}"></script>
     {% block js_import %}
     {% endblock %}
 </head>
@@ -33,14 +37,14 @@
         <div class="col-md-10">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="col-md-6 col-sm-12 content-title-section">
+                    <div class="col-md-7 col-sm-12 content-title-section">
                         <div class="col-md-12">
                             <h2 class="content-title">{{ content_title }}</h2>
                             {% block content_section_action %}
                             {% endblock %}
                         </div>
                     </div>
-                    <div class="col-md-6 additional-information">
+                    <div class="col-md-5 additional-information">
                         {% block additional-information %}
                         {% endblock %}
                     </div>

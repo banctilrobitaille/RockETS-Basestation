@@ -1,0 +1,51 @@
+.transmitter-widget {
+    color: white;
+    background-color: rgba(22, 160, 133, 0.8);
+    margin-right: 2%;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+.transmitter-widget-header {
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.transmitter-widget-title {
+    overflow: hidden;
+}
+
+.transmitter-name {
+    margin: 0;
+}
+
+.transmitter-widget-action {
+    margin-top: 1%;
+    padding: 0 1% 0 0;
+}
+
+.transmitter-widget-properties-title {
+    display: inline-block;
+    font-weight: bold;
+    margin: 2%;
+}
+
+.transmitter-widget-properties {
+    display: inline-block;
+}
+
+.transmitter-widget-icon {
+    color: #FFF;
+}
+
+.transmitter-widget-content {
+    padding: 2%;
+}
+
+.transmitter-widget-image {
+    padding: 0;
+}
+
+.transmitter-widget-details {
+    margin-left: 1%;
+}

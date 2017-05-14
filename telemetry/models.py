@@ -14,21 +14,21 @@ class Flight(EmbeddedDocument):
 
 class MonitoredObject(Document):
     meta = {
-        'abstract': True,
+        'allow_inheritance': True,
     }
     TYPES = {
-        'rocket': "Rocket",
-        'rocket engine': "Rocket engine"
+        'rocket': "rocket",
     }
     uuid = UUIDField(required=True)
     name = StringField(required=True)
     description = StringField()
-    identifier = StringField()
+    identifier = StringField(required=True, unique=True)
+    sensor_ids = ListField(UUIDField())
 
 
 class Aircraft(MonitoredObject):
     meta = {
-        'abstract': True,
+        'allow_inheritance': True,
     }
     flights = ListField(EmbeddedDocumentField(Flight))
 
@@ -41,44 +41,57 @@ class RocketEngine(MonitoredObject):
     pass
 
 
-class CommunicationProtocol(Document):
-    TYPES = {
-        'rockets_custom': "Rockets Custom",
-    }
-
-
 class SensorMeasurement(EmbeddedDocument):
-    name = StringField()
-
-
-class SensorInterface(EmbeddedDocument):
-    meta = {
-        'abstract': True,
-    }
-    TYPES = {
-        'serial': "Serial",
-        'spi': "SPI",
-        'uart': "UART",
-        'i2c': "I2C"
-    }
+    name = StringField(required=True)
 
 
 class Sensor(Document):
     meta = {
-        'abstract': True,
+        'allow_inheritance': True,
     }
     TYPES = {
-        'main input': "Main input",
         'barometer': "Barometer",
         'thermometer': "Thermometer",
+        'altimeter': "altimeter",
+        'gps': "gps",
+    }
+    LOCATIONS = {
+        'remote': "remote",
     }
     name = StringField(required=True)
     uuid = UUIDField(required=True)
+    type = StringField(required=True)
+    description = StringField()
 
 
 class RemoteSensor(Sensor):
     measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
+    node = StringField(required=True)
 
 
-class LocalSensor(Sensor):
-    sensorInterface = EmbeddedDocumentField(SensorInterface)
+class Transmitter(Document):
+    name = StringField(required=True)
+    uuid = UUIDField(required=True)
+    description = StringField()
+    interface_id = UUIDField(required=True)
+
+
+class TransmitterInterface(Document):
+    meta = {
+        'allow_inheritance': True,
+    }
+    TYPES = {
+        'serial': "serial",
+    }
+    uuid = UUIDField(required=True)
+
+
+class SerialTransmitterInterface(TransmitterInterface):
+    BAUD_RATES = {
+        '4800': "4800",
+        '9600': "9600",
+        '57600': "57600",
+    }
+    baud_rate = StringField(required=True)
+    port = StringField(required=True)
+    type = StringField(default="serial")

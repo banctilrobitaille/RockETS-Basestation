@@ -1,6 +1,8 @@
 .monitored-object-widget {
     color: white;
     background-color: rgba(230, 126, 34, 0.8);
+    margin-bottom: 2%;
+    cursor: pointer;
 }
 
 .monitored-object-widget-header {
@@ -24,6 +26,7 @@
 .monitored-object-widget-properties-title {
     display: inline-block;
     font-weight: bold;
+    margin: 2%;
 }
 
 .monitored-object-widget-properties {

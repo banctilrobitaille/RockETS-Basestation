@@ -22,7 +22,7 @@ SECRET_KEY = 'e%i2&cwkw+h1j+shv0(kn0lwpew1w%nh_a4&n*er&_!rk(5c77'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.2.19', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['192.168.2.19', 'localhost', '0.0.0.0', '10.192.220.15']
 
 # Application definition
 
@@ -35,9 +35,9 @@ INSTALLED_APPS = [
     'channels',
     'rest_framework',
     'core',
-    'sensors',
     'dashboards',
     'telemetry',
+    'rest_framework_swagger'
 ]
 
 MIDDLEWARE = [

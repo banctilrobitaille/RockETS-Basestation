@@ -1,32 +1,27 @@
 {% for dashboard in dashboards %}
-    <div class="col-md-4 col-sm-6 dashboard-widget hvr-forward" id="{{ dashboard.uuid }}">
+    <div class="col-md-3 col-sm-6 dashboard-widget hvr-forward" id="{{ dashboard.uuid }}">
         <div class="row dashboard-widget-header">
-            <div class="col-md-2 col-sm-2 dashboard-icon">
-                <i class="fa  fa-bar-chart fa-2x"></i>
-            </div>
-            <div class="col-md-8 col-sm-7 dashboard-widget-title">
+            <div class="col-md-10 col-sm-9 dashboard-widget-title">
                 <h4 class="ellipsis-text dashboard-name">{{ dashboard.name }}</h4>
             </div>
-            <div class="col-md-2 col-sm-3 dashboard-widget-action">
+            <div class="col-md-2 col-sm-3 dashboard-widget-action pull-right">
                 <a href="#">
-                    <i class="pull-right fa  fa-trash-o fa-2x hvr-grow dashboard-widget-delete-icon"
-                       id="{{ dashboard.uuid }}"></i>
+                    <i class="pull-right fa  fa-trash-o fa-1x hvr-grow dashboard-widget-delete-icon"></i>
                 </a>
                 <a href="#" data-toggle="modal" data-target="#dashboard-edition-modal">
-                    <i class="pull-right fa  fa-cog fa-2x hvr-grow dashboard-widget-edit-icon"
-                       id="{{ dashboard.uuid }}"></i>
+                    <i class="pull-right fa  fa-cog fa-1x hvr-grow dashboard-widget-edit-icon"></i>
                 </a>
             </div>
         </div>
         <div class="row dashboard-widget-content">
-            <div class="dashboard-widget-content-overlay" id="{{ dashboard.uuid }}">
+            <div class="col-md-2 dashboard-widget-image">
+                <i class="fa  fa-bar-chart fa-4x"></i>
             </div>
-            <h5 class="dashboard-widget-properties-title">UUID: </h5>
-            <span class="dashboard-uuid">{{ dashboard.uuid }}</span>
-            <br/>
-            <h5 class="dashboard-widget-properties-title">Description: </h5>
-            <span class="dashboard-description">{{ dashboard.description }}</span>
-            <br/>
+            <div class="col-md-10 dashboard-widget-details">
+                <h5 class="dashboard-widget-properties-title">Description: </h5>
+                <span class="dashboard-description">{{ dashboard.description }}</span>
+                <br/>
+            </div>
         </div>
         <div class="row dashboard-widget-footer">
         </div>

@@ -1,16 +1,12 @@
 .dashboard-widget {
     color: white;
-    margin-top: 3%;
-    margin-left: 3%;
     background-color: rgba(39, 174, 96, 0.4);
-    border: 2px solid rgba(30, 130, 76, 0);
-}
-
-.glow {
-    text-shadow: 0px 0px 5px #1E824C;
+    margin-top: 2%;
+    margin-left: 2%;
 }
 
 .dashboard-widget-header {
+    padding: 2%;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -18,36 +14,39 @@
     overflow: hidden;
 }
 
+.dashboard-name {
+    margin: 0;
+}
+
 .dashboard-widget-action {
+    margin-top: 1%;
     padding: 0 1% 0 0;
 }
 
 .dashboard-widget-properties-title {
     display: inline-block;
     font-weight: bold;
+    margin: 0;
 }
 
 .dashboard-widget-properties {
     display: inline-block;
 }
 
-.dashboard-icon {
+.dashboard-widget-icon {
     color: #FFF;
 }
 
 .dashboard-widget-content {
-    padding-left: 4%;
+    padding: 2%;
 }
 
-.dashboard-widget-content-overlay {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0);
-    height: 65%;
-    width: 100%;
-    overflow: hidden;
-    z-index: 10;
-    left: 0;
-    bottom: 0;
+.dashboard-widget-image {
+    padding: 0;
+}
+
+.dashboard-widget-details {
+
 }
 
 a {

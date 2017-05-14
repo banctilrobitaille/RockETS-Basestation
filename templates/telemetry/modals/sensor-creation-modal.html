@@ -22,7 +22,7 @@
                                     <input type="text" class="form-control input-custom" id="sensorName">
                                 </div>
                                 <div class="col-md-9 col-md-offset-2">
-                                    <span class="modal-error-message help-block" id="sensorNameError">The monitored object name should not be empty</span>
+                                    <span class="modal-error-message help-block" id="sensorNameError">The sensor name should not be empty</span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -46,7 +46,7 @@
                             <div class="form-group">
                                 <label for="" class="col-sm-2 control-label">Location:</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control input-custom" id="sensorType">
+                                    <select class="form-control input-custom" id="sensorLocation">
                                         <option value="remote">Remote</option>
                                     </select>
                                 </div>
@@ -58,7 +58,17 @@
                                 <label for="" class="col-sm-2 control-label">Node:</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control input-custom"
-                                           id="remoteSensorJSONNode">
+                                           id="sensorNode">
+                                </div>
+                                <div class="col-md-9 col-md-offset-2">
+                                    <span class="modal-error-message help-block" id="sensorNodeError">A remote sensor should be associated with a node</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Measures:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="sensorMeasures" multiple="multiple">
+                                    </select>
                                 </div>
                             </div>
                         </div>

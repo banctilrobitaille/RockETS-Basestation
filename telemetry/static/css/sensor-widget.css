@@ -1,6 +1,8 @@
 .sensor-widget {
     color: white;
     background-color: rgba(142, 68, 173, 0.8);
+    margin-bottom: 2%;
+    cursor: pointer;
 }
 
 .sensor-widget-header {
@@ -24,6 +26,7 @@
 .sensor-widget-properties-title {
     display: inline-block;
     font-weight: bold;
+    margin: 1%;
 }
 
 .sensor-widget-properties {

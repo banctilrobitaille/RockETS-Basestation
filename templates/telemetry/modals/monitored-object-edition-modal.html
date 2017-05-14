@@ -4,8 +4,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content custom-modal">
             <div class="modal-header">
-                <i class="fa  fa-bar-chart fa-4x modal-header-icon"></i>
-                <h3 class="modal-title" id="monitored-object-edition-modal-label">Monitored object creation</h3>
+                <i class="fa  fa-car fa-4x modal-header-icon"></i>
+                <h3 class="modal-title" id="monitored-object-edition-modal-label">Edit monitored object</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,20 +17,50 @@
                             <h4>General</h4>
                             <hr>
                             <div class="form-group">
-                                <label for="monitoredObjectName" class="col-sm-2 control-label">Name:</label>
+                                <label for="editedMonitoredObjectName" class="col-sm-2 control-label">Name:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control input-custom" id="monitoredObjectName">
+                                    <input type="text" class="form-control input-custom" id="editedMonitoredObjectName">
                                 </div>
                                 <div class="col-md-9 col-md-offset-2">
-                                    <span class="modal-error-message help-block" id="monitoredObjectNameError">The monitored object name should not be empty</span>
+                                    <span class="modal-error-message help-block" id="editedMonitoredObjectNameError">The monitored object name should not be empty</span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="monitoredObjectDescription"
+                                <label for="editedMonitoredObjectId" class="col-sm-2 control-label">ID:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" id="editedMonitoredObjectId">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="editedMonitoredObjectDescription"
                                        class="col-sm-2 control-label">Description:</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control input-custom"
-                                           id="monitoredObjectDescription">
+                                           id="editedMonitoredObjectDescription">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Type:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="editedMonitoredObjectType">
+                                        {% for monitored_object_type in monitored_object_types %}
+                                            <option value="{{ monitored_object_type }}">{{ monitored_object_type|title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h4>Configuration</h4>
+                            <div class="form-group monitored-object-modal-configuration"
+                                 id="editedRocketMonitoredObjectConfiguration">
+                                <div class="form-group">
+                                    <label for="editedRocketTargetApogee"
+                                           class="col-sm-2 control-label">Apogee:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control input-custom"
+                                               id="editedRocketTargetApogee">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +69,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary btn-primary-custom"
-                        id="createMonitoredObjectDescriptionButton">
+                        id="editMonitoredObjectButton">
                     Create
                 </button>
                 <button type="button" class="btn btn-secondary btn-secondary-custom" data-dismiss="modal">Close</button>

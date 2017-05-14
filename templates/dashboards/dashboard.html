@@ -10,20 +10,21 @@
 {% endblock %}
 
 {% block js_import %}
-    <script src="{% static "js/mapbox-gl.js" %}"></script>
-    <script src="{% static "js/moment.js" %}"></script>
-    <script src="{% static "js/chart.min.js" %}"></script>
-    <script src="{% static "js/widget-modals.js" %}"></script>
+    <script src="{% static "js/vendors/mapbox-gl.js" %}"></script>
+    <script src="{% static "js/vendors/moment.js" %}"></script>
+    <script src="{% static "js/vendors/Chart.min.js" %}"></script>
+    <script src="{% static "js/modals/widget-modals.js" %}"></script>
     <script src="{% static "js/widget.js" %}"></script>
-    <script src="{% static "js/raphael-2.1.4.min.js" %}"></script>
-    <script src="{% static "js/justgage.js" %}"></script>
+    <script src="{% static "js/vendors/raphael-2.1.4.min.js" %}"></script>
+    <script src="{% static "js/vendors/justgage.js" %}"></script>
     <script src="{% static "js/dashboard.js" %}"></script>
 {% endblock %}
 {% block content_section_action %}
-    <a href="#" data-toggle="modal" data-target="">
-        <button type="submit" class="btn btn-primary btn-primary-custom content-section-action">
-            Save <i class="fa fa-save" aria-hidden="true"></i>
-        </button>
+    <a href="#">
+        <i class="fa fa-play fa-3x" aria-hidden="true" id="dashboard-play-icon"></i>
+    </a>
+    <a href="#">
+        <i class="fa fa-stop fa-3x" aria-hidden="true" id="dashboard-stop-icon"></i>
     </a>
 {% endblock %}
 {% block additional-information %}
@@ -35,6 +36,8 @@
 {% endblock %}
 {% block content %}
     <div class="dashboard" id="{{ dashboards.uuid }}">
+        <input type="hidden" value="{{ dashboards.transmitter_id }}" id="dashboardTransmitterId">
+        <input type="hidden" value="{{ dashboards.monitored_object_id }}" id="dashboardMonitoredObjectId">
         {% for row in dashboard_rows %}
             <div class="row dashboard-row">
                 {% for widget in row.widgets %}
@@ -63,6 +66,5 @@
     {% include "dashboards/modals/widgets/widget-creation-modal.html" %}
     {% include "dashboards/modals/widgets/widget-edition-modal.html" %}
     {% block script %}
-
     {% endblock %}
 {% endblock %}

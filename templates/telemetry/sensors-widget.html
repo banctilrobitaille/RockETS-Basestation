@@ -1,0 +1,35 @@
+<div class="col-md-4 col-sm-6 telemetry-widget-holder hvr-forward">
+    <div class="col-md-12 sensor-widget" id="{{ sensor.uuid }}">
+        <div class="row sensor-widget-header">
+            <div class="col-md-10 col-sm-9 sensor-widget-title">
+                <h4 class="ellipsis-text sensor-name">{{ sensor.name }}</h4>
+            </div>
+            <div class="col-md-2 col-sm-3 sensor-widget-action pull-right">
+                <a href="#">
+                    <i class="pull-right fa  fa-trash-o fa-1x hvr-grow sensor-widget-delete-icon"></i>
+                </a>
+                <a href="#" data-toggle="modal" data-target="#sensor-edition-modal">
+                    <i class="pull-right fa  fa-cog fa-1x hvr-grow sensor-widget-edit-icon"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row sensor-widget-content">
+            <div class="col-md-2 sensor-widget-image">
+                <i class="fa  fa-plug fa-4x"></i>
+            </div>
+            <div class="col-md-10 sensor-widget-details">
+                <h5 class="sensor-widget-properties-title">Description: </h5>
+                <span class="sensor-description">{{ sensor.description }}</span>
+                <br/>
+                <h5 class="sensor-widget-properties-title">Type: </h5>
+                <span class="sensor-description">{{ sensor.type }}</span>
+                <br/>
+                <h5 class="sensor-widget-properties-title">Node: </h5>
+                <span class="sensor-description">{{ sensor.node }}</span>
+                <br/>
+            </div>
+        </div>
+        <div class="row sensor-widget-footer">
+        </div>
+    </div>
+</div>
