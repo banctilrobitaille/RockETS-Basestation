@@ -18,12 +18,11 @@ class MonitoredObject(Document):
     }
     TYPES = {
         'rocket': "rocket",
-        'rocket engine': "rocket engine"
     }
     uuid = UUIDField(required=True)
     name = StringField(required=True)
     description = StringField()
-    identifier = StringField()
+    identifier = StringField(required=True, unique=True)
     sensor_ids = ListField(UUIDField())
 
 

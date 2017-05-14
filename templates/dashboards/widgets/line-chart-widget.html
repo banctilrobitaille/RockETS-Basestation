@@ -28,7 +28,8 @@
                     yAxes: [{
                         type: 'linear',
                         ticks: {
-                            suggestedMin: 0
+                            suggestedMin: 0,
+                            maxTicksLimit: 5
                         },
                         scaleLabel: {
                             display: true,
@@ -39,7 +40,7 @@
                         type: 'time',
                         ticks: {
                             autoSkip: true,
-                            maxTicksLimit: 7
+                            maxTicksLimit: 2
                         }
                     }]
                 }
@@ -61,8 +62,8 @@
             var value = parseFloat(e.data).toFixed(2);
             window["{{ widget.uuid }}-chart"].data.datasets[0].data[window["{{ widget.uuid }}-index"]] = value;
             window["{{ widget.uuid }}-chart"].data.labels[window["{{ widget.uuid }}-index"]++] = moment();
-            window["{{ widget.uuid }}-chart"].update();
-            if (window["{{ widget.uuid }}-index"] % 30 == 0) {
+            window["{{ widget.uuid }}-chart"].update(1);
+            if (window["{{ widget.uuid }}-index"] % 150 == 0) {
                 window["{{ widget.uuid }}-chart"].data.datasets[0].data.shift();
                 window["{{ widget.uuid }}-chart"].data.labels.shift();
                 window["{{ widget.uuid }}-index"]--;

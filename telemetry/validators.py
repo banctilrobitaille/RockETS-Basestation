@@ -81,6 +81,11 @@ class MonitoredObjectValidator(object):
         return query_params
 
     @staticmethod
+    def validate_delete_parameters_from(query_params):
+        MonitoredObjectValidator.__validate_uuid_from(query_params)
+        return query_params
+
+    @staticmethod
     def __validate_uuid_from(query_params):
         if 'uuid' not in query_params.keys() or not query_params['uuid']:
             raise InvalidMonitoredObjectParametersException("Parameter <uuid> should not be null or empty")

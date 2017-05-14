@@ -66,6 +66,8 @@ class TelemetryMonitoredObjects(APIView):
     @api_view(['DELETE'])
     def delete(request):
         try:
+            MonitoredObjectValidator.validate_delete_parameters_from(request.query_params)
+
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=400)
