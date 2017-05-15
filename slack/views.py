@@ -33,6 +33,8 @@ class SlackMessage(APIView):
         sc.api_call(
                 "chat.postMessage",
                 channel="#basestation",
-                text="Hello from the basestation! :tada:"
-        )
+                attachments='[{'
+                            '"text":"The rocket went from ON PAD to ON FLIGHT",'
+                            '"title" : "Rocket state changed",'
+                            '"color": "#36a64f"}]')
         return Response(status=status.HTTP_200_OK)
