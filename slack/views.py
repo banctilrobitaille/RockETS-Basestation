@@ -1,4 +1,4 @@
-import configparser
+from django_slack import slack_message
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import JsonResponse
@@ -6,6 +6,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from slackclient import SlackClient
 
 from slack.configuration_providers import SlackConfigurationProvider
 from slack.validators import SlackOAuthValidator
@@ -21,3 +22,17 @@ class SlackOAuth(APIView):
             'client_id': SlackConfigurationProvider.get_instance().get_client_id(),
             'client_secret': SlackConfigurationProvider.get_instance().get_client_secret()
         }
+
+
+class SlackMessage(APIView):
+    @staticmethod
+    @api_view(['GET'])
+    def get(request):
+        sc = SlackClient(SlackConfigurationProvider.get_instance().get_oauth_token())
+
+        sc.api_call(
+                "chat.postMessage",
+                channel="#basestation",
+                text="Hello from the basestation! :tada:"
+        )
+        return Response(status=status.HTTP_200_OK)
