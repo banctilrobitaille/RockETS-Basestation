@@ -1,5 +1,7 @@
 from django.conf.urls import url
 from rest_framework_swagger.views import get_swagger_view
+
+from slack.views import SlackMessage
 from telemetry.views import Telemetry, TelemetryMonitoredObjects, TelemetrySensors, TelemetryTransmitters, \
     TelemetryTransmitterStart, TelemetryTransmitterStop
 from dashboards.views import Dashboards, Widgets
@@ -33,5 +35,6 @@ urlpatterns = [
     url(r'^{}{}{}$'.format("", "", "telemetry/transmitter/stop"), TelemetryTransmitterStop.as_view()),
     url(r'^{}{}{}$'.format("", "", "dashboards"), Dashboards.as_view()),
     url(r'^{}{}{}$'.format("", "", "dashboards/widget"), Widgets.as_view()),
+    url(r'^{}{}{}$'.format("", "", "slack/message"), SlackMessage.as_view()),
     url(r'^{}{}{}'.format("", "", ""), Core.as_view()),
 ]
