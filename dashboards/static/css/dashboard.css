@@ -39,3 +39,20 @@
 .dashboard-time-icon {
     display: inline-block;
 }
+
+.dashboard-action {
+    display: inline-block;
+    margin-left: 3%;
+}
+
+#dashboard-play-icon {
+    color: rgba(39, 174, 96, 0.8);
+    display: inline-block;
+    margin-left: 3%;
+}
+
+#dashboard-stop-icon {
+    color: rgba(192, 57, 43, 1);
+    margin-left: 2%;
+    display: inline-block;
+}

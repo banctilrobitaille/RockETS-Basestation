@@ -19,6 +19,12 @@
     margin: 2%;
 }
 
+.transmitters-section {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 2%;
+}
+
 .telemetry-section-content {
     padding: 0 2% 2%;
 }
@@ -32,30 +38,55 @@
 }
 
 .telemetry-add-monitored-object-content {
-    display: table-cell;
     vertical-align: middle;
+    margin: 1%;
 }
 
 .telemetry-add-monitored-object {
-    margin-left: 1%;
     display: table;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
+    border: dashed 2px dimgray;
 }
 
 .telemetry-add-monitored-object:hover {
     color: rgba(255, 255, 255, 0.8);
-    border: dashed 2px dimgray;
 }
 
 .telemetry-add-sensors {
-    margin-left: 1%;
     display: table;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
+    border: dashed 2px dimgray;
 }
 
 .telemetry-add-sensors:hover {
     color: rgba(255, 255, 255, 0.8);
+}
+
+.telemetry-add-transmitters {
+    margin-right: 2%;
+    display: table;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
     border: dashed 2px dimgray;
+}
+
+.telemetry-add-transmitters:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.telemetry-add-transmitters-content {
+    vertical-align: middle;
+    margin: 1%;
+}
+
+.telemetry-widget-holder {
+    padding-left: 0.1%;
+    margin-bottom: 1%;
+}
+
+.telemetry-add-widget-holder {
+    padding: 0 1% 0 0;
+
 }

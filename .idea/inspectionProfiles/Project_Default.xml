@@ -8,6 +8,11 @@
           <option value="dashboards.models.Dashboard.objects" />
           <option value="dashboards.views.Widgets.objects" />
           <option value="dashboards.models.DashboardWidget.objects" />
+          <option value="telemetry.models.Sensor.objects" />
+          <option value="telemetry.models.RemoteSensor.objects" />
+          <option value="telemetry.models.MonitoredObject.objects" />
+          <option value="telemetry.models.Transmitter.objects" />
+          <option value="telemetry.models.TransmitterInterface.objects" />
         </list>
       </option>
     </inspection_tool>

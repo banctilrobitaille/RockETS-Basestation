@@ -24,8 +24,8 @@
         window["{{ widget.uuid }}"] = new JustGage({
             id: "{{ widget.name }}-{{ widget.uuid }}",
             value: 0,
-            min: -2,
-            max: 5,
+            min: -15,
+            max: 50,
             valueFontColor: "#FFFFFF",
             label: "{{ widget.description }}",
             labelFontColor: "#FFFFFF",
@@ -33,7 +33,8 @@
             decimals: 2
         });
 
-        window["{{ widget.uuid }}-socket"] = new WebSocket("ws://" + window.location.host + "/telemetry/12rsdf");
+        window["{{ widget.uuid }}-socket"] = new WebSocket("ws://" + window.location.host +
+                "/telemetry/{{ widget.sensor_id }}/{{ widget.sensor_measure }}");
         window["{{ widget.uuid }}-socket"].onmessage = function (e) {
             var value = parseFloat(e.data).toFixed(2);
             if (value < window["{{ widget.uuid }}-minimum-value"]) {

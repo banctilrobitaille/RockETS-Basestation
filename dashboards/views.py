@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from telemetry.communication import CommunicationService
+from telemetry.models import MonitoredObject, Sensor, Transmitter
 from validators import DashboardValidator, WidgetValidator
 from factories import DashboardFactory, DashboardWidgetFactory, DashboardRowsFactory
 
@@ -19,25 +19,46 @@ class Dashboards(APIView):
     @api_view(['GET'])
     def get(request):
         if "uuid" not in request.query_params.keys():
-            dashboards = Dashboard.objects.all()
             return render_to_response('dashboards/dashboards-index.html',
-                                      {'content_title': "Dashboards", 'dashboards': dashboards},
+                                      {'content_title': "Dashboards",
+                                       'dashboards': Dashboard.objects.all(),
+                                       'monitored_objects': MonitoredObject.objects.all(),
+                                       'transmitters': Transmitter.objects.all()},
                                       RequestContext(request))
         else:
-            CommunicationService.get_instance().open_communication_channel_for("telemetry")
             dashboard = Dashboard.objects(uuid=request.query_params["uuid"]).first()
             dashboard_rows = DashboardRowsFactory.create_dashboard_rows_from(dashboard.widgets)
-
             return render_to_response('dashboards/dashboard.html',
-                                      {'content_title': dashboard.name, 'dashboards': dashboard,
+                                      {'content_title': dashboard.name,
+                                       'dashboards': dashboard,
                                        'dashboard_rows': dashboard_rows,
                                        'widget_types': DashboardWidget.TYPES.keys(),
-                                       'measure_units': DashboardWidget.MEASURE_UNITS.keys()},
+                                       'measure_units': DashboardWidget.MEASURE_UNITS.keys(),
+                                       'sensors': map(lambda sensor_uuid: Sensor.objects(uuid=sensor_uuid).first(),
+                                                      MonitoredObject.objects(
+                                                              uuid=dashboard.monitored_object_id).first().sensor_ids)},
                                       RequestContext(request))
 
     @staticmethod
     @api_view(['POST'])
     def post(request):
+        """
+            Create a new dashboard.
+            ---
+            parameters:
+                - name: name
+                  description: The dashboard's name.
+                  type: string
+                  required: true
+                - name: description
+                  description: The dashboard's description.
+                  type: string
+                  required: false
+                - name: template
+                  description: The dashboard's template.
+                  type: string
+                  required: true
+        """
         try:
             DashboardFactory.create_dashboard_from_query_params(
                     DashboardValidator.validate(request.query_params)).save()
@@ -48,6 +69,15 @@ class Dashboards(APIView):
     @staticmethod
     @api_view(['DELETE'])
     def delete(request):
+        """
+            Delete a dashboard.
+            ---
+            parameters:
+                - name: uuid
+                  description: The dashboard's uuid.
+                  type: string
+                  required: true
+        """
         try:
             if 'uuid' in request.query_params.keys():
                 dashboard = Dashboard.objects(uuid=request.query_params['uuid'])

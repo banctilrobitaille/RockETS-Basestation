@@ -6,11 +6,9 @@ from mongoengine import *
 class DashboardWidget(EmbeddedDocument):
     MINIMUM_WIDTH = 2
     MAXIMUM_WIDTH = 10
-
     meta = {
         'abstract': True,
     }
-
     TYPES = {'line-chart': "line-chart",
              'altimeter': "altimeter",
              'variometer': "variometer",
@@ -19,18 +17,19 @@ class DashboardWidget(EmbeddedDocument):
              'gauge': "gauge",
              'gps-map': "GPS map",
              'guided-chute-planner': "Guided chute planner"}
-    MEASURE_UNITS = {'knots': "kn",
-                     'meters': "m",
-                     'feet': "ft",
-                     'meters_per_minute': "m/min",
-                     'meters_per_second': "m/sec",
-                     'feet_per_minute': "ft/min",
-                     'feet_per_second': "ft/sec",
+    MEASURE_UNITS = {'kn': "kn",
+                     'm': "m",
+                     'ft': "ft",
+                     'm/min': "m/min",
+                     'm/sec': "m/sec",
+                     'ft/min': "ft/min",
+                     'ft/sec': "ft/sec",
+                     'ft/sec2': "ft/sec2",
+                     'm/sec2': "m/sec2"
                      }
     CATEGORIES = {'gauge': "gauge",
                   'chart': "chart",
                   'map': "map"}
-
     TYPES_TO_CATEGORY = {
         'line-chart': "chart",
         'altimeter': "gauge",
@@ -44,6 +43,7 @@ class DashboardWidget(EmbeddedDocument):
 
     uuid = UUIDField(required=True)
     sensor_id = UUIDField()
+    sensor_measure = StringField()
     name = StringField(required=True)
     description = StringField()
     type = StringField()
@@ -65,6 +65,8 @@ class Dashboard(Document):
     description = StringField(max_length=200)
     template = StringField()
     widgets = ListField(EmbeddedDocumentField(DashboardWidget))
+    monitored_object_id = UUIDField(required=True)
+    transmitter_id = UUIDField(required=True)
 
     def update_with(self, params):
         if 'name' in params.keys():

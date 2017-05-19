@@ -11,6 +11,8 @@ class DashboardFactory(object):
         dashboard.name = query_params['name']
         dashboard.description = query_params['description']
         dashboard.template = query_params['template']
+        dashboard.monitored_object_id = query_params['monitored-object-uuid']
+        dashboard.transmitter_id = query_params['transmitter-uuid']
         dashboard.uuid = uuid.uuid4()
         for widget in DashboardFactory.__get_default_widgets_for(template=query_params['template']):
             dashboard.widgets.append(widget)
@@ -49,7 +51,7 @@ class DashboardWidgetFactory(object):
         if widget_type is DashboardWidget.TYPES['variometer']:
             widget.name = "Vertical speed"
             widget.description = "The vertical speed gauge(variometer) inform of the rate of descent or climb"
-            widget.measure_units = DashboardWidget.MEASURE_UNITS['feet_per_minute']
+            widget.measure_units = DashboardWidget.MEASURE_UNITS['ft/min']
             widget.width = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_VERTICAL_SPEED_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['variometer']
@@ -59,7 +61,7 @@ class DashboardWidgetFactory(object):
             widget.name = "Air speed"
             widget.description = "The airspeed indicator or airspeed gauge is an instrument used in an aircraft to " \
                                  "display the craft's airspeed, typically in knots"
-            widget.measure_units = DashboardWidget.MEASURE_UNITS['knots']
+            widget.measure_units = DashboardWidget.MEASURE_UNITS['kn']
             widget.width = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_AIR_SPEED_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['airspeed']
@@ -69,7 +71,7 @@ class DashboardWidgetFactory(object):
             widget.name = "Altitude"
             widget.description = "An altimeter or an altitude meter is an instrument used to measure the altitude" \
                                  " of an object above a fixed level."
-            widget.measure_units = DashboardWidget.MEASURE_UNITS['feet']
+            widget.measure_units = DashboardWidget.MEASURE_UNITS['ft']
             widget.width = DashboardWidgetFactory.DEFAULT_GAUGE_SIZE
             widget.grid_position = DashboardWidgetFactory.DEFAULT_ALTITUDE_GAUGE_POSITION
             widget.type = DashboardWidget.TYPES['altimeter']
@@ -109,6 +111,8 @@ class DashboardWidgetFactory(object):
         widget.type = query_params['type']
         widget.category = DashboardWidget.TYPES_TO_CATEGORY[query_params['type']]
         widget.uuid = uuid.uuid4()
+        widget.sensor_id = query_params['sensor']
+        widget.sensor_measure = query_params['sensor-measure']
 
         return widget
 

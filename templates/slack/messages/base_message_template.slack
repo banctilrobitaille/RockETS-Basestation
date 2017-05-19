@@ -1,0 +1,12 @@
+{% extends django_slack %}
+{% load django_slack %}
+
+{% block token %}
+    {{ client_id }}
+{% endblock %}
+{% block channel %}
+    {{ channel }}
+{% endblock %}
+{% block text %}
+    Message text here: "This is a test"
+{% endblock %}

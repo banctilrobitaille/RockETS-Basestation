@@ -1,4 +1,4 @@
-# RockETS Basestation
+# RockETS Basestation <a href="https://slack.com/oauth/authorize?&client_id=3552035680.183230877715&scope=incoming-webhook,bot"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
 
 #### Setup
 > pip install -r [path/to/requirements.txt]
