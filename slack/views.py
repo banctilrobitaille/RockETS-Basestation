@@ -34,7 +34,16 @@ class SlackMessage(APIView):
                 "chat.postMessage",
                 channel="#basestation",
                 attachments='[{'
-                            '"text":"The rocket went from ON PAD to ON FLIGHT",'
-                            '"title" : "Rocket state changed",'
-                            '"color": "#36a64f"}]')
+                            '"title":"Rocket state changed ! :tada:",'
+                            '"color": "#36a64f",'
+                            '"fields": [{'
+                            '"title": "From:",'
+                            '"value": "ON THE PAD",'
+                            '"short": true},'
+                            '{"title": "To:",'
+                            '"value": "IN FLIGHT",'
+                            '"short": true}'
+                            '],'
+                            '"thumb_url": "https://image.flaticon.com/icons/png/512/214/214697.png",'
+                            '"footer": "Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY"}]')
         return Response(status=status.HTTP_200_OK)
