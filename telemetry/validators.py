@@ -123,6 +123,11 @@ class TransmitterValidator(object):
         return query_params
 
     @staticmethod
+    def __validate_uuid_from(query_params):
+        if 'uuid' not in query_params.keys() or not query_params['uuid']:
+            raise InvalidTransmitterParametersException("Parameter <uuid> should not be null or empty")
+
+    @staticmethod
     def __validate_name_from(query_params):
         if 'name' not in query_params.keys() or not query_params['name']:
             raise InvalidTransmitterParametersException("Parameter <name> should not be null or empty")

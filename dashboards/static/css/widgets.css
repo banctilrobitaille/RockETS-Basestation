@@ -64,3 +64,9 @@
 .gauge-widget-minimum-value {
     margin-top: 0;
 }
+
+.single-value-widget-value {
+    margin-top: 25%;
+    color: white;
+    text-align: center;
+}

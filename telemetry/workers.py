@@ -36,10 +36,13 @@ class SerialTransmitterWorker(TransmitterWorker):
             self.__serial_connection.flush()
             received_string = self.__serial_connection.readline()
             try:
-                sensors = json.loads(received_string)['Sensors']
-
+                print(received_string)
+                raw_data = json.loads(received_string)
+                sensors = raw_data['Sensors']
+                print(raw_data)
                 for sensor in sensors.keys():
                     for measure in sensors[sensor]:
+                        Group("main-state").send({'text': str(raw_data['State']).replace("_", " ")})
                         Group(sensor + "-" + measure).send({'text': str(sensors[sensor][measure])})
             except Exception as e:
                 print(e.message)

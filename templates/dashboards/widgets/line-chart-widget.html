@@ -63,11 +63,11 @@
             window["{{ widget.uuid }}-chart"].data.datasets[0].data[window["{{ widget.uuid }}-index"]] = value;
             window["{{ widget.uuid }}-chart"].data.labels[window["{{ widget.uuid }}-index"]++] = moment();
             window["{{ widget.uuid }}-chart"].update(1);
-            if (window["{{ widget.uuid }}-index"] % 300 == 0) {
-                window["{{ widget.uuid }}-chart"].data.datasets[0].data.shift();
-                window["{{ widget.uuid }}-chart"].data.labels.shift();
-                window["{{ widget.uuid }}-index"]--;
-            }
+            //if (window["{{ widget.uuid }}-index"] % 1000 == 0) {
+            //  window["{{ widget.uuid }}-chart"].data.datasets[0].data.shift();
+            //window["{{ widget.uuid }}-chart"].data.labels.shift();
+            //window["{{ widget.uuid }}-index"]--;
+            //}
         };
         window["{{ widget.uuid }}-socket"].onopen = function () {
             console.log("Socket opened")

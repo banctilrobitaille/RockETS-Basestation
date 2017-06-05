@@ -9,7 +9,7 @@ from rest_framework import status
 from telemetry.communication import CommunicationService
 from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException
 from telemetry.factories import SensorFactory, MonitoredObjectFactory, TransmitterFactory
-from telemetry.models import Sensor, MonitoredObject, RemoteSensor, Transmitter, TransmitterInterface
+from telemetry.models import Sensor, MonitoredObject, Transmitter, TransmitterInterface
 from telemetry.validators import SensorValidator, MonitoredObjectValidator, TransmitterValidator, \
     TransmitterStartValidator, TransmitterStopValidator
 
@@ -127,6 +127,11 @@ class TelemetryTransmitters(APIView):
             return Response(status=status.HTTP_201_CREATED)
         except InvalidSensorParametersException as e:
             return JsonResponse({'error_message': e.message}, status=400)
+
+    @staticmethod
+    @api_view(['DELETE'])
+    def delete(request):
+        TransmitterValidator.validate_post_parameters_from()
 
 
 class TelemetryTransmitterStart(APIView):
