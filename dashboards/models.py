@@ -9,27 +9,34 @@ class DashboardWidget(EmbeddedDocument):
     meta = {
         'abstract': True,
     }
-    TYPES = {'line-chart': "line-chart",
-             'altimeter': "altimeter",
-             'variometer': "variometer",
-             'heading': "heading",
-             'airspeed': "airspeed",
-             'gauge': "gauge",
-             'gps-map': "GPS map",
-             'guided-chute-planner': "Guided chute planner"}
-    MEASURE_UNITS = {'kn': "kn",
-                     'm': "m",
-                     'ft': "ft",
-                     'm/min': "m/min",
-                     'm/sec': "m/sec",
-                     'ft/min': "ft/min",
-                     'ft/sec': "ft/sec",
-                     'ft/sec2': "ft/sec2",
-                     'm/sec2': "m/sec2"
-                     }
-    CATEGORIES = {'gauge': "gauge",
-                  'chart': "chart",
-                  'map': "map"}
+    TYPES = {
+        'line-chart': "line-chart",
+        'altimeter': "altimeter",
+        'variometer': "variometer",
+        'heading': "heading",
+        'airspeed': "airspeed",
+        'gauge': "gauge",
+        'gps-map': "GPS map",
+        'guided-chute-planner': "Guided chute planner",
+        'single-value': "Single value"
+    }
+    MEASURE_UNITS = {
+        'kn': "kn",
+        'm': "m",
+        'ft': "ft",
+        'm/min': "m/min",
+        'm/sec': "m/sec",
+        'ft/min': "ft/min",
+        'ft/sec': "ft/sec",
+        'ft/sec2': "ft/sec2",
+        'm/sec2': "m/sec2",
+        'none': "none"
+    }
+    CATEGORIES = {
+        'gauge': "gauge",
+        'chart': "chart",
+        'map': "map"
+    }
     TYPES_TO_CATEGORY = {
         'line-chart': "chart",
         'altimeter': "gauge",
@@ -38,7 +45,8 @@ class DashboardWidget(EmbeddedDocument):
         'airspeed': "gauge",
         'gauge': "gauge",
         'gps-map': "map",
-        'guided-chute-planner': "map"
+        'guided-chute-planner': "map",
+        'single-value': "single value",
     }
 
     uuid = UUIDField(required=True)

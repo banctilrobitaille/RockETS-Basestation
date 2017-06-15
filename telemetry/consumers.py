@@ -9,7 +9,7 @@ def ws_connect(message, sensor_uuid, measure):
         sensor_node = Sensor.objects(uuid=sensor_uuid).first().node
         Group(sensor_node + "-" + measure).add(message.reply_channel)
     except Exception as e:
-        pass
+        Group("main-" + measure).add(message.reply_channel)
 
 
 def ws_disconnect(message):
