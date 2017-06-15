@@ -39,10 +39,9 @@ class SerialTransmitterWorker(TransmitterWorker):
                 print(received_string)
                 raw_data = json.loads(received_string)
                 sensors = raw_data['Sensors']
-                print(raw_data)
                 for sensor in sensors.keys():
                     for measure in sensors[sensor]:
-                        Group("main-state").send({'text': str(raw_data['State']).replace("_", " ")})
+                        Group("main-state").send({'text': str(raw_data['Rocket_State']).replace("_", " ")})
                         Group(sensor + "-" + measure).send({'text': str(sensors[sensor][measure])})
             except Exception as e:
                 print(e.message)
