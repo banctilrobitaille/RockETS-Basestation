@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from telemetry.models import MonitoredObject, Sensor, Transmitter
+from telemetry.models import MonitoredObject, Sensor, Transmitter, TransmitterInterface
 from validators import DashboardValidator, WidgetValidator
 from factories import DashboardFactory, DashboardWidgetFactory, DashboardRowsFactory
 
@@ -34,6 +34,8 @@ class Dashboards(APIView):
                                        'dashboard_rows': dashboard_rows,
                                        'widget_types': DashboardWidget.TYPES.keys(),
                                        'measure_units': DashboardWidget.MEASURE_UNITS.keys(),
+                                       'dashboard_transmitter': Transmitter.objects(uuid=dashboard.transmitter_id),
+                                       'transmitters': Transmitter.objects.all(),
                                        'sensors': map(lambda sensor_uuid: Sensor.objects(uuid=sensor_uuid).first(),
                                                       MonitoredObject.objects(
                                                               uuid=dashboard.monitored_object_id).first().sensor_ids)},

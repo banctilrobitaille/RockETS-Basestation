@@ -67,7 +67,14 @@ class TelemetryMonitoredObjects(APIView):
     def delete(request):
         try:
             MonitoredObjectValidator.validate_delete_parameters_from(request.query_params)
+            monitored_object = MonitoredObject.objects(uuid=request.query_params['uuid']).first()
 
+            for sensor_id in monitored_object.sensor_ids:
+                try:
+                    Sensor.objects(uuid=sensor_id).delete()
+                except Exception as e:
+                    print("Unable to delete sensor with ID: " + sensor_id)
+            monitored_object.delete()
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=400)
@@ -131,7 +138,7 @@ class TelemetryTransmitters(APIView):
     @staticmethod
     @api_view(['DELETE'])
     def delete(request):
-        TransmitterValidator.validate_post_parameters_from()
+        TransmitterValidator.validate_post_parameters_from(request.query_params)
 
 
 class TelemetryTransmitterStart(APIView):

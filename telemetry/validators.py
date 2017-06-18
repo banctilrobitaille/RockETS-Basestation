@@ -119,7 +119,11 @@ class TransmitterValidator(object):
         TransmitterValidator.__validate_name_from(query_params)
         TransmitterValidator.__validate_description_from(query_params)
         TransmitterInterfaceValidator.validate_transmitter_interface_parameters_from(query_params)
+        return query_params
 
+    @staticmethod
+    def validate_delete_parameters_from(query_params):
+        TransmitterValidator.__validate_uuid_from(query_params)
         return query_params
 
     @staticmethod

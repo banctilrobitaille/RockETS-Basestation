@@ -74,7 +74,6 @@ class Transmitter(Document):
     uuid = UUIDField(required=True)
     description = StringField()
     interface_id = UUIDField(required=True)
-    # dashboard_id = UUIDField(required=True)
 
 
 class TransmitterInterface(Document):

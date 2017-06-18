@@ -33,17 +33,22 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="editedDashboardUUID" class="col-sm-2 control-label">UUID:</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control input-custom" readonly="readonly"
-                                           id="editedDashboardUUID">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="dashboardTemplate" class="col-sm-2 control-label">Template:</label>
                                 <div class="col-sm-9">
                                     <select disabled class="form-control input-custom" id="dashboardTemplate">
                                         <option value="aircraft">Aircraft</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="editedDashboardTransmitter"
+                                       class="col-sm-2 control-label">Transmitter:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="editedDashboardTransmitter">
+                                        {% for transmitter in transmitters %}
+                                            <option value=transmitter.uuid>{{ transmitter.name }}/{{ transmitter.description }}
+                                            </option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
