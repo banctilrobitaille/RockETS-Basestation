@@ -25,6 +25,12 @@
     margin: 2%;
 }
 
+.local-sensors-section {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 2%;
+}
+
 .telemetry-section-content {
     padding: 0 2% 2%;
 }
@@ -50,6 +56,17 @@
 }
 
 .telemetry-add-monitored-object:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.telemetry-add-local-sensors {
+    display: table;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    border: dashed 2px dimgray;
+}
+
+.telemetry-add-local-sensors:hover {
     color: rgba(255, 255, 255, 0.8);
 }
 

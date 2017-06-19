@@ -138,7 +138,15 @@ class TelemetryTransmitters(APIView):
     @staticmethod
     @api_view(['DELETE'])
     def delete(request):
-        TransmitterValidator.validate_post_parameters_from(request.query_params)
+        try:
+            TransmitterValidator.validate_delete_parameters_from(request.query_params)
+            transmitter = Transmitter.objects(uuid=request.query_params['uuid']).first()
+            transmitter_interface = TransmitterInterface.objects(uuid=transmitter.interface_id).first()
+            transmitter_interface.delete()
+            transmitter.delete()
+            return Response(status=status.HTTP_200_OK)
+        except InvalidSensorParametersException as e:
+            return JsonResponse({'error_message': e.message}, status=400)
 
 
 class TelemetryTransmitterStart(APIView):

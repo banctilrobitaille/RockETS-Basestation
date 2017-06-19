@@ -114,6 +114,9 @@ class DashboardWidgetFactory(object):
         widget.sensor_id = query_params['sensor']
         widget.sensor_measure = query_params['sensor-measure']
 
+        if widget.type == DashboardWidget.TYPES['gauge']:
+            widget.minValue = float(query_params['minimum-value'])
+            widget.maxValue = float(query_params['maximum-value'])
         return widget
 
 

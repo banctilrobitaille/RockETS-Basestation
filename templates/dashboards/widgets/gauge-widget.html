@@ -24,8 +24,8 @@
         window["{{ widget.uuid }}"] = new JustGage({
             id: "{{ widget.name }}-{{ widget.uuid }}",
             value: 0,
-            min: -15,
-            max: 50,
+            min: parseFloat({{ widget.minValue }}),
+            max: parseFloat({{ widget.maxValue }}),
             valueFontColor: "#FFFFFF",
             label: "{{ widget.description }}",
             labelFontColor: "#FFFFFF",
