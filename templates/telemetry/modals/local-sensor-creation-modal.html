@@ -1,0 +1,102 @@
+<div class="modal fade" id="local-sensor-creation-modal" tabindex="-1" role="dialog"
+     aria-labelledby="local-sensor-creation-modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content custom-modal">
+            <div class="modal-header">
+                <i class="fa  fa-plug fa-4x modal-header-icon"></i>
+                <h3 class="modal-title" id="local-sensor-creation-modal-label">Local sensor creation</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <h4>General</h4>
+                            <hr>
+                            <div class="form-group">
+                                <label for="localSensorName" class="col-sm-2 control-label">Name:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom" id="localSensorName">
+                                </div>
+                                <div class="col-md-9 col-md-offset-2">
+                                    <span class="modal-error-message help-block" id="localSensorNameError">The sensor name should not be empty</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="localSensorDescription"
+                                       class="col-sm-2 control-label">Description:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom"
+                                           id="localSensorDescription">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Type:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="localSensorType">
+                                        {% for sensor_type in sensor_types %}
+                                            <option value="{{ sensor_type }}">{{ sensor_type|title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h4>Configuration</h4>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Measures:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="localSensorMeasures"
+                                            multiple="multiple">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h4>Connectivity</h4>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Interface:</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control input-custom" id="sensorInterfaceType">
+                                        {% for transmitter_interface_type in transmitter_interface_types %}
+                                            <option value="{{ transmitter_interface_type }}">{{ transmitter_interface_type|title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group local=sensor-interface-configuration"
+                             id="serialSensorInterfaceConfiguration">
+                            <div class="form-group">
+                                <label for="sensorInterfaceBaudrate"
+                                       class="col-sm-2 control-label">Baud rate:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom"
+                                           id="sensorInterfaceBaudrate">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sensorInterfacePort"
+                                       class="col-sm-2 control-label">Port:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control input-custom"
+                                           id="sensorInterfacePort">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-primary-custom"
+                        id="createLocalSensorButton">
+                    Create
+                </button>
+                <button type="button" class="btn btn-secondary btn-secondary-custom" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

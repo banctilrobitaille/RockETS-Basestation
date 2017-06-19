@@ -1,29 +1,32 @@
 <div class="col-md-4 col-sm-6 telemetry-widget-holder hvr-forward">
-    <div class="col-md-12 col-sm-6 transmitter-widget" id="{{ transmitter.uuid }}">
-        <div class="row transmitter-widget-header">
-            <div class="col-md-10 col-sm-9 transmitter-widget-title">
-                <h4 class="ellipsis-text transmitter-name">{{ transmitter.name }}</h4>
+    <div class="col-md-12 local-sensor-widget" id="{{ local_sensor.uuid }}">
+        <div class="row sensor-widget-header">
+            <div class="col-md-10 col-sm-9 sensor-widget-title">
+                <h4 class="ellipsis-text sensor-name">{{ local_sensor.name }}</h4>
             </div>
-            <div class="col-md-2 col-sm-3 transmitter-widget-action pull-right">
+            <div class="col-md-2 col-sm-3 sensor-widget-action pull-right">
                 <a href="#">
-                    <i class="pull-right fa  fa-trash-o fa-1x hvr-grow transmitter-widget-delete-icon"></i>
+                    <i class="pull-right fa  fa-trash-o fa-1x hvr-grow sensor-widget-delete-icon"></i>
                 </a>
-                <a href="#" data-toggle="modal" data-target="#transmitter-edition-modal">
-                    <i class="pull-right fa  fa-cog fa-1x hvr-grow transmitter-widget-edit-icon"></i>
+                <a href="#" data-toggle="modal" data-target="#sensor-edition-modal">
+                    <i class="pull-right fa  fa-cog fa-1x hvr-grow sensor-widget-edit-icon"></i>
                 </a>
             </div>
         </div>
-        <div class="row transmitter-widget-content">
-            <div class="col-md-2 transmitter-widget-image">
-                <i class="fa  fa-wifi fa-4x"></i>
+        <div class="row sensor-widget-content">
+            <div class="col-md-2 sensor-widget-image">
+                <i class="fa  fa-plug fa-4x"></i>
             </div>
-            <div class="col-md-9 transmitter-widget-details">
-                <h5 class="transmitter-widget-properties-title">Description: </h5>
-                <span class="transmitter-description">{{ transmitter.description }}</span>
+            <div class="col-md-10 sensor-widget-details">
+                <h5 class="sensor-widget-properties-title">Description: </h5>
+                <span class="sensor-description">{{ local_sensor.description }}</span>
+                <br/>
+                <h5 class="sensor-widget-properties-title">Type: </h5>
+                <span class="sensor-description">{{ local_sensor.type }}</span>
                 <br/>
             </div>
         </div>
-        <div class="row transmitter-widget-footer">
+        <div class="row sensor-widget-footer">
         </div>
     </div>
 </div>

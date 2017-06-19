@@ -37,11 +37,11 @@
                 "/telemetry/{{ widget.sensor_id }}/{{ widget.sensor_measure }}");
         window["{{ widget.uuid }}-socket"].onmessage = function (e) {
             var value = parseFloat(e.data).toFixed(2);
-            if (value < window["{{ widget.uuid }}-minimum-value"]) {
+            if (value < parseFloat(window["{{ widget.uuid }}-minimum-value"])) {
                 window["{{ widget.uuid }}-minimum-value"] = value;
                 $("#{{ widget.uuid }}").find(".gauge-widget-minimum-value").html("Min: " + value);
             }
-            if (value > window["{{ widget.uuid }}-maximum-value"]) {
+            if (value > parseFloat(window["{{ widget.uuid }}-maximum-value"])) {
                 window["{{ widget.uuid }}-maximum-value"] = value;
                 $("#{{ widget.uuid }}").find(".gauge-widget-maximum-value").html("Max: " + value);
             }

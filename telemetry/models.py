@@ -56,6 +56,7 @@ class Sensor(Document):
         'gps': "gps",
     }
     LOCATIONS = {
+        'local': "local",
         'remote': "remote",
     }
     name = StringField(required=True)
@@ -67,6 +68,11 @@ class Sensor(Document):
 class RemoteSensor(Sensor):
     measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
     node = StringField(required=True)
+
+
+class LocalSensor(Sensor):
+    measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
+    interface_id = UUIDField(required=True)
 
 
 class Transmitter(Document):

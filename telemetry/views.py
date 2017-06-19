@@ -9,7 +9,7 @@ from rest_framework import status
 from telemetry.communication import CommunicationService
 from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException
 from telemetry.factories import SensorFactory, MonitoredObjectFactory, TransmitterFactory
-from telemetry.models import Sensor, MonitoredObject, Transmitter, TransmitterInterface
+from telemetry.models import Sensor, MonitoredObject, Transmitter, TransmitterInterface, LocalSensor
 from telemetry.validators import SensorValidator, MonitoredObjectValidator, TransmitterValidator, \
     TransmitterStartValidator, TransmitterStopValidator
 
@@ -23,7 +23,9 @@ class Telemetry(APIView):
                                    'monitored_objects': MonitoredObject.objects.all(),
                                    'monitored_object_types': MonitoredObject.TYPES.keys(),
                                    'transmitters': Transmitter.objects.all(),
-                                   'transmitter_interface_types': TransmitterInterface.TYPES.keys()},
+                                   'transmitter_interface_types': TransmitterInterface.TYPES.keys(),
+                                   'sensor_types': Sensor.TYPES.keys(),
+                                   'local_sensors': LocalSensor.objects.all()},
                                   RequestContext(request))
 
 
@@ -95,9 +97,11 @@ class TelemetrySensors(APIView):
         try:
             sensor = SensorFactory.create_sensor_from_query_params(
                     SensorValidator.validate_post_parameters_from(request.query_params))
-            monitored_object = MonitoredObject.objects(uuid=request.query_params['monitored-object-uuid']).first()
-            monitored_object.sensor_ids.append(sensor.uuid)
-            monitored_object.save()
+
+            if request.query_params['location'] == Sensor.LOCATIONS['remote']:
+                monitored_object = MonitoredObject.objects(uuid=request.query_params['monitored-object-uuid']).first()
+                monitored_object.sensor_ids.append(sensor.uuid)
+                monitored_object.save()
             sensor.save()
             return Response(status=status.HTTP_201_CREATED)
         except InvalidSensorParametersException as e:

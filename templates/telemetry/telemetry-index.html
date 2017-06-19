@@ -67,7 +67,7 @@
         <div class="row telemetry-section-content telemetry-section-displayed">
             <div class="col-md-12">
                 {% for local_sensor in local_sensors %}
-                    {% include "telemetry/transmitters-widget.html" %}
+                    {% include "telemetry/local-sensors-widget.html" %}
                 {% endfor %}
                 {% include "telemetry/add-local-sensors-component.html" %}
             </div>
@@ -77,4 +77,5 @@
     {% include "telemetry/modals/monitored-object-edition-modal.html" %}
     {% include "telemetry/modals/transmitter-creation-modal.html" %}
     {% include "telemetry/modals/transmitter-edition-modal.html" %}
+    {% include "telemetry/modals/local-sensor-creation-modal.html" %}
 {% endblock %}

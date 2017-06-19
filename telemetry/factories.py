@@ -1,7 +1,7 @@
 import uuid
 
-from telemetry.models import Sensor, RemoteSensor, SensorMeasurement, MonitoredObject, Rocket, TransmitterInterface, \
-    SerialTransmitterInterface, Transmitter
+from telemetry.models import RemoteSensor, SensorMeasurement, MonitoredObject, Rocket, TransmitterInterface, \
+    SerialTransmitterInterface, Transmitter, LocalSensor, Sensor
 from telemetry.workers import SerialTransmitterWorker
 
 
@@ -13,7 +13,7 @@ class SensorFactory(object):
         if query_params['location'] == Sensor.LOCATIONS['remote']:
             sensor = SensorFactory.create_remote_sensor_from(query_params)
         else:
-            raise NotImplementedError
+            sensor = SensorFactory.create_local_sensor_from(query_params)
         return sensor
 
     @staticmethod
@@ -34,7 +34,22 @@ class SensorFactory(object):
 
     @staticmethod
     def create_local_sensor_from(query_params):
-        return None
+        local_sensor = LocalSensor()
+        local_sensor.name = query_params['name']
+        local_sensor.description = query_params['description']
+        local_sensor.type = query_params['type']
+        local_sensor.uuid = uuid.uuid4()
+
+        for measure in query_params['measures'].split(SensorFactory.MEASURES_SEPARATOR):
+            local_sensor_measure = SensorMeasurement()
+            local_sensor_measure.name = measure
+            local_sensor.measurements.append(local_sensor_measure)
+
+        local_sensor_interface = InterfaceFactory.create_interface_from(query_params)
+        local_sensor.interface_id = local_sensor_interface.uuid
+        local_sensor_interface.save()
+
+        return local_sensor
 
 
 class MonitoredObjectFactory(object):
@@ -61,16 +76,16 @@ class TransmitterFactory(object):
         transmitter.description = query_params['description']
         transmitter.uuid = uuid.uuid4()
 
-        transmitter_interface = TransmitterInterfaceFactory.create_transmitter_interface_from(query_params)
+        transmitter_interface = InterfaceFactory.create_interface_from(query_params)
         transmitter.interface_id = transmitter_interface.uuid
         transmitter_interface.save()
 
         return transmitter
 
 
-class TransmitterInterfaceFactory(object):
+class InterfaceFactory(object):
     @staticmethod
-    def create_transmitter_interface_from(query_params):
+    def create_interface_from(query_params):
         transmitter_interface = None
 
         if query_params['interface-type'] == TransmitterInterface.TYPES['serial']:

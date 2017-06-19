@@ -5,6 +5,13 @@
     cursor: pointer;
 }
 
+.local-sensor-widget {
+    color: white;
+    background-color: rgba(142, 68, 173, 0.8);
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
 .sensor-widget-header {
     padding: 2%;
     background-color: rgba(0, 0, 0, 0.1);

@@ -11,8 +11,9 @@ class SensorValidator(object):
         SensorValidator.__validate_description_from(query_params)
         SensorValidator.__validate_location_from(query_params)
         SensorValidator.__validate_measure_from(query_params)
-        SensorValidator.__validate_node_from(query_params)
         SensorValidator.__validate_type_from(query_params)
+        if query_params['location'] == Sensor.LOCATIONS['remote']:
+            SensorValidator.__validate_node_from(query_params)
         return query_params
 
     @staticmethod
