@@ -23,8 +23,10 @@ $(document).ready(function () {
                 sweetAlert("Oops...", "An error has occurred while starting the communication", "error");
             },
 
-            timeout: 12000000
+            timeout: 12000
         });
+
+
     });
 
     $("#dashboard-stop-icon").on("click", function () {

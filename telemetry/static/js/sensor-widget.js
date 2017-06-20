@@ -26,4 +26,28 @@ $(document).ready(function () {
             timeout: 12000000
         });
     });
+
+    $(".local-sensor-widget-delete-icon").on("click", function (event) {
+        var sensorId = event.target.closest(".local-sensor-widget").id;
+        var queryParams = "?uuid=" + sensorId;
+
+        jQuery.ajax({
+            url: "http://localhost:8000/telemetry/sensor" + queryParams,
+            type: "DELETE",
+            success: function (resultData) {
+                swal({
+                    title: "Deleted",
+                    text: "The sensor has been successfully deleted",
+                    type: "success"
+                }, function () {
+                    location.reload();
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                sweetAlert("Oops...", "An error has occurred while deleting the sensor", "error");
+            },
+
+            timeout: 12000
+        });
+    });
 });

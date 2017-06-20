@@ -1,7 +1,7 @@
 import uuid
 
-from telemetry.models import RemoteSensor, SensorMeasurement, MonitoredObject, Rocket, TransmitterInterface, \
-    SerialTransmitterInterface, Transmitter, LocalSensor, Sensor
+from telemetry.models import RemoteSensor, SensorMeasurement, MonitoredObject, Rocket, DeviceInterface, \
+    SerialDeviceInterface, Transmitter, LocalSensor, Sensor
 from telemetry.workers import SerialTransmitterWorker
 
 
@@ -86,20 +86,28 @@ class TransmitterFactory(object):
 class InterfaceFactory(object):
     @staticmethod
     def create_interface_from(query_params):
-        transmitter_interface = None
+        device_interface = None
 
-        if query_params['interface-type'] == TransmitterInterface.TYPES['serial']:
-            transmitter_interface = SerialTransmitterInterface()
-            transmitter_interface.baud_rate = query_params['baud-rate']
-            transmitter_interface.port = query_params['port']
-            transmitter_interface.uuid = uuid.uuid4()
+        if query_params['interface-type'] == DeviceInterface.TYPES['serial']:
+            device_interface = SerialDeviceInterface()
+            device_interface.baud_rate = query_params['baud-rate']
+            device_interface.port = query_params['port']
+            device_interface.uuid = uuid.uuid4()
 
-        return transmitter_interface
+        return device_interface
 
 
 class TransmitterWorkerFactory(object):
     @staticmethod
     def create_transmitter_worker_with(transmitter_interface):
-        if transmitter_interface.type == TransmitterInterface.TYPES['serial']:
+        if transmitter_interface.type == DeviceInterface.TYPES['serial']:
             return SerialTransmitterWorker(serial_port=transmitter_interface.port,
                                            baud_rate=transmitter_interface.baud_rate)
+
+
+class DeviceWorkerFactory(object):
+    @staticmethod
+    def create_device_worker_with(device_interface):
+        if device_interface.type == DeviceInterface.TYPES['serial']:
+            return SerialTransmitterWorker(serial_port=device_interface.port,
+                                           baud_rate=device_interface.baud_rate)

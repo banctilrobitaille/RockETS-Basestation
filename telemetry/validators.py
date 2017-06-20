@@ -1,7 +1,7 @@
 from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException, \
     InvalidTransmitterParametersException, InvalidTransmitterInterfaceParametersException, \
     InvalidTransmitterActionParametersException
-from telemetry.models import Sensor, MonitoredObject, TransmitterInterface
+from telemetry.models import Sensor, MonitoredObject, DeviceInterface
 
 
 class SensorValidator(object):
@@ -145,15 +145,15 @@ class TransmitterValidator(object):
     def __validate_interface_type_from(query_params):
         if 'interface-type' not in query_params.keys() or not query_params['interface-type']:
             raise InvalidTransmitterParametersException("Parameter <interface-type> should not be null or empty")
-        elif query_params['interface-type'] not in TransmitterInterface.TYPES.keys():
+        elif query_params['interface-type'] not in DeviceInterface.TYPES.keys():
             raise InvalidMonitoredObjectParametersException(
-                    "Parameter <interface-type> should be one of those:" + str(TransmitterInterface.TYPES.keys()))
+                    "Parameter <interface-type> should be one of those:" + str(DeviceInterface.TYPES.keys()))
 
 
 class TransmitterInterfaceValidator(object):
     @staticmethod
     def validate_transmitter_interface_parameters_from(query_params):
-        if query_params['interface-type'] == TransmitterInterface.TYPES['serial']:
+        if query_params['interface-type'] == DeviceInterface.TYPES['serial']:
             TransmitterInterfaceValidator.__validate_serial_interface_parameters_from(query_params)
 
     @staticmethod

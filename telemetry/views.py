@@ -9,7 +9,7 @@ from rest_framework import status
 from telemetry.communication import CommunicationService
 from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException
 from telemetry.factories import SensorFactory, MonitoredObjectFactory, TransmitterFactory
-from telemetry.models import Sensor, MonitoredObject, Transmitter, TransmitterInterface, LocalSensor
+from telemetry.models import Sensor, MonitoredObject, Transmitter, DeviceInterface, LocalSensor
 from telemetry.validators import SensorValidator, MonitoredObjectValidator, TransmitterValidator, \
     TransmitterStartValidator, TransmitterStopValidator
 
@@ -23,7 +23,7 @@ class Telemetry(APIView):
                                    'monitored_objects': MonitoredObject.objects.all(),
                                    'monitored_object_types': MonitoredObject.TYPES.keys(),
                                    'transmitters': Transmitter.objects.all(),
-                                   'transmitter_interface_types': TransmitterInterface.TYPES.keys(),
+                                   'transmitter_interface_types': DeviceInterface.TYPES.keys(),
                                    'sensor_types': Sensor.TYPES.keys(),
                                    'local_sensors': LocalSensor.objects.all()},
                                   RequestContext(request))
@@ -120,8 +120,9 @@ class TelemetrySensors(APIView):
     def delete(request):
         try:
             SensorValidator.validate_delete_parameters_from(request.query_params)
-            MonitoredObject.objects(uuid=request.query_params['monitored-object-uuid']).update(
-                    pull__sensor_ids=request.query_params['uuid'])
+            if 'monitored-object-uuid' in request.query_params.keys():
+                MonitoredObject.objects(uuid=request.query_params['monitored-object-uuid']).update(
+                        pull__sensor_ids=request.query_params['uuid'])
             Sensor.objects(uuid=request.query_params['uuid']).delete()
             return Response(status=status.HTTP_200_OK)
         except InvalidSensorParametersException as e:
@@ -145,7 +146,7 @@ class TelemetryTransmitters(APIView):
         try:
             TransmitterValidator.validate_delete_parameters_from(request.query_params)
             transmitter = Transmitter.objects(uuid=request.query_params['uuid']).first()
-            transmitter_interface = TransmitterInterface.objects(uuid=transmitter.interface_id).first()
+            transmitter_interface = DeviceInterface.objects(uuid=transmitter.interface_id).first()
             transmitter_interface.delete()
             transmitter.delete()
             return Response(status=status.HTTP_200_OK)
@@ -159,8 +160,8 @@ class TelemetryTransmitterStart(APIView):
     def get(request):
         try:
             TransmitterStartValidator.validate_get_parameters_from(request.query_params)
-            CommunicationService.get_instance().start_reception_with(
-                    Transmitter.objects(uuid=request.query_params['uuid']).first())
+            CommunicationService.get_instance().start_reception_from(
+                    device=Transmitter.objects(uuid=request.query_params['uuid']).first())
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=500)
@@ -173,7 +174,31 @@ class TelemetryTransmitterStop(APIView):
         try:
             TransmitterStopValidator.validate_get_parameters_from(request.query_params)
             CommunicationService.get_instance().stop_reception_from(
-                    Transmitter.objects(uuid=request.query_params['uuid']).first())
+                    transmitter=Transmitter.objects(uuid=request.query_params['uuid']).first())
+            return Response(status=status.HTTP_200_OK)
+        except Exception as e:
+            return JsonResponse({'error_message': e.message}, status=500)
+
+
+class TelemetryLocalSensorsStart(APIView):
+    @staticmethod
+    @api_view(['POST'])
+    def post(request):
+        try:
+            for local_sensor in LocalSensor.objects.all():
+                CommunicationService.get_instance().start_reception_from(local_sensor)
+            return Response(status=status.HTTP_200_OK)
+        except Exception as e:
+            return JsonResponse({'error_message': e.message}, status=500)
+
+
+class TelemetryLocalSensorsStop(APIView):
+    @staticmethod
+    @api_view(['POST'])
+    def post(request):
+        try:
+            for local_sensor in LocalSensor.objects.all():
+                CommunicationService.get_instance().stop_reception_from(local_sensor)
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=500)

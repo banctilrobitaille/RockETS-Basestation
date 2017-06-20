@@ -82,7 +82,7 @@ class Transmitter(Document):
     interface_id = UUIDField(required=True)
 
 
-class TransmitterInterface(Document):
+class DeviceInterface(Document):
     meta = {
         'allow_inheritance': True,
     }
@@ -92,7 +92,7 @@ class TransmitterInterface(Document):
     uuid = UUIDField(required=True)
 
 
-class SerialTransmitterInterface(TransmitterInterface):
+class SerialDeviceInterface(DeviceInterface):
     BAUD_RATES = {
         '4800': "4800",
         '9600': "9600",
