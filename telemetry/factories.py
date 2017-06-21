@@ -1,8 +1,10 @@
 import uuid
 
+from telemetry.data_processors import GPSNMEADataProcessor
+from telemetry.gps import GPGGASentence
 from telemetry.models import RemoteSensor, SensorMeasurement, MonitoredObject, Rocket, DeviceInterface, \
     SerialDeviceInterface, Transmitter, LocalSensor, Sensor
-from telemetry.workers import SerialTransmitterWorker
+from telemetry.workers import SerialTransmitterWorker, SerialDeviceWorker
 
 
 class SensorFactory(object):
@@ -107,7 +109,24 @@ class TransmitterWorkerFactory(object):
 
 class DeviceWorkerFactory(object):
     @staticmethod
-    def create_device_worker_with(device_interface):
+    def create_device_worker_with(device, data_processor):
+        device_interface = DeviceInterface.objects(uuid=device.interface_id).first()
         if device_interface.type == DeviceInterface.TYPES['serial']:
-            return SerialTransmitterWorker(serial_port=device_interface.port,
-                                           baud_rate=device_interface.baud_rate)
+            if data_processor is None:
+                return SerialTransmitterWorker(serial_port=device_interface.port,
+                                               baud_rate=device_interface.baud_rate)
+            else:
+                return SerialDeviceWorker(serial_port=device_interface.port,
+                                          baud_rate=device_interface.baud_rate,
+                                          data_processor=data_processor,
+                                          device=device)
+
+
+class DataProcessorFactory(object):
+    @staticmethod
+    def create_data_processor_for(device):
+        data_processor = None
+        if device.type == Sensor.TYPES['gps']:
+            data_processor = GPSNMEADataProcessor()
+
+        return data_processor

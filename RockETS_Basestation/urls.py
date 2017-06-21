@@ -3,7 +3,7 @@ from rest_framework_swagger.views import get_swagger_view
 
 from slack.views import SlackMessage
 from telemetry.views import Telemetry, TelemetryMonitoredObjects, TelemetrySensors, TelemetryTransmitters, \
-    TelemetryTransmitterStart, TelemetryTransmitterStop
+    TelemetryTransmitterStart, TelemetryTransmitterStop, TelemetryLocalSensorsStart, TelemetryLocalSensorsStop
 from dashboards.views import Dashboards, Widgets
 from core.views import Core
 
@@ -33,6 +33,8 @@ urlpatterns = [
     url(r'^{}{}{}$'.format("", "", "telemetry/transmitter"), TelemetryTransmitters.as_view()),
     url(r'^{}{}{}$'.format("", "", "telemetry/transmitter/start"), TelemetryTransmitterStart.as_view()),
     url(r'^{}{}{}$'.format("", "", "telemetry/transmitter/stop"), TelemetryTransmitterStop.as_view()),
+    url(r'^{}{}{}$'.format("", "", "telemetry/sensor/start"), TelemetryLocalSensorsStart.as_view()),
+    url(r'^{}{}{}$'.format("", "", "telemetry/sensor/stop"), TelemetryLocalSensorsStop.as_view()),
     url(r'^{}{}{}$'.format("", "", "dashboards"), Dashboards.as_view()),
     url(r'^{}{}{}$'.format("", "", "dashboards/widget"), Widgets.as_view()),
     url(r'^{}{}{}$'.format("", "", "slack/message"), SlackMessage.as_view()),

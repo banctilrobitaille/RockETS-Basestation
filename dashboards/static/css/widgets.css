@@ -70,3 +70,8 @@
     color: white;
     text-align: center;
 }
+
+.map-widget-value {
+    display: inline-block;
+    color: white;
+}

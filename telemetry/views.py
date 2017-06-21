@@ -8,7 +8,7 @@ from rest_framework import status
 
 from telemetry.communication import CommunicationService
 from telemetry.exceptions import InvalidSensorParametersException, InvalidMonitoredObjectParametersException
-from telemetry.factories import SensorFactory, MonitoredObjectFactory, TransmitterFactory
+from telemetry.factories import SensorFactory, MonitoredObjectFactory, TransmitterFactory, DataProcessorFactory
 from telemetry.models import Sensor, MonitoredObject, Transmitter, DeviceInterface, LocalSensor
 from telemetry.validators import SensorValidator, MonitoredObjectValidator, TransmitterValidator, \
     TransmitterStartValidator, TransmitterStopValidator
@@ -160,8 +160,8 @@ class TelemetryTransmitterStart(APIView):
     def get(request):
         try:
             TransmitterStartValidator.validate_get_parameters_from(request.query_params)
-            CommunicationService.get_instance().start_reception_from(
-                    device=Transmitter.objects(uuid=request.query_params['uuid']).first())
+            CommunicationService.get_instance().start_reception_with(
+                    Transmitter.objects(uuid=request.query_params['uuid']).first(), None)
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=500)
@@ -174,7 +174,7 @@ class TelemetryTransmitterStop(APIView):
         try:
             TransmitterStopValidator.validate_get_parameters_from(request.query_params)
             CommunicationService.get_instance().stop_reception_from(
-                    transmitter=Transmitter.objects(uuid=request.query_params['uuid']).first())
+                    Transmitter.objects(uuid=request.query_params['uuid']).first())
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=500)
@@ -186,7 +186,8 @@ class TelemetryLocalSensorsStart(APIView):
     def post(request):
         try:
             for local_sensor in LocalSensor.objects.all():
-                CommunicationService.get_instance().start_reception_from(local_sensor)
+                CommunicationService.get_instance().start_reception_with(local_sensor, DataProcessorFactory
+                                                                         .create_data_processor_for(local_sensor))
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=500)

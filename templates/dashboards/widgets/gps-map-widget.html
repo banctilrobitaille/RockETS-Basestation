@@ -6,16 +6,110 @@
     <div id='{{ widget.name|cut:" " }}-{{ widget.uuid }}'></div>
 {% endblock %}
 {% block widget-footer %}
+    <p class="map-widget-value">Latitude: </p><p class="map-widget-value" id="map-latitude"></p>
+    <p class="map-widget-value">Longitude: </p><p class="map-widget-value" id="map-longitude"></p>
 {% endblock %}
 {% block script %}
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiYmVucm9iaSIsImEiOiJjajFoYWFuY2owMDZpMndvMGZ2ZHM0azR5In0.WEFjBJOEWJwKqoQS3_ndWA';
         var map = new mapboxgl.Map({
             container: '{{ widget.name|cut:" "}}-{{ widget.uuid }}',
-            style: 'mapbox://styles/mapbox/outdoors-v9'
+            style: 'mapbox://styles/mapbox/outdoors-v10',
+            zoom: 14
         });
+        var point = {
+            "type": "Point",
+            "coordinates": [0, 0]
+        };
         $('#{{ widget.name|cut:" "}}-{{ widget.uuid }}').css({'width': '100%'});
         var cw = $('#{{ widget.name|cut:" "}}-{{ widget.uuid }}').width();
         $('#{{ widget.name|cut:" "}}-{{ widget.uuid }}').css({'height': 0.60 * cw + 'px'});
+
+        map.on('load', function () {
+            map.addSource('base_station', {type: 'geojson', data: point});
+
+            map.addLayer({
+                "id": "base_station",
+                "type": "symbol",
+                "source": "base_station",
+                "layout": {
+                    "icon-image": "bus-15"
+                }
+            });
+        });
+
+        window["{{ widget.uuid }}-socket"] = new WebSocket("ws://" + window.location.host +
+                "/telemetry/{{ widget.sensor_id }}/{{ widget.sensor_measure }}");
+        window["{{ widget.uuid }}-socket"].onmessage = function (e) {
+            var coords = e.data.split(",");
+            var latitude = parseLatitude(coords[0]);
+            var longitude = parseLongitude(coords[1]);
+            point = {
+                "type": "Point",
+                "coordinates": [longitude, latitude]
+            };
+            map.getSource('base_station').setData(point);
+
+            $("#map-latitude").html(latitude);
+            $("#map-longitude").html(longitude);
+            map.setCenter([longitude, latitude]);
+        };
+        window["{{ widget.uuid }}-socket"].onopen = function () {
+            console.log("Socket opened")
+        };
+        // Call onopen directly if socket is already open
+        if (window["{{ widget.uuid }}-socket"].readyState == WebSocket.OPEN) window["{{ widget.uuid }}-socket"].onopen();
+
+        function parseLongitude(lon) {
+            var h;
+            var a;
+            var dg;
+            var mn;
+            h = -1.0;
+            a = lon.split('.');
+            if (a[0].length === 5) {
+                // three digits of degrees
+                dg = lon.substring(0, 3);
+                mn = lon.substring(3);
+            } else if (a[0].length === 4) {
+                // 2 digits of degrees (in case no leading zero)
+                dg = lon.substring(0, 2);
+                mn = lon.substring(2);
+            } else if (a[0].length === 3) {
+                // 1 digit of degrees (in case no leading zero)
+                dg = lon.substring(0, 1);
+                mn = lon.substring(1);
+            } else {
+                // no degrees, just minutes (nonstandard but a buggy unit might do this)
+                dg = '0';
+                mn = lon;
+            }
+            // longitude is usually precise to 5-8 digits
+            return ((parseFloat(dg) + (parseFloat(mn) / 60.0)) * h).toFixed(8);
+        }
+
+        function parseLatitude(lat) {
+            var h = 1.0;
+            var a;
+            var dg;
+            var mn;
+            var l;
+            a = lat.split('.');
+            if (a[0].length === 4) {
+                // two digits of degrees
+                dg = lat.substring(0, 2);
+                mn = lat.substring(2);
+            } else if (a[0].length === 3) {
+                // 1 digit of degrees (in case no leading zero)
+                dg = lat.substring(0, 1);
+                mn = lat.substring(1);
+            } else {
+                // no degrees, just minutes (nonstandard but a buggy unit might do this)
+                dg = '0';
+                mn = lat;
+            }
+            // latitude is usually precise to 5-8 digits
+            return ((parseFloat(dg) + (parseFloat(mn) / 60.0)) * h).toFixed(8);
+        }
     </script>
 {% endblock %}

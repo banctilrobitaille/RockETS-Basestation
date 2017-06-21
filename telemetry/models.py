@@ -64,18 +64,28 @@ class Sensor(Document):
     type = StringField(required=True)
     description = StringField()
 
+    def is_local(self):
+        raise NotImplementedError
+
 
 class RemoteSensor(Sensor):
     measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
     node = StringField(required=True)
+
+    def is_local(self):
+        return False
 
 
 class LocalSensor(Sensor):
     measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
     interface_id = UUIDField(required=True)
 
+    def is_local(self):
+        return True
+
 
 class Transmitter(Document):
+    type = "transmitter"
     name = StringField(required=True)
     uuid = UUIDField(required=True)
     description = StringField()
