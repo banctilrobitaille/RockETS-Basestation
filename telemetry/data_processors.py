@@ -6,11 +6,6 @@ class AbstractDataProcessor(object):
         raise NotImplementedError
 
 
-class MainDataProcessor(AbstractDataProcessor):
-    def process(self, data):
-        pass
-
-
 class GPSNMEADataProcessor(AbstractDataProcessor):
     def process(self, data):
         nmea_sentence = NMEASentenceFactory.create(NMEASentenceFactory.SENTENCE_TYPE['GPGGA'], data)

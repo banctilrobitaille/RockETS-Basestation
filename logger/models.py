@@ -1,5 +1,10 @@
 from __future__ import unicode_literals
 
-from django.db import models
+from datetime import datetime
+from mongoengine import *
 
-# Create your models here.
+
+class LogData(Document):
+    log_time = DateTimeField(default=datetime.now())
+    device_type = StringField(required=True)
+    measures = DictField()

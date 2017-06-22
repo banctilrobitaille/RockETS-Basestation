@@ -3,6 +3,9 @@ from threading import Thread
 from channels import Group
 import json
 
+from logger.models import LogData
+from logger.services import LogService
+
 
 class DeviceWorker(Thread):
     def __init__(self, data_processor):
@@ -43,15 +46,15 @@ class SerialTransmitterWorker(DeviceWorker):
         self.is_running = True
         self.__serial_connection.flush()
         while self.is_running:
-            received_string = self.__serial_connection.readline()
             try:
-                print(received_string)
-                raw_data = json.loads(received_string)
-                sensors = raw_data['Sensors']
-                for sensor in sensors.keys():
-                    for measure in sensors[sensor]:
-                        Group("main-state").send({'text': str(raw_data['Rocket_State']).replace("_", " ")})
-                        Group(sensor + "-" + measure).send({'text': str(sensors[sensor][measure])})
+                if self.__serial_connection.inWaiting() > 0:
+                    received_string = self.__serial_connection.readline()
+                    raw_data = json.loads(received_string)
+                    sensors = raw_data['Sensors']
+                    for sensor in sensors.keys():
+                        for measure in sensors[sensor]:
+                            Group("main-state").send({'text': str(raw_data['Rocket_State']).replace("_", " ")})
+                            Group(sensor + "-" + measure).send({'text': str(sensors[sensor][measure])})
             except Exception as e:
                 print(e.message)
 
@@ -80,6 +83,7 @@ class SerialDeviceWorker(DeviceWorker):
                     if processed_data is not None:
                         for key, value in processed_data.iteritems():
                             Group(str(self.device.uuid) + "-" + key).send({'text': str(value)})
+                        LogService.get_instance().log_data_for(device_type=self.device.type, data=processed_data)
             except Exception as e:
                 print(e)
 

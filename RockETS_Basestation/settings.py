@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'core',
     'dashboards',
     'telemetry',
+    'logger',
     'rest_framework_swagger'
 ]
 
