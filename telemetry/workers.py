@@ -49,12 +49,15 @@ class SerialTransmitterWorker(DeviceWorker):
             try:
                 if self.__serial_connection.inWaiting() > 0:
                     received_string = self.__serial_connection.readline()
+                    self.__serial_connection.flush()
+                    print(received_string)
                     raw_data = json.loads(received_string)
                     sensors = raw_data['Sensors']
                     for sensor in sensors.keys():
                         for measure in sensors[sensor]:
                             Group("main-state").send({'text': str(raw_data['Rocket_State']).replace("_", " ")})
                             Group(sensor + "-" + measure).send({'text': str(sensors[sensor][measure])})
+                    LogService.get_instance().log_data_for(str(raw_data['ID']), raw_data)
             except Exception as e:
                 print(e.message)
 

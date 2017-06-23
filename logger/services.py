@@ -5,8 +5,7 @@ class LogService(object):
     __INSTANCE = None
 
     def log_data_for(self, device_type, data):
-        log_data = LogData(device_type=device_type, measures=data).save()
-        print(LogData.objects(device_type='gps').last().measures)
+        LogData(device_type=device_type, measures=data).save()
 
     @staticmethod
     def get_instance():
