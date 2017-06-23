@@ -54,6 +54,7 @@ class Sensor(Document):
         'thermometer': "Thermometer",
         'altimeter': "altimeter",
         'gps': "gps",
+        'other': "Other",
     }
     LOCATIONS = {
         'local': "local",

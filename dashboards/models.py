@@ -18,7 +18,9 @@ class DashboardWidget(EmbeddedDocument):
         'gauge': "gauge",
         'gps-map': "GPS map",
         'guided-chute-planner': "Guided chute planner",
-        'single-value': "Single value"
+        'single-value': "Single value",
+        'state-machine': "State machine",
+        'boolean-state': "Boolean state",
     }
     MEASURE_UNITS = {
         'kn': "kn",
@@ -47,6 +49,8 @@ class DashboardWidget(EmbeddedDocument):
         'gps-map': "map",
         'guided-chute-planner': "map",
         'single-value': "single value",
+        'state-machine': "State machine",
+        'boolean-state': "Boolean state",
     }
 
     uuid = UUIDField(required=True)
@@ -88,7 +92,7 @@ class Dashboard(Document):
 
 
 class DashboardRow(object):
-    MAXIMUM_WIDTH = 10
+    MAXIMUM_WIDTH = 9
 
     __number_of_widgets = None
     __used_width = None
@@ -101,7 +105,7 @@ class DashboardRow(object):
 
     @property
     def is_full(self):
-        return self.__used_width <= DashboardRow.MAXIMUM_WIDTH - DashboardWidget.MINIMUM_WIDTH
+        return self.__used_width < DashboardRow.MAXIMUM_WIDTH - DashboardWidget.MINIMUM_WIDTH
 
     @property
     def widgets(self):

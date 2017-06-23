@@ -1,7 +1,7 @@
 .widget-holder {
-    margin-top: 2%;
+    margin-top: 1%;
     background-color: rgba(0, 0, 0, 0.2);
-    min-height: 250px;
+    min-height: 100px;
 }
 
 .widget-holder-header {
@@ -28,7 +28,8 @@
 }
 
 .gauge-widget {
-    margin-top: 12%;
+    max-height: 150px;
+    margin-top: 5%;
 }
 
 .widget-style-2 {
@@ -66,7 +67,7 @@
 }
 
 .single-value-widget-value {
-    margin-top: 25%;
+    margin-top: 15%;
     color: white;
     text-align: center;
 }

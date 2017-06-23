@@ -3,14 +3,14 @@
     <span>{{ widget.name }}</span>
 {% endblock %}
 {% block widget-content %}
-    <h2 class="single-value-widget-value ellipsis-text" id="{{ widget.uuid }}-value"></h2>
+    <h2 class="single-value-widget-value" id="{{ widget.uuid }}-value"></h2>
 {% endblock %}
 {% block widget-footer %}
 {% endblock %}
 {% block script %}
     <script>
         window["{{ widget.uuid }}-socket"] = new WebSocket("ws://" + window.location.host +
-                "/telemetry/{{ widget.sensor_id }}/{{ widget.sensor_measure }}");
+                "/telemetry/main/state");
         window["{{ widget.uuid }}-socket"].onmessage = function (e) {
             $("#{{ widget.uuid }}-value").text(e.data);
         };

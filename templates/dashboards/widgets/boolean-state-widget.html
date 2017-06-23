@@ -12,6 +12,11 @@
         window["{{ widget.uuid }}-socket"] = new WebSocket("ws://" + window.location.host +
                 "/telemetry/{{ widget.sensor_id }}/{{ widget.sensor_measure }}");
         window["{{ widget.uuid }}-socket"].onmessage = function (e) {
+            if (String(e.data) === "True") {
+                $("#{{ widget.uuid }}").find(".widget-holder-content").css('background-color', 'rgba(39, 174, 96, 1)');
+            } else {
+                $("#{{ widget.uuid }}").find(".widget-holder-content").css('background-color', 'rgba(192, 57, 43, 1)');
+            }
             $("#{{ widget.uuid }}-value").text(e.data);
         };
         window["{{ widget.uuid }}-socket"].onopen = function () {

@@ -7,7 +7,6 @@ def ws_connect(message, sensor_uuid, measure):
     message.reply_channel.send({"accept": True})
     try:
         sensor = Sensor.objects(uuid=sensor_uuid).first()
-
         if sensor.is_local():
             Group(sensor_uuid + "-" + measure).add(message.reply_channel)
         else:
@@ -15,6 +14,14 @@ def ws_connect(message, sensor_uuid, measure):
             Group(sensor_node + "-" + measure).add(message.reply_channel)
     except Exception as e:
         Group("main-" + measure).add(message.reply_channel)
+
+
+def ws_connect_with(message, measure):
+    message.reply_channel.send({"accept": True})
+    try:
+        Group(measure).add(message.reply_channel)
+    except Exception as e:
+        print(e.message)
 
 
 def ws_disconnect(message):
