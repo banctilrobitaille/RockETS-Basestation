@@ -6,3 +6,7 @@ djangorestframework== 3.5.4
 mongoengine==0.11.0
 redis== 2.10.5
 slackclient==1.0.5
+pyserial
+configparser
+Django_slack
+pypiwin32
