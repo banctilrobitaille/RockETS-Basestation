@@ -1,4 +1,5 @@
 .dashboard-widget {
+    cursor: pointer;
     color: white;
     background-color: rgba(39, 174, 96, 0.4);
     margin-top: 2%;

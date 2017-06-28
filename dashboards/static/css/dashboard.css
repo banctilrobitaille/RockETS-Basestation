@@ -1,14 +1,13 @@
 .dashboard-add-widget {
-    min-height: 248px;
     display: table;
     margin-top: 2%;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
+    border: dashed 2px rgba(255, 255, 255, 0.8);
 }
 
 .dashboard-add-widget:hover {
     color: rgba(255, 255, 255, 0.8);
-    border: dashed 2px rgba(255, 255, 255, 0.8);
 }
 
 .dashboard-add-widget-content {

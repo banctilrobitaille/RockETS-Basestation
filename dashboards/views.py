@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from telemetry.models import MonitoredObject, Sensor, Transmitter
+from telemetry.models import MonitoredObject, Sensor, Transmitter, LocalSensor
 from validators import DashboardValidator, WidgetValidator
 from factories import DashboardFactory, DashboardWidgetFactory, DashboardRowsFactory
 
@@ -29,14 +29,20 @@ class Dashboards(APIView):
             dashboard = Dashboard.objects(uuid=request.query_params["uuid"]).first()
             dashboard_rows = DashboardRowsFactory.create_dashboard_rows_from(dashboard.widgets)
             return render_to_response('dashboards/dashboard.html',
-                                      {'content_title': dashboard.name,
+                                      {'content_title': dashboard.name + "(" + MonitoredObject.objects(
+                                              uuid=dashboard.monitored_object_id).first().name + ")",
                                        'dashboards': dashboard,
                                        'dashboard_rows': dashboard_rows,
                                        'widget_types': DashboardWidget.TYPES.keys(),
                                        'measure_units': DashboardWidget.MEASURE_UNITS.keys(),
+                                       'dashboard_transmitter': Transmitter.objects(uuid=dashboard.transmitter_id),
+                                       'transmitters': Transmitter.objects.all(),
                                        'sensors': map(lambda sensor_uuid: Sensor.objects(uuid=sensor_uuid).first(),
                                                       MonitoredObject.objects(
-                                                              uuid=dashboard.monitored_object_id).first().sensor_ids)},
+                                                              uuid=dashboard.monitored_object_id).first().sensor_ids),
+                                       'local_sensors': LocalSensor.objects.all(),
+                                       'monitored_object': MonitoredObject.objects(
+                                               uuid=dashboard.monitored_object_id).first()},
                                       RequestContext(request))
 
     @staticmethod

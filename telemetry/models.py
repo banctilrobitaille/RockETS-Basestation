@@ -54,8 +54,10 @@ class Sensor(Document):
         'thermometer': "Thermometer",
         'altimeter': "altimeter",
         'gps': "gps",
+        'other': "Other",
     }
     LOCATIONS = {
+        'local': "local",
         'remote': "remote",
     }
     name = StringField(required=True)
@@ -63,21 +65,35 @@ class Sensor(Document):
     type = StringField(required=True)
     description = StringField()
 
+    def is_local(self):
+        raise NotImplementedError
+
 
 class RemoteSensor(Sensor):
     measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
     node = StringField(required=True)
 
+    def is_local(self):
+        return False
+
+
+class LocalSensor(Sensor):
+    measurements = ListField(EmbeddedDocumentField(SensorMeasurement))
+    interface_id = UUIDField(required=True)
+
+    def is_local(self):
+        return True
+
 
 class Transmitter(Document):
+    type = "transmitter"
     name = StringField(required=True)
     uuid = UUIDField(required=True)
     description = StringField()
     interface_id = UUIDField(required=True)
-    # dashboard_id = UUIDField(required=True)
 
 
-class TransmitterInterface(Document):
+class DeviceInterface(Document):
     meta = {
         'allow_inheritance': True,
     }
@@ -87,7 +103,7 @@ class TransmitterInterface(Document):
     uuid = UUIDField(required=True)
 
 
-class SerialTransmitterInterface(TransmitterInterface):
+class SerialDeviceInterface(DeviceInterface):
     BAUD_RATES = {
         '4800': "4800",
         '9600': "9600",

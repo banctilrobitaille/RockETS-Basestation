@@ -1,24 +1,23 @@
-from telemetry.factories import TransmitterWorkerFactory
-from telemetry.models import TransmitterInterface
+from telemetry.factories import TransmitterWorkerFactory, DeviceWorkerFactory
+from telemetry.models import DeviceInterface
 
 
 class CommunicationService(object):
     __instance = None
 
     def __init__(self):
-        self.__active_transmitter_workers = {}
+        self.__active_workers = {}
 
-    def start_reception_with(self, transmitter):
-        if transmitter.uuid not in self.__active_transmitter_workers.keys():
-            transmitter_worker = TransmitterWorkerFactory.create_transmitter_worker_with(
-                    TransmitterInterface.objects(uuid=transmitter.interface_id).first())
-            transmitter_worker.start()
-            self.__active_transmitter_workers[transmitter.uuid] = transmitter_worker
+    def start_reception_with(self, device, data_processor):
+        if device.uuid not in self.__active_workers.keys():
+            device_worker = DeviceWorkerFactory.create_device_worker_with(device, data_processor)
+            device_worker.start()
+            self.__active_workers[device.uuid] = device_worker
 
-    def stop_reception_from(self, transmitter):
-        if transmitter.uuid in self.__active_transmitter_workers.keys():
-            self.__active_transmitter_workers[transmitter.uuid].stop()
-            del self.__active_transmitter_workers[transmitter.uuid]
+    def stop_reception_from(self, device):
+        if device.uuid in self.__active_workers.keys():
+            self.__active_workers[device.uuid].stop()
+            del self.__active_workers[device.uuid]
 
     @staticmethod
     def get_instance():

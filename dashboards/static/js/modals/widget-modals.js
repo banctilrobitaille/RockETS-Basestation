@@ -5,9 +5,12 @@
  * Created by Benoit on 2017-03-26.
  */
 $(document).ready(function () {
+    $(".widget-creation-modal-configuration").hide();
+
     $('#widget-creation-modal').on("shown.bs.modal", function () {
         updateSensorMeasures($("#widgetSensor").val());
-
+        $(".widget-creation-modal-configuration").hide();
+        showWidgetConfigurationFrom($("#widgetType").val())
     });
 
     $("#widgetSensor").on("change", function () {
@@ -24,10 +27,12 @@ $(document).ready(function () {
         var widgetSensorMeasure = $("#widgetSensorMeasure").val();
         var widgetRefreshRate = $("#widgetRefreshRate").val();
         var widgetDashboardUUID = $("#widgetDashboardUUID").val();
+        var widgetMinValue = $("#widgetMinimumValue").val();
+        var widgetMaxValue = $("#widgetMaximumValue").val();
         var queryParams = "?name=" + widgetName + "&description=" + widgetDescription + "&type=" + widgetType +
             "&measure-units=" + widgetMeasureUnits + "&width=" + widgetWidth + "&sensor=" + widgetSensor +
             "&sensor-measure=" + widgetSensorMeasure + "&refresh-rate=" + widgetRefreshRate +
-            "&dashboard-uuid=" + widgetDashboardUUID;
+            "&dashboard-uuid=" + widgetDashboardUUID + "&minimum-value=" + widgetMinValue + "&maximum-value=" + widgetMaxValue;
 
         jQuery.ajax({
             url: "http://localhost:8000/dashboards/widget" + queryParams,
@@ -89,7 +94,19 @@ $(document).ready(function () {
             timeout: 12000000
         });
     });
+    $("#widgetType").on("change", function () {
+        $(".widget-creation-modal-configuration").slideUp();
+        showWidgetConfigurationFrom($("#widgetType").val())
+    });
 });
+
+function showWidgetConfigurationFrom(widgetType) {
+    const GAUGE = "gauge";
+
+    if (widgetType == GAUGE) {
+        $("#gaugeWidgetConfiguration").slideDown();
+    }
+}
 
 function updateSensorMeasures(sensorUUID) {
     $("#widgetSensorMeasure").empty();
@@ -107,7 +124,6 @@ function updateSensorMeasures(sensorUUID) {
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("shit");
         },
-
         timeout: 12000000
     });
 }
