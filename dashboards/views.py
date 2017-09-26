@@ -7,8 +7,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from telemetry.models import MonitoredObject, Sensor, Transmitter, LocalSensor
-from validators import DashboardValidator, WidgetValidator
-from factories import DashboardFactory, DashboardWidgetFactory, DashboardRowsFactory
+from dashboards.validators import DashboardValidator, WidgetValidator
+from dashboards.factories import DashboardFactory, DashboardWidgetFactory, DashboardRowsFactory
 
 from dashboards.models import Dashboard, DashboardWidget
 from dashboards.exceptions import InvalidDashboardParametersException, InvalidWidgetParametersException

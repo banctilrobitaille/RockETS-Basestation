@@ -1,5 +1,4 @@
-from telemetry.factories import TransmitterWorkerFactory, DeviceWorkerFactory
-from telemetry.models import DeviceInterface
+from telemetry.factories import DeviceWorkerFactory
 
 
 class CommunicationService(object):

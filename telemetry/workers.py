@@ -1,6 +1,9 @@
+from random import random
+
 import serial
 from threading import Thread
 from channels import Group
+from datetime import datetime
 import json
 
 from logger.models import LogData
@@ -36,28 +39,31 @@ class DeviceWorker(Thread):
 class SerialTransmitterWorker(DeviceWorker):
     def __init__(self, serial_port, baud_rate):
         super(SerialTransmitterWorker, self).__init__(None)
-        self.__serial_connection = serial.Serial(port=serial_port,
+        """self.__serial_connection = serial.Serial(port=serial_port,
                                                  baudrate=baud_rate,
                                                  parity=serial.PARITY_NONE,
                                                  stopbits=serial.STOPBITS_ONE,
-                                                 bytesize=serial.EIGHTBITS)
+                                                 bytesize=serial.EIGHTBITS)"""
 
     def run(self):
         self.is_running = True
-        self.__serial_connection.flush()
+        # self.__serial_connection.flush()
         while self.is_running:
             try:
-                if self.__serial_connection.inWaiting() > 0:
-                    received_string = self.__serial_connection.readline()
-                    self.__serial_connection.flush()
-                    print(received_string)
-                    raw_data = json.loads(received_string)
-                    sensors = raw_data['Sensors']
-                    for sensor in sensors.keys():
-                        for measure in sensors[sensor]:
-                            Group("main-state").send({'text': str(raw_data['Rocket_State']).replace("_", " ")})
-                            Group(sensor + "-" + measure).send({'text': str(sensors[sensor][measure])})
-                    LogService.get_instance().log_data_for(str(raw_data['ID']), raw_data)
+                # self.__serial_connection.flush()
+                # if self.__serial_connection.inWaiting() > 0:
+                # received_string = self.__serial_connection.readline()
+                # print(received_string)
+                # = cjson.decode(received_string)
+                # sensors = raw_data['Sensors']
+                print(datetime.now())
+                Group("main-state").send({'text': str(random())})
+                Group("Altimeter-Altitude_AGL").send({'text': str(random())})
+                # LogService.get_instance().log_data_for(str(raw_data['ID']), raw_data)
+                """for sensor in sensors.keys():
+                    for measure in sensors[sensor].keys():
+                        Group(sensor + "-" + measure).send({'text': str(sensors[sensor][measure])})
+                        # LogService.get_instance().log_data_for(str(raw_data['ID']), raw_data)"""
             except Exception as e:
                 print(e.message)
 

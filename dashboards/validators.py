@@ -1,5 +1,5 @@
 from dashboards.models import Dashboard, DashboardWidget
-from exceptions import InvalidDashboardParametersException, InvalidWidgetParametersException
+from dashboards.exceptions import InvalidDashboardParametersException, InvalidWidgetParametersException
 
 
 class DashboardValidator(object):

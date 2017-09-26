@@ -28,7 +28,8 @@
                     yAxes: [{
                         type: 'linear',
                         ticks: {
-                            suggestedMin: 0,
+                            min: 0,
+                            max: 1,
                             maxTicksLimit: 5
                         },
                         scaleLabel: {
@@ -37,6 +38,7 @@
                         }
                     }],
                     xAxes: [{
+                        stacked: true,
                         type: 'time',
                         ticks: {
                             autoSkip: true,
@@ -71,7 +73,7 @@
             window["{{ widget.uuid }}-chart"].data.datasets[0].data[window["{{ widget.uuid }}-index"]] = value;
             window["{{ widget.uuid }}-chart"].data.labels[window["{{ widget.uuid }}-index"]++] = moment();
             window["{{ widget.uuid }}-chart"].update(1);
-            if (window["{{ widget.uuid }}-index"] % 1000 == 0) {
+            if (window["{{ widget.uuid }}-index"] % 100 == 0) {
                 window["{{ widget.uuid }}-chart"].data.datasets[0].data.shift();
                 window["{{ widget.uuid }}-chart"].data.labels.shift();
                 window["{{ widget.uuid }}-index"]--;

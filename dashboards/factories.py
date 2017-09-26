@@ -1,7 +1,7 @@
 import uuid
 
 from dashboards.models import Dashboard, DashboardWidget, DashboardRow
-from exceptions import InvalidDashboardParametersException
+from dashboards.exceptions import InvalidDashboardParametersException
 
 
 class DashboardFactory(object):

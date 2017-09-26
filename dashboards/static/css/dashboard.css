@@ -1,9 +1,9 @@
 .dashboard-add-widget {
     display: table;
-    margin-top: 2%;
+    margin-top: 1%;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
-    border: dashed 2px rgba(255, 255, 255, 0.8);
+    min-height: 200px;
 }
 
 .dashboard-add-widget:hover {

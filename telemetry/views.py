@@ -51,7 +51,7 @@ class TelemetryMonitoredObjects(APIView):
     def post(request):
         try:
             MonitoredObjectFactory.create_monitored_object_from(
-                    MonitoredObjectValidator.validate_post_parameters_from(request.query_params)).save()
+                MonitoredObjectValidator.validate_post_parameters_from(request.query_params)).save()
             return Response(status=status.HTTP_201_CREATED)
         except InvalidMonitoredObjectParametersException as e:
             return JsonResponse({'error_message': e.message}, status=400)
@@ -96,7 +96,7 @@ class TelemetrySensors(APIView):
     def post(request):
         try:
             sensor = SensorFactory.create_sensor_from_query_params(
-                    SensorValidator.validate_post_parameters_from(request.query_params))
+                SensorValidator.validate_post_parameters_from(request.query_params))
 
             if request.query_params['location'] == Sensor.LOCATIONS['remote']:
                 monitored_object = MonitoredObject.objects(uuid=request.query_params['monitored-object-uuid']).first()
@@ -122,7 +122,7 @@ class TelemetrySensors(APIView):
             SensorValidator.validate_delete_parameters_from(request.query_params)
             if 'monitored-object-uuid' in request.query_params.keys():
                 MonitoredObject.objects(uuid=request.query_params['monitored-object-uuid']).update(
-                        pull__sensor_ids=request.query_params['uuid'])
+                    pull__sensor_ids=request.query_params['uuid'])
             Sensor.objects(uuid=request.query_params['uuid']).delete()
             return Response(status=status.HTTP_200_OK)
         except InvalidSensorParametersException as e:
@@ -135,7 +135,7 @@ class TelemetryTransmitters(APIView):
     def post(request):
         try:
             TransmitterFactory.create_transmitter_from(
-                    TransmitterValidator.validate_post_parameters_from(request.query_params)).save()
+                TransmitterValidator.validate_post_parameters_from(request.query_params)).save()
             return Response(status=status.HTTP_201_CREATED)
         except InvalidSensorParametersException as e:
             return JsonResponse({'error_message': e.message}, status=400)
@@ -161,7 +161,7 @@ class TelemetryTransmitterStart(APIView):
         try:
             TransmitterStartValidator.validate_get_parameters_from(request.query_params)
             CommunicationService.get_instance().start_reception_with(
-                    Transmitter.objects(uuid=request.query_params['uuid']).first(), None)
+                Transmitter.objects(uuid=request.query_params['uuid']).first(), None)
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=500)
@@ -174,7 +174,7 @@ class TelemetryTransmitterStop(APIView):
         try:
             TransmitterStopValidator.validate_get_parameters_from(request.query_params)
             CommunicationService.get_instance().stop_reception_from(
-                    Transmitter.objects(uuid=request.query_params['uuid']).first())
+                Transmitter.objects(uuid=request.query_params['uuid']).first())
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=500)
@@ -185,9 +185,9 @@ class TelemetryLocalSensorsStart(APIView):
     @api_view(['POST'])
     def post(request):
         try:
-            for local_sensor in LocalSensor.objects.all():
-                CommunicationService.get_instance().start_reception_with(local_sensor, DataProcessorFactory
-                                                                         .create_data_processor_for(local_sensor))
+            # for local_sensor in LocalSensor.objects.all():
+            # CommunicationService.get_instance().start_reception_with(local_sensor, DataProcessorFactory
+            # .create_data_processor_for(local_sensor))
             return Response(status=status.HTTP_200_OK)
         except Exception as e:
             return JsonResponse({'error_message': e.message}, status=500)
