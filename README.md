@@ -5,7 +5,7 @@
 
 > Install Redis from https://github.com/MSOpenTech/redis/releases
 
-> Install MongoDB
+> Install MongoDB following https://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/
 
 #### How to contribute ?
 - [X] Create a branch by feature and/or bug fix
