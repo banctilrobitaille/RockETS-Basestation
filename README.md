@@ -1,4 +1,4 @@
-# RockETS Basestation 
+# RockETS Basestation <img src="/images/logo.png" width="90" vertical-align="bottom">
 
 >This project is a python project developped for a student club called RockETS at ETS (École de Technologie Supérieure). RockETS participate anually to the IREC (Intercollegiate Rocket Engineering Competition). The goal of the competition is to develop, build and launch a sounding rocket, reach a precise altitude, perform a scientific experience during the flight and recover the rocket in good shape. To do so, tracking the rocket is essential. This project is the base station that will be used to track the rocket during the flight, get the telemetry data, review the logs, etc., using different serial devices such as a RFD900 and GPS. This version is a V2 version which has been developped with reusability as the main goal as the club will have to eventually monitor a rocket motor. That said, the hard client base station has been converted to a web base application using websockets to update the different dashboard's widgets. 
 
